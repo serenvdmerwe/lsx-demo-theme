@@ -48,8 +48,17 @@
 			]
 		},
 		"layout": {
-			"contentSize": "645px",
-			"wideSize": "1340px"
+			"contentSize": "768px",
+			"wideSize": "1240px"
+		},
+		"shadow": {
+			"presets": [
+				{
+					"name": "LSX Shadow",
+					"shadow": "4px 4px 0px 0px #000",
+					"slug": "lsx-shadow"
+				}
+			]
 		},
 		"spacing": {
 			"defaultSpacingSizes": false,
@@ -248,15 +257,6 @@
 			],
 			"writingMode": true
 		},
-		"shadow": {
-			"presets": [
-				{
-					"name": "LSX Shadow",
-					"slug": "lsx-shadow",
-					"shadow": "4px 4px 0px 0px #000"
-				}
-			]
-		},
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
@@ -292,7 +292,7 @@
 					},
 					"width": null
 				},
-				"shadow": "var(--wp--preset--shadow--crisp)",
+				"shadow": "var(--wp--preset--shadow--lsx-shadow)",
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--medium)"
 				}
@@ -713,27 +713,37 @@
 			},
 			"h1": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--xx-large)"
+					"fontSize": "var(--wp--preset--font-size--xx-large)",
+					"fontStyle": "normal",
+					"fontWeight": "900"
 				}
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--x-large)"
+					"fontSize": "var(--wp--preset--font-size--x-large)",
+					"fontStyle": "normal",
+					"fontWeight": "700"
 				}
 			},
 			"h3": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--large)"
+					"fontSize": "var(--wp--preset--font-size--large)",
+					"fontStyle": "normal",
+					"fontWeight": "700"
 				}
 			},
 			"h4": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)"
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontStyle": "normal",
+					"fontWeight": "600"
 				}
 			},
 			"h5": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontStyle": "normal",
+					"fontWeight": "500",
 					"letterSpacing": "0.5px"
 				}
 			},
@@ -741,7 +751,7 @@
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontStyle": "normal",
-					"fontWeight": "700",
+					"fontWeight": "400",
 					"letterSpacing": "1.4px",
 					"textTransform": "uppercase"
 				}
@@ -755,7 +765,7 @@
 					"fontStyle": "normal",
 					"fontWeight": "700",
 					"letterSpacing": "-0.1px",
-					"lineHeight": "1.125"
+					"lineHeight": "1.35"
 				}
 			},
 			"link": {
