@@ -273,7 +273,6 @@
 						"style": "solid",
 						"width": "1px"
 					},
-					"color": null,
 					"left": {
 						"color": "var(--wp--preset--color--neutral)",
 						"style": "solid",
@@ -284,13 +283,11 @@
 						"style": "solid",
 						"width": "1px"
 					},
-					"style": null,
 					"top": {
 						"color": "var(--wp--preset--color--neutral)",
 						"style": "solid",
 						"width": "1px"
-					},
-					"width": null
+					}
 				},
 				"shadow": "var(--wp--preset--shadow--lsx-shadow)",
 				"typography": {
