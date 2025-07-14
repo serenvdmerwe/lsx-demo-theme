@@ -31,15 +31,15 @@ These fonts have been chosen to align with the theme niche which is thematically
 - **Reconfigured font size presets:** 
     S (0,875rem), M(1rem), L(1,25rem), X-L(1,5rem), XX-L(2rem)
 
-- **Updated theme color palette:** 
-| Color          | Usage                     | Hex       |
+-  **Updated theme color palette:**
+| Color | Usage | Hex |
 | -------------- | ------------------------- | --------- |
-| Jet Black      | Primary text, backgrounds | `#121212` |
-| Asphalt Gray   | Neutral tone, UI borders  | `#4A4A4A` |
-| Concrete White | Background (light mode)   | `#F4F4F4` |
-| Safety Orange  | Accent (CTAs, buttons)    | `#FF5F1F` |
-| Neon Green     | Highlight / hover effects | `#00FF85` |
-| Chrome Blue    | Secondary accents / links | `#3895FF` |
+| Jet Black | Primary text, backgrounds | `#121212` |
+| Asphalt Gray | Neutral tone, UI borders | `#4A4A4A` |
+| Concrete White | Background (light mode) | `#F4F4F4` |
+| Safety Orange | Accent (CTAs, buttons) | `#FF5F1F` |
+| Neon Green | Highlight / hover effects | `#00FF85` |
+| Chrome Blue | Secondary accents / links | `#3895FF` |
 
 - **Deleted:**
 - styles/08-midnight.json
