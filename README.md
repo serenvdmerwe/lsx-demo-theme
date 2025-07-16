@@ -29,7 +29,7 @@ These fonts have been chosen to align with the theme niche which is thematically
 ### Removals & resets
 
 - **Reconfigured font size presets:** 
-    S (0,875rem), M(1rem), L(1,25rem), X-L(1,5rem), XX-L(2rem)
+    S (0.875rem), M(1rem), L(1.25rem), X-L(1.5rem), XX-L(2rem)
     
 -  **Updated theme color palette:**
 
@@ -47,4 +47,4 @@ These fonts have been chosen to align with the theme niche which is thematically
 - styles/colors/08-midnight.json
 
 - **Added:**
-- Ciustom Shadow 'LSX Shadow' for buttons
+- Custom Shadow 'LSX Shadow' for buttons
