@@ -2,7 +2,7 @@
 	"version": 3,
 	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
 	"title": "Vollkorn & Fira Code",
-	"slug": "typography-preset-2",
+	"slug": "vollkorn-and-fira-code",
 	"settings": {
 		"typography": {
 			"fontFamilies": [
