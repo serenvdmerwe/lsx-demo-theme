@@ -1,0 +1,47 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# macOS folder attributes
+.Spotlight-V100
+.Trashes
+*.swp
+*.swo
+
+# WordPress uploads or cache (optional, if included)
+wp-content/uploads/
+wp-content/cache/
+
+# Node-related (if using build tools like npm, Gulp, etc.)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# PHP dependency management
+vendor/
+composer.lock
+
+# SASS / build artifacts (if applicable)
+*.css.map
+*.scssc
+
+# VS Code and other editor config
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+
+# Theme-specific
+style.css.map
+theme.zip
