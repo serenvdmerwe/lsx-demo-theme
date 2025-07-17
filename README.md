@@ -18,13 +18,13 @@ TBC
 
 These fonts have been chosen to align with the theme niche which is thematically 'contemporary' and 'post-modern'
 
-- **Primary Font:** Albert Sans
-  - Source: [Google Fonts](https://fonts.google.com/specimen/Albert+Sans)
+- **Primary Font:** Lexend (Variable)
+  - Source: [Google Fonts](https://fonts.google.com/specimen/Lexend)
   - Usage: Body text, links, captions etc.
 
-- **Secondary Font:** Aleo
-  - Source: [Google Fonts](https://fonts.google.com/specimen/Aleo)
-  - Usage: Headings
+- **Secondary Font:** Manrope (Variable)
+  - Source: [Google Fonts](https://fonts.google.com/specimen/Manrope)
+  - Usage: TBC
 
 ### Removals & resets
 
@@ -43,8 +43,11 @@ These fonts have been chosen to align with the theme niche which is thematically
 | Chrome Blue | Secondary accents / links | `#3895FF` |
 
 - **Deleted:**
-- styles/08-midnight.json
-- styles/colors/08-midnight.json
+- All Style Variations that came with TT5 theme (except '01-evening')
+- Default fonts that came with TT5 theme
+- Section styles that came with TT5 theme
 
 - **Added:**
 - Custom Shadow 'LSX Shadow' for buttons
+- 'Dark Mode' style variation and color palette variation 
+- Lexend & Manrope variable fonts according to LSX Design System
