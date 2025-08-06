@@ -1,53 +1,70 @@
-# LSX Demo Theme
+# 🧱 LSX Demo Theme Project
 
-Development repository for the LSX Demo Theme
+Welcome to the LightSpeed LSX Demo Theme challenge. This repo forms the foundation of your WordPress Block Theme learning journey.
 
-## About
+---
 
-This theme is based off the WordPress [Twenty Twenty-Five](https://make.wordpress.org/core/2024/08/15/introducing-twenty-twenty-five/) theme and being used for a trial project for Lightspeed Agency.
+## 🚀 Project Goals
 
-## Maintenance
+- Build a functional and well-structured WordPress block theme using best practices.
+- Learn to work with `theme.json`, block templates, and Figma design assets.
+- Demonstrate proficiency in GitHub, VS Code, Copilot, and Studio or LocalWP.
+- Document your process and track time using Harvest.
 
-Here you'll find details and rationale behind certain changes, updates and customisations to the theme
+---
 
-### Images/Media
+## 🛠️ Tools Required
 
-TBC
+- [VS Code](https://code.visualstudio.com/)
+- [GitHub Desktop or CLI](https://desktop.github.com/)
+- [LocalWP](https://localwp.com/) *or* [WordPress Studio](https://developer.wordpress.com/studio/)
+- [Create Block Theme Plugin](https://wordpress.org/plugins/create-block-theme/)
+- [Harvest Time Tracking](https://www.harvestapp.com/)
+- [Figma](https://figma.com) — Use our [LSX Design System](https://lsx.rocks/design-system)
 
-### Fonts/Typography
+---
 
-These fonts have been chosen to align with the theme niche which is thematically 'contemporary' and 'post-modern'
+## 🕒 Time Tracking
 
-- **Primary Font:** Lexend (Variable)
-  - Source: [Google Fonts](https://fonts.google.com/specimen/Lexend)
-  - Usage: Body text, links, captions etc.
+You are required to log your time with [Harvest](https://www.harvestapp.com/):
 
-- **Secondary Font:** Manrope (Variable)
-  - Source: [Google Fonts](https://fonts.google.com/specimen/Manrope)
-  - Usage: TBC
+1. Sign up for a free account.
+2. Install the [Harvest Chrome Extension](https://chrome.google.com/webstore/detail/harvest-time-tracking/).
+3. Log time via GitHub issues and link sessions to tasks.
+4. Use the project name: `LSX Demo Theme`
+5. Time should be logged daily.
 
-### Removals & resets
+---
 
-- **Reconfigured font size presets:** 
-    S (0.875rem), M(1rem), L(1.25rem), X-L(1.5rem), XX-L(2rem)
-    
--  **Updated theme color palette:**
+## 🗂️ Project Tasks (Issues)
 
-| Color | Usage | Hex |
-| -------------- | ------------------------- | --------- |
-| Jet Black | Primary text, backgrounds | `#121212` |
-| Asphalt Gray | Neutral tone, UI borders | `#4A4A4A` |
-| Concrete White | Background (light mode) | `#F4F4F4` |
-| Safety Orange | Accent (CTAs, buttons) | `#FF5F1F` |
-| Neon Green | Highlight / hover effects | `#00FF85` |
-| Chrome Blue | Secondary accents / links | `#3895FF` |
+All tasks are managed as GitHub issues. Each issue represents a deliverable milestone.  
+Make regular commits with meaningful messages and close issues via PRs.
 
-- **Deleted:**
-- All Style Variations that came with TT5 theme (except '01-evening')
-- Default fonts that came with TT5 theme
-- Section styles that came with TT5 theme
+See [📌 Project Issue Board](./projects) for an overview.
 
-- **Added:**
-- Custom Shadow 'LSX Shadow' for buttons
-- 'Dark Mode' style variation and color palette variation 
-- Lexend & Manrope variable fonts according to LSX Design System
+---
+
+## 📚 Study Curriculum
+
+Refer to the [GitHub Wiki](../../wiki) for the 12-week study plan and documentation.
+
+---
+
+## ✅ Weekly Deliverables
+
+Each week you are expected to:
+
+- [ ] Log your progress in `learning-journal.md`
+- [ ] Push commits to your forked repo
+- [ ] Update `README.md` with changes and progress
+- [ ] Use Issues + PRs to manage and submit tasks
+- [ ] Sync your local site to WordPress.com using Studio (or export zip via LocalWP)
+
+---
+
+## 🤝 Support
+
+You can ask questions in the LightSpeed Slack workspace in the `#lsx-demo-theme` channel.
+
+Good luck and have fun!
