@@ -1,0 +1,67 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * 0'  # Run weekly on Sundays
+
+jobs:
+  wp-vulnerabilities:
+    name: WordPress Vulnerabilities Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer
+
+      - name: Install WPScan
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev
+          gem install wpscan
+
+      - name: Scan WordPress theme files
+        run: |
+          # Extract theme name from style.css
+          THEME_NAME=$(grep -m 1 "Theme Name:" style.css | cut -d':' -f2- | xargs)
+          echo "Scanning theme: $THEME_NAME"
+
+          # Run theme check - simplified example, would connect to a WP instance in real setup
+          wpscan --no-banner --no-update --format json > wpscan-results.json || true
+
+          # Check for critical findings
+          if grep -q "critical" wpscan-results.json; then
+            echo "Critical security issues found!"
+            exit 1
+          fi
+
+  code-security:
+    name: Code Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer, phpcs
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: PHPCS Security Scan
+        run: vendor/bin/phpcs --standard=.github/linters/phpcs.xml -s ./
+
+      - name: Check for unescaped output
+        run: |
+          # Look for common WordPress security issues
+          grep -r --include="*.php" -E "echo \\\$[a-zA-Z0-9_]*;" . || true
+          grep -r --include="*.php" -E "<\?=\\\$[a-zA-Z0-9_]*" . || true
