@@ -8,13 +8,18 @@ vendor
 tests
 .husky
 
-# Build process
+# Editor and configuration files
 .editorconfig
-.eslintrc.js
 .gitattributes
 .gitignore
+
+# Linting and formatting
+.eslintrc.js
 .stylelintrc.js
 .prettierrc.js
+phpcs.xml
+
+# Build and tooling
 composer.json
 composer.lock
 package.json
@@ -24,7 +29,6 @@ playwright.config.js
 webpack.config.js
 Gruntfile.js
 gulpfile.js
-phpcs.xml
 phpunit.xml
 .env
 .npmrc
@@ -42,6 +46,27 @@ CHANGELOG.md
 *.zip
 *.tar.gz
 *.tgz
+
+# Configuration files for editor, linting, formatting, npm, and distribution
+.editorconfig
+.gitattributes
+.gitignore
+.eslintrc.js
+.stylelintrc.js
+.prettierrc.js
+phpcs.xml
+composer.json
+composer.lock
+package.json
+package-lock.json
+postcss.config.js
+playwright.config.js
+webpack.config.js
+Gruntfile.js
+gulpfile.js
+phpunit.xml
+.env
+.npmrc
 
 # Workspace files
 *.code-workspace

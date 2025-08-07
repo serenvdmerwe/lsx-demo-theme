@@ -1,7 +1,7 @@
 # Auto detect text files and ensure proper line endings
 * text=auto
 
-# Force LF (Unix) line endings for PHP, JS, CSS, etc.
+# Force LF (Unix) line endings for all common text-based files
 *.php text eol=lf
 *.js text eol=lf
 *.css text eol=lf
