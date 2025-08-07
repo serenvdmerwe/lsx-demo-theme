@@ -2,6 +2,8 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+Thumbs.db
+Icon?
 
 # Thumbnails
 ._*
@@ -11,6 +13,11 @@
 .Trashes
 *.swp
 *.swo
+
+# WordPress core
+/wp-admin/
+/wp-includes/
+wordpress/
 
 # WordPress uploads or cache (optional, if included)
 wp-content/uploads/
@@ -23,6 +30,7 @@ yarn-debug.log*
 yarn-error.log*
 dist/
 build/
+.env
 
 # PHP dependency management
 vendor/
@@ -36,6 +44,11 @@ composer.lock
 .vscode/
 .idea/
 *.code-workspace
+.devcontainer/.env
+
+# Local dev
+.local/
+.localwp-site/
 
 # Temporary files
 *.log

@@ -1,0 +1,49 @@
+# Directories
+.git
+.github
+.devcontainer
+.vscode
+node_modules
+vendor
+tests
+.husky
+
+# Build process
+.editorconfig
+.eslintrc.js
+.gitattributes
+.gitignore
+.stylelintrc.js
+.prettierrc.js
+composer.json
+composer.lock
+package.json
+package-lock.json
+postcss.config.js
+playwright.config.js
+webpack.config.js
+Gruntfile.js
+gulpfile.js
+phpcs.xml
+phpunit.xml
+.env
+.npmrc
+
+# Documentation
+DEVELOPMENT.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+CHANGELOG.md
+*.md
+
+# Development files
+*.map
+*.log
+*.zip
+*.tar.gz
+*.tgz
+
+# Workspace files
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
