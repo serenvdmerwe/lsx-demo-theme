@@ -31,6 +31,7 @@ yarn-error.log*
 dist/
 build/
 .env
+.env.example
 
 # PHP dependency management
 vendor/
