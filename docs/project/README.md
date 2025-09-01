@@ -8,3 +8,6 @@ This is your core practical assignment. You’ll build a custom block theme base
 - Follow our issue + PR workflow
 
 See [Detailed Brief →](brief.md)
+
+
+
