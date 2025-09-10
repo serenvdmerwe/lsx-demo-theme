@@ -2,7 +2,7 @@
 name: Weekly plan
 about: Outline your plan for the upcoming week including study objectives, tasks and time allocation.
 title: "[Week Plan] Week X Plan"
-labels: [planning]
+labels: "planning"
 assignees: []
 ---
 
@@ -31,3 +31,4 @@ Estimate how many hours you will spend on each activity and update with actual h
 ## Course material
 
 Link to any courses, articles or documentation you will follow.
+
