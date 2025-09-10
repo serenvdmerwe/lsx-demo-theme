@@ -1,0 +1,25 @@
+blank_issues_enabled: false
+contact_links:
+  - name: LSX Theme Development Documentation
+    url: https://github.com/lightspeedwp/lsx-demo-theme/blob/main/README.md
+    about: Review the main project documentation and setup instructions
+  - name: WordPress Block Theme Handbook
+    url: https://developer.wordpress.org/themes/block-themes/
+    about: Official WordPress documentation for block theme development
+  - name: WordPress Studio Support
+    url: https://developer.wordpress.com/studio/
+    about: Get help with WordPress Studio local development environment
+  - name: WordPress.org Support Forums
+    url: https://wordpress.org/support/forum/themes-and-templates/
+    about: Ask questions and find answers in the WordPress community forums
+labels:
+  - name: "Theme: LSX"
+    description: "Issues related to the LSX theme functionality and features"
+  - name: "Block Patterns"
+    description: "Issues related to block patterns in the LSX theme"
+  - name: "Block Styles"
+    description: "Issues related to block styles in the LSX theme"
+  - name: "Documentation"
+    description: "Issues related to documentation for the LSX theme"
+  - name: "Feature Request"
+    description: "Requests for new features or enhancements in the LSX theme"

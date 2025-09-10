@@ -114,6 +114,14 @@ if ( ! function_exists( 'lsx_demo_theme_pattern_categories' ) ) :
 				'description' => __( 'A collection of post format patterns.', 'lsx-demo-theme' ),
 			)
 		);
+
+		register_block_pattern_category(
+			'lsx_demo_theme_pricing',
+			array(
+				'label'       => __( 'Pricing', 'lsx-demo-theme' ),
+				'description' => __( 'A collection of pricing table patterns and layouts.', 'lsx-demo-theme' ),
+			)
+		);
 	}
 endif;
 add_action( 'init', 'lsx_demo_theme_pattern_categories' );
