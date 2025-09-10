@@ -12,15 +12,4 @@ contact_links:
   - name: WordPress.org Support Forums
     url: https://wordpress.org/support/forum/themes-and-templates/
     about: Ask questions and find answers in the WordPress community forums
-  - name: Bug Report
-    url: https://github.com/lightspeedwp/lsx-demo-theme/issues/new?template=bug-report.md
-    about: Report a bug or issue with the LSX theme
-  - name: Feature Request
-    url: https://github.com/lightspeedwp/lsx-demo-theme/issues/new?template=feature-request.md
-    about: Suggest a new feature or enhancement for the LSX theme
-  - name: Documentation Request
-    url: https://github.com/lightspeedwp/lsx-demo-theme/issues/new?template=docs-request.md
-    about: Request updates or additions to the LSX theme documentation
-  - name: Task
-    url: https://github.com/lightspeedwp/lsx-demo-theme/issues/new?template=task.md
-    about: Create a task or to-do related to the LSX theme
+
