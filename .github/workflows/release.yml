@@ -1,0 +1,63 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Build and Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Package theme
+        run: |
+          # Get version from tag
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+          # Create a clean directory for the theme
+          mkdir -p theme-package
+
+          # Copy only production files
+          rsync -av --exclude-from='.distignore' --exclude='.git' --exclude='node_modules' --exclude='vendor' . theme-package/
+
+          # Ensure build files are included
+          cp -r build/* theme-package/ || true
+
+          # Create the zip file
+          cd theme-package && zip -r "../lsx-demo-theme-$VERSION.zip" .
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: LSX Demo Theme v${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: |
+            lsx-demo-theme-*.zip
+          body: |
+            ## LSX Demo Theme ${{ github.ref_name }}
+
+            ### What's Changed
+            * See the [CHANGELOG.md](https://github.com/lightspeedwp/lsx-demo-theme/blob/main/CHANGELOG.md) for details
+
+            ### Full Changelog
+            https://github.com/lightspeedwp/lsx-demo-theme/compare/${{ github.ref_name }}...main
