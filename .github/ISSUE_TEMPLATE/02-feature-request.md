@@ -26,6 +26,3 @@ assignees: []
 
 ### Priority
 <!-- Choose one: P0 (Critical), P1 (High), P2 (Medium), P3 (Low). Explain the rationale if P0/P1. -->
-
-### **Priority**
-<!-- How important is this feature? Choose one: Low, Medium, High -->
