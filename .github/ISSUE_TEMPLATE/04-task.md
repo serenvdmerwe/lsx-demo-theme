@@ -3,7 +3,6 @@ name: Task
 about: Create a task or to-do item for the project
 title: '[Task] <Descriptive Title>'
 labels: 'task'
-assignees: ''
 
 ---
 
@@ -24,6 +23,10 @@ assignees: ''
 2. Step 2
 3. Step 3
 
+## Acceptance criteria
+- [ ] Clear, testable outcomes are listed.
+- [ ] Success/failure conditions are unambiguous.
+- [ ] Any non-functional needs (performance, security, accessibility) are noted.
 ### **Related Issues or Tasks**
 <!-- Link any related issues or tasks here. Example: -->
 <!-- - #123 -->
@@ -37,3 +40,6 @@ assignees: ''
 - [ ] Low
 - [ ] Medium
 - [ ] High
+
+> If you select a priority, also apply the corresponding label:
+> priority:low, priority:medium, or priority:high.
