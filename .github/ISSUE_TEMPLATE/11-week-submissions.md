@@ -6,20 +6,20 @@ labels: ["weekly-submission"]
 assignees: []
 ---
 
-Use this template at the end of each week to summarise what you have done, identify challenges and reflect on your learning.  This helps mentors track progress and provide feedback.
+Use this template at the end of each week to summarise what you have done, identify challenges and reflect on your learning. This helps mentors track progress and provide feedback.
 
-### ��️ What Did You Work On?
+### 🛠️ What Did You Work On?
 
-Summarise the tasks and study topics you completed.  Link to any relevant issues, pull requests or branches.
+Summarise the tasks and study topics you completed. Link to any relevant issues, pull requests or branches.
 
-### �� Challenges Faced
+### ⚡ Challenges Faced
 
-Describe any obstacles you encountered.  Be specific so mentors can help you overcome them.
+Describe any obstacles you encountered. Be specific so mentors can help you overcome them.
 
 ### ❓ Questions for Review
 
-List any questions or areas where you would like feedback.  This can include code review, design decisions or further resources.
+List any questions or areas where you would like feedback. This can include code review, design decisions or further resources.
 
-### �� Reflection
+### 🌟 Reflection
 
-Reflect on what you learned this week, what went well and what you would do differently next week.  This section supports the reflection questions used in your log files.
+Reflect on what you learned this week, what went well and what you would do differently next week. This section supports the reflection questions used in your log files.

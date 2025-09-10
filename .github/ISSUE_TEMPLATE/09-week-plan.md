@@ -6,28 +6,28 @@ labels: ["planning"]
 assignees: []
 ---
 
-Use this template at the start of each week to plan your learning and development tasks.  Break down your activities into categories and assign estimated time.
+Use this template at the start of each week to plan your learning and development tasks. Break down your activities into categories and assign estimated time.
 
-### �� Studies
+### 📚 Studies
 
-List the articles, courses or documentation you intend to study (e.g. WordPress Learning Pathway modules, GitHub Skills).  Include links where possible.
+List the articles, courses or documentation you intend to study (e.g. WordPress Learning Pathway modules, GitHub Skills). Include links where possible.
 
-### �� Videos
+### 🎥 Videos
 
 List any tutorial videos or webinars you plan to watch (e.g. Ollie Theme Academy sessions, Figma Dev Mode tutorials).
 
-### �� Tasks
+### 📝 Tasks
 
 Outline your documentation or administrative tasks (e.g. update README, write logs, organise folders).
 
-### �� Coding Tasks
+### 💻 Coding Tasks
 
-List the coding tasks you will work on this week (e.g. build a block pattern, refactor theme.json settings).  Reference specific GitHub issues.
+List the coding tasks you will work on this week (e.g. build a block pattern, refactor theme.json settings). Reference specific GitHub issues.
 
 ### ⏱️ Time Tracking
 
-Note how you will track your time (Harvest entries linked to issues).  Set a target number of hours.
+Note how you will track your time (Harvest entries linked to issues). Set a target number of hours.
 
-### �� Course Material
+### 📖 Course Material
 
-Mention any external courses or materials you plan to complete this week (e.g. GitHub Copilot course, VS Code basics, accessibility guidelines).
+Mention any external courses or materials you plan to complete this week (e.g. GitHub Copilot course, VS Code basics, accessibility guidelines).
