@@ -9,7 +9,6 @@ assignees: []
 ---
 
 ## Documentation Request Checklist
-## Documentation Request Checklist
 - [ ] I have checked the existing documentation to ensure this request is not a duplicate.
 - [ ] I have searched existing issues to avoid duplicates.
 - [ ] I have clearly described the documentation or clarification needed.
@@ -17,9 +16,6 @@ assignees: []
 
 ### What documentation is needed?
 <!-- Provide a clear and concise description of the specific documentation you are requesting or the area that needs clarification. -->
-
-### **Why is this documentation important?**
-<!-- Explain how this documentation would help you or others better understand or use the project. -->
 
 ### Where should this live?
 <!-- Proposed location (e.g. README, /docs/guide.md, website page, code comments). -->
@@ -30,6 +26,4 @@ assignees: []
 <!-- Add any other relevant information, examples, or screenshots to support your request. -->
 
 ### Priority
-<!-- How important is this documentation request? Choose one: Low, Medium, High -->
-### **Priority**
 <!-- How important is this documentation request? Choose one: Low, Medium, High -->
