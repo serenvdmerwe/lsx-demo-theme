@@ -28,8 +28,8 @@ Thank you for your interest in contributing to LightSpeed! Please follow this wo
 
 - **No new failing or flaky tests.** If a test must be skipped, document the reason and linked issue, and add an unblock date.
 - **Do not commit or paste secrets.** Run secret scanning locally before opening a PR.
-- **PRs with module version bumps should have a link to the release notes and a summary of notable changes.**
-- **Any PR that doesn't meet the criteria in this list should be converted to a draft PR until it is ready to go.**- Be responsive to feedback and make requested changes as needed.
+
+- Be responsive to feedback and make requested changes as needed.
 - Only maintainers can approve and merge PRs.
 - PRs will be reviewed by **maintainers**. Automated tools (e.g., **CodeRabbit.ai**, Copilot) may assist with feedback, but human maintainers provide approvals.
   **CodeRabbit.ai** runs pre‑review automated checks for quality, performance, and best practices.
