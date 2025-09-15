@@ -16,7 +16,6 @@ Thank you for your interest in contributing to LightSpeed! Please follow this wo
 
 ### 3. Develop Your Solution
 - Follow the coding standards and style guides used in this repository. If a linter or formatter is configured (e.g., ESLint, Prettier, PHPCS), ensure your code passes all checks before submitting.
-- Follow the coding standards and style guides used in this repository. If a linter or formatter is configured (e.g., ESLint, Prettier, PHPCS), ensure your code passes all checks before submitting.
 - Use **[CodeRabbit.ai](https://coderabbit.ai/)** alongside your local tools to perform automated code reviews and identify issues early.
 - Write clear, concise commit messages (e.g., Conventional Commits: feat:, fix:, docs:, chore:, refactor:).- Open a PR from your branch to the appropriate base branch (e.g., `trunk` or `trunk 2.1`).
 - **All PRs must have a description.** Make sure the description is accurate and updated if changes are made.
