@@ -7,7 +7,8 @@ Thank you for your interest in contributing to LightSpeed! Please follow this wo
 ## Ideal Contribution Workflow
 
 ### 1. Start with the GitHub Issue
-- Use the appropriate [issue template](../../issues/new/choose) for bug reports, enhancements, or questions.- Clearly describe the problem, feature, or task. Include as much detail as possible (steps to reproduce, expected behavior, environment, etc.).
+- Use the appropriate [issue template](../../issues/new/choose) for bug reports, enhancements, or questions.
+- Clearly describe the problem, feature, or task. Include as much detail as possible (steps to reproduce, expected behavior, environment, etc.).
 - Discuss your intended approach in the issue before starting work, if needed.
 
 ### 2. Create a Branch
