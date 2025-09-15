@@ -34,8 +34,9 @@ Thank you for your interest in contributing to LightSpeed! Please follow this wo
 - PRs will be reviewed by **maintainers**. Automated tools (e.g., **CodeRabbit.ai**, Copilot) may assist with feedback, but human maintainers provide approvals.
   **CodeRabbit.ai** runs pre‑review automated checks for quality, performance, and best practices.
 - Be responsive to feedback and make requested changes as needed.
-- Only maintainers can approve and merge PRs.---
+- Only maintainers can approve and merge PRs.
 
+---
 ## Additional Guidelines
 
 - **Use [Saved Replies](../SAVED_REPLIES.md) for common responses.** Reviewers and maintainers are encouraged to use or adapt the saved replies for consistent and efficient communication.
