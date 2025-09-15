@@ -113,5 +113,3 @@ Mentors should review:
 * [LightSpeed Code Standards](https://chatgpt.com/c/68907faf-ca64-8326-91b2-09001d49d6fc#)
 
 * [GitHub Skills Courses](https://github.com/skills)
-
----
