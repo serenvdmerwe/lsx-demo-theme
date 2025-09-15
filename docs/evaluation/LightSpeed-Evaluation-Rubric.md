@@ -49,7 +49,7 @@ Mentors should complete this at the end of each month and discuss it in a 1:1 wi
 | ----- | ----- | ----- |
 | Theme.json | Can edit and explain structure and styles | ✅ / 🔄 / ❌ |
 | Block Patterns | Understands layout structure and variations | ✅ / 🔄 / ❌ |
-| Copilot \+ MCP | Integrated agent & .instructions.md workflow | ✅ / 🔄 / ❌ |
+| Copilot + MCP | Integrated agent & .instructions.md workflow | ✅ / 🔄 / ❌ |
 | Project Workflow | PRs submitted with proper context | ✅ / 🔄 / ❌ |
 | Reflection | Weekly journal shows learning growth | ✅ / 🔄 / ❌ |
 
