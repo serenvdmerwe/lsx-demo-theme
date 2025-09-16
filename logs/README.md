@@ -4,7 +4,14 @@ Each intern must maintain a set of log files in this folder. These logs serve as
 
 ## Structure
 
-Logs are organised by week. Create a file called `week-01.md` for the first week, `week-02.md` for the second week, and so on. At the end of the internship, write a longer reflection in `reflections.md`.
+Logs are organised by week. Create a folder for each week (e.g., `week1`, `week2`, etc.) and include daily log files for each working day. Use the templates provided in the `week1` folder to structure your logs. For example:
+
+- For Week 1, use the `week1` folder and the provided templates (`logs-week1-day1.md`, `logs-week1-day2.md`, etc.).
+- When moving on to the next week, create a new folder (e.g., `week2`) and copy the templates from the `week1` folder. Update the filenames and content to reflect the new week.
+
+This process should be repeated for all weeks from Week 1 to Week 12.
+
+At the end of the internship, write a longer reflection in `reflections.md`.
 
 ### Daily Entries
 
