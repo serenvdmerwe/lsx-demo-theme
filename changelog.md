@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] - 2025-09-10
 
 ### ENHANCEMENT
-- Enhanced the ISSUE_TEMPLATES by removing unwanted templates, adding required templates and editing the exisitng templates where required. #9, #11
+- Enhanced the ISSUE_TEMPLATES by removing unwanted templates, adding required templates and editing the existing templates where required. #9, #11
 
 ## [Unreleased] - 2025-09-11
 
