@@ -6,37 +6,30 @@ This template illustrates how to structure your daily log.  Duplicate this file 
 
 ### How do you feel today?
 
-- Emotionally - 35 %
-- Physically - 50 %
+Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
 
 ### What did you do yesterday?
 
-- WordPress.org profile set up
-- GitHub Skills Couse
-- Add the moderator files to the LSX Demo Theme
-- Google docs clean up and admin
-- Asana Week Planning
+Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
 
 ### What do you plan to do today?
 
-List the tasks you intend to work on today:
+List the tasks you intend to work on today.  Use a checklist to break them down:
 
-- Add last Doc to the LSX Demo Theme
-- Planning meet W/ Ash Brandon
-- LSX Demo Theme All the way today
+- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
+- [ ] Add more tasks as needed.
 
 ### What are your blockers?
 
-- honestly, had a not-so-great night last night, but not gonna let that get in my way
+Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
 
 ## Daily Logs
 
-- 1:56 – Google Meet: W/ Ash Brandon Agile et el
-- 0:38 – Google Meet: W/ Brandon Sprint Planning
-- 0:05 – Config: WP.org - Slack channel
-- 0:02 – LSX Demo Theme: Add Ash as admin on personal repo
-- 1:30 – LSX Demo Theme: Atlassian - Read Through
-- 1:15 – LSX Demo Theme: Log ISSUES on repo for group project
-- 3:00 – Project Management: Asana tag planning
+Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
 
-**Total:** 8:26
+```
+- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
+- 2.0 hrs – read WordPress block theme documentation and took notes
+```
+
+You can draft notes throughout the day in this section and refine them before committing.
