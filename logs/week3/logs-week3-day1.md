@@ -6,44 +6,30 @@ This template illustrates how to structure your daily log.  Duplicate this file 
 
 ### How do you feel today?
 
-- Emotionally - :chart_with_upwards_trend::chart_with_downwards_trend::chart_with_upwards_trend::chart_with_downwards_trend:
-- Physically - :woman-gesturing-no::skin-tone-2:
+Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
 
 ### What did you do yesterday?
 
-- Made the CONTRIBUTOR.md file
-- Team planning with Brandon
-- Studies
+Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
 
 ### What do you plan to do today?
 
-List the tasks you intend to work on today:
+List the tasks you intend to work on today.  Use a checklist to break them down:
 
-- WordPress.org profile set up
-- Google docs clean up and admin
-- lsx-demo-theme action plan with Brandon
-- GitHub Skills  Couse
-- Ms learn
-- Google Course
+- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
+- [ ] Add more tasks as needed.
 
 ### What are your blockers?
 
-- Thankfully, not as during this time I get to work from home. All is understandable on the work front
+Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
 
 ## Daily Logs
 
+Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
 
-- 1:30 – LSX Demo Theme: CONTRIBUTOR.md file
-- 0:10 – Business Development: Google Docs Admin
-- 0:10 – Config: WP.org Profile set up
-- 0:10 – Huddle: W/ Ash
-- 0:15 – Business Development: Morning Admin
-- 0:05 – LSX Demo Theme: Invited @Brandon and @Ash to personal project repository
-- 0:02 – LSX Demo Theme: Enabled ISSUES on personal project
-- 0:15 – LSX Demo Theme: Labels Sync with main Repo
-- 0:25 – LSX Demo Theme: Priority field settings + status field + Size field + Iterations settings updates personal
-- 0:10 – LSX Demo Theme: Set Milestones on personal Repo
-- 0:30 – GitHub Skills Course: Connect-the-dots
-- 0:40 – LSX Demo Theme: Created ISSUES for the Three Files needing to be added today
+```
+- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
+- 2.0 hrs – read WordPress block theme documentation and took notes
+```
 
-**Total:** 4:22
+You can draft notes throughout the day in this section and refine them before committing.

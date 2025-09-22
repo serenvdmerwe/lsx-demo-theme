@@ -6,46 +6,30 @@ This template illustrates how to structure your daily log.  Duplicate this file 
 
 ### How do you feel today?
 
-- Emotionally - 70%
-- Physically - 80%
-- Its been a hectic morning
+Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
 
 ### What did you do yesterday?
 
-- MS Course GitHub Foundations Pt1 and 2
+Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
 
 ### What do you plan to do today?
 
-List the tasks you intend to work on today:
+List the tasks you intend to work on today.  Use a checklist to break them down:
 
-- LSX Demo Theme Changes
-- GitHub Skills + GitHub Copilot Course
+- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
+- [ ] Add more tasks as needed.
 
 ### What are your blockers?
 
-- Just need coffee and some time to get tasks done today, and I shall be all good
+Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
 
 ## Daily Logs
 
+Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
 
-- 0:40 – Project Management: Asana Admin Time
-- 0:15 – Business Development: Laying out a plan for tomorrow
-- 0:15 – MS Learn Course: Achievement ZBRTF892 (Completed)
-- 0:30 – MS Learn Course: Achievement 3ACM3DNH (Completed)
-- 0:20 – MS Learn Course: Achievement 3ACQ8M6H (Completed)
-- 2:00 – Google Meet: LSX Plan Discussion with Brandon
-- 0:25 – MS Learn Course: Achievement 4GQ8LLJK (Completed)
-- 0:20 – MS Learn Course: Achievement E5V35JXP, ZBRGBP82 (Completed)
-- 0:20 – MS Learn Course: Achievement 7KYLB6SZ (Completed)
-- 0:20 – MS Learn Course: Achievement BCPN3WMD (Completed)
-- 2:00 – LSX Demo Theme: LightSpeed/LSX Demo Theme work
-- 0:30 – MS Learn Course: Achievement 9YGEEV7U (Completed)
-- 0:30 – MS Learn Course: Achievement W23DTY4N (Completed)
-- 0:20 – MS Learn Course: Achievement ZBRC3W72, 8ZUBTL8W (Completed)
-- 0:20 – MS Learn Course: Achievement ZBRC8LU2 (Completed)
-- 0:15 – MS Learn Course: Achievement K6EFV53B (Completed)
-- 0:25 – MS Learn Course: Achievement FM8T3DRX, 9YGE5M8U (Completed)
-- 0:20 – GitHub Skills Course: Review Pull Requests (Completed)
-- 0:20 – GitHub Skills Course: Resolve Merge Conflicts
+```
+- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
+- 2.0 hrs – read WordPress block theme documentation and took notes
+```
 
-**Total:** 10:25
+You can draft notes throughout the day in this section and refine them before committing.
