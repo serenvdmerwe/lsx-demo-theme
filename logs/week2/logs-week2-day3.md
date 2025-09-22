@@ -6,30 +6,43 @@ This template illustrates how to structure your daily log.  Duplicate this file 
 
 ### How do you feel today?
 
-Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
+- Emotionally - 60 %
+- Physically - 90 %
 
 ### What did you do yesterday?
 
-Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
+- LSX Demo Theme Changes
+- GitHub Skills + GitHub Copilot Course
 
 ### What do you plan to do today?
 
-List the tasks you intend to work on today.  Use a checklist to break them down:
+List the tasks you intend to work on today:
 
-- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
-- [ ] Add more tasks as needed.
+- GitHub Copilot Skills Course
+- Repo management
+- Brandon team work
 
 ### What are your blockers?
 
-Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
+- Work Life Balance - Learning how not to get too addicted to this work!
 
 ## Daily Logs
 
-Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
 
-```
-- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
-- 2.0 hrs – read WordPress block theme documentation and took notes
-```
+- 1:00 – Business Development: Docs Read Over
+- 0:05 – Config: CodeRabbit
+- 0:10 – Config: MS Learn Path
+- 0:03 – Config: GitHub Config Slack
+- 2:25 – Google Meet: W/ Brandon
+- 0:20 – MS Learn Course: Achievement VJ7XETGM (Completed)
+- 0:35 – GitHub Skills Course: Getting Started with GitHub Copilot
+- 0:30 – GitHub Skills Course: Customize Your GitHub Copilot Experience
+- 1:30 – LSX Demo Theme: RnD Contributers.md file change
+- 0:45 – GitHub Skills Course: Integrate MCP with Copilot
+- 0:40 – GitHub Skills Course: Expand Your Team with Copilot
+- 0:50 – GitHub Skills Course: Modernize Your Legacy Code with GitHub Copilot
+- 0:05 – Business Development: Profile Changes to GitHub
+- 0:30 – MS Learn Course: Achievement A4XWRVR7 (Completed)
+- 0:20 – MS Learn Course: Achievement NVH9WJDF (Completed)
 
-You can draft notes throughout the day in this section and refine them before committing.
+**Total:** 9:48
