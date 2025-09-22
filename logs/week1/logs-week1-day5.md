@@ -6,30 +6,40 @@ Use this template for the final day of the first week.  Replace the placeholder 
 
 ### How do you feel today?
 
-Summarise your mood or energy level.  For example: “Feeling accomplished after finishing the hero section.”
+- Emotionally - 70% - Mixed
+- Physically - 60%
 
 ### What did you do yesterday?
 
-Briefly describe the tasks you completed yesterday.  Include any issues or PRs you worked on.
+- Asana Calendar Planning
+- Full Site Editing - What will full site editing mean for site creators?
+- GitHub Skills Course - Communicate Using Markdown
+- OTA - Understanding Settings
+- Google meat - W/ Brandon Intern Discussion and Mac Help
+- FireFlie.ai - Minute Management and Edits
+- Read Through Study Materials
+- Apple setup and Learning Mac Interface P2 - Tier 3 Git Issue Logged W/ Brandon - Study Cmd short keys + MacBook Guide Discussion W/ ChatGPT - Draw up of Complications and Logs
+- .github repository created - files added
 
 ### What do you plan to do today?
 
-List the tasks you intend to complete today.  Use a checklist format:
+List the tasks you intend to complete today:
 
-- [ ] Replace this line with an actual task (e.g. “Refactor header template”)
-- [ ] Add more tasks as needed
+- Apply wordpress.org after Gravatar resolve
+- MS Learn GitHub Path - Focal Point Today
+- LSX Demo Theme Fix Issues
+- Greet Morning in Chanel
 
 ### What are your blockers?
 
-Note anything preventing you from progressing.  If nothing is blocking you, write “None”.
+- Apple Problem was that, in hindsight, I tunnelled in on getting the software to work rather than my Repos.
+- Other than that, all is well
 
 ## Daily Logs
 
-Copy your Harvest time entries here.  Use bullets with the hours spent and a brief description, such as:
+- 0:43 – MS GitHub Learn Path
+- 3:00 – Google Meet LSX Demo Theme Meeting W/ Brandon
+- 1:00 – Google Meet W/ Ash + Brandon End Week Meet
+- 1:45 – Read Through Study Materials
 
-```
-- 1.0 hrs – created the newsletter signup pattern (Issue #7)
-- 1.5 hrs – wrote daily logs and updated README
-```
-
-At the end of the week, include a reflection in your weekly log file summarising what you learned and your next steps.
+**Total:** 6:28
