@@ -6,29 +6,30 @@ This template illustrates how to structure your daily log.  Duplicate this file 
 
 ### How do you feel today?
 
-- Emotionally - Sensitive - 67%
-- Physically - 88%
+Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
 
 ### What did you do yesterday?
 
-- Email WP.com log issue and get WP Courses actioned
-- Create an Issue for Contributor.md file
-- MS Learn Course Path
+Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
 
 ### What do you plan to do today?
 
-List the tasks you intend to work on today:
+List the tasks you intend to work on today.  Use a checklist to break them down:
 
-- Team planning with Brandon before and potentially co after intern Google meet invariably
-- Just get my Changes pushed and merged for my contributor.md file issues to be resolved
-- if after that then I can have all the course work fun MS Learn and GitHub Skills Courses Yay.
+- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
+- [ ] Add more tasks as needed.
 
 ### What are your blockers?
 
-- Not that I can think of at the moment
+Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
 
 ## Daily Logs
 
-- 0:25 – MS Learn Course: Achievement 3A9N2KZH (Completed)
+Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
 
-**Total:** 0:25
+```
+- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
+- 2.0 hrs – read WordPress block theme documentation and took notes
+```
+
+You can draft notes throughout the day in this section and refine them before committing.
