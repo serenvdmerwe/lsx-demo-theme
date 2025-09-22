@@ -1,4 +1,4 @@
-# Week 2 Reflection Template
+# Week 8 Reflection Template
 
 Complete this reflection at the end of Week 1.  Use it to think deeply about your progress and plan the next week.
 
