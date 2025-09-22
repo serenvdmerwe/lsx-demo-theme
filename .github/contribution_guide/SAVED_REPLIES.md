@@ -5,12 +5,6 @@ To help maintain a consistent, welcoming, and efficient community, the LightSpee
 You can add these saved replies to your [GitHub account](https://github.com/settings/replies).
 
 ## Issue: already fixed (v1)
-```
-Thank you for reporting this issue! It has been resolved in a recent release of LightSpeed. Please update to the latest version.
-
-If you continue to experience problems, please provide more details so we can assist further.
-```
-
 ## Issue: unclear description (v1)
 ```
 Thank you for reaching out! To help us assist you, please provide:
@@ -44,10 +38,6 @@ Thank you for your report! We are unable to reproduce the issue with the informa
 ```
 
 ## Issue: expected behavior (v1)
-```
-This appears to be the expected behavior for LightSpeed. If you believe there is a bug or improvement needed, please provide additional context or examples.
-```
-
 ## Issue: template missing (v1)
 ```
 Thank you for submitting this issue! Please use the appropriate issue template (bug, enhancement, or question) and provide all requested details. This helps us respond more quickly and accurately.
@@ -58,11 +48,8 @@ Thank you for submitting this issue! Please use the appropriate issue template (
 We welcome your help on this issue! If you’d like to submit a Pull Request, please follow our [contribution workflow](./CONTRIBUTING.md). Let us know if you need any guidance.
 ```
 
+<!-- Note: Replace #NUMBER with the actual issue/PR number -->
 ## Issue or PR: duplicate (v1)
-```
-Thank you for your contribution! This is a duplicate of #NUMBER, so we are closing this for now. If you believe this is in error, please comment. Otherwise, subscribe to #NUMBER for updates.
-```
-
 ## Issue or PR: closed for inactivity (v1)
 ```
 This issue/PR is being closed due to inactivity. If you are still experiencing problems or have updates, please let us know and we’ll be happy to help!
@@ -75,7 +62,9 @@ Thank you for your submission! We’re seeking input from maintainers or the Lig
 
 ## PR: merging and next steps (v1)
 ```
-This PR looks great and will be merged. If you’d like to contribute further, check out our [help-wanted issues](https://github.com/lightspeedwp/REPONAME/labels/help-wanted). Thank you!
+This PR looks great and will be merged. If you’d like to contribute further, check out our [help-wanted issues](https://github.com/lightspeedwp/{{REPO_NAME}}/labels/help-wanted). Thank you!
+
+<!-- Replace {{REPO_NAME}} with your repository name, or use GitHub template variables if available. -->
 ```
 
 ## PR: template missing (v1)
@@ -112,6 +101,6 @@ Thank you for your PR! For clarity and consistency, please use a descriptive bra
 ```
 
 ## PR: missing related Issue (v1)
-```
-Thank you for your PR! Each PR must be linked to a related Issue for discussion and review. Please [open an Issue](https://github.com/lightspeedwp/REPONAME/issues/new/choose) and link it to this PR.
-```
+## PR: missing related Issue (v1)
+
+Thank you for your PR! Each PR must be linked to a related Issue for discussion and review. Please [open an Issue](https://github.com/lightspeedwp/[REPOSITORY-NAME]/issues/new/choose) and link it to this PR.

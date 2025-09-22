@@ -15,7 +15,19 @@ Thank you for your interest in contributing to LightSpeed! Please follow this wo
 - Use a descriptive branch name, such as `feature/short-description`, `bugfix/short-description`, or `chore/short-description`.
 
 ### 3. Develop Your Solution
-- Follow the coding standards and style guides used in this repository. If a linter or formatter is configured (e.g., ESLint, Prettier, PHPCS), ensure your code passes all checks before submitting.
+Follow the coding standards and style guides used in this repository. This project uses the following linters and formatters:
+  - **ESLint** (v8.x) with configuration in `.eslintrc.js`
+  - **Prettier** (v3.x) with configuration in `.prettierrc`
+  - **PHPCS** (v3.x) with configuration in `phpcs.xml`
+To reproduce checks locally before submitting:
+  1. Install dependencies: `npm install`
+  2. Run linters/formatters:
+     - JavaScript/TypeScript: `npm run lint` (ESLint)
+     - Formatting: `npm run format` (Prettier)
+     - PHP: `npm run phpcs` (PHPCS)
+  3. Optionally, use pre-commit hooks (via Husky) by running `npm run prepare` to enable automatic checks on commit.
+  4. Config files are located at the project root: `.eslintrc.js`, `.prettierrc`, `phpcs.xml`.
+Ensure your code passes all checks before submitting your PR.
 - Use **[CodeRabbit.ai](https://coderabbit.ai/)** alongside your local tools to perform automated code reviews and identify issues early.
 - Write clear, concise commit messages (e.g., Conventional Commits: feat:, fix:, docs:, chore:, refactor:).
 - Open a PR from your branch to the appropriate base branch (e.g., `main` or `release/2.1`).
