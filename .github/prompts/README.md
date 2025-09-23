@@ -14,6 +14,15 @@ To run a prompt, open the file or use `/filename` in Copilot Chat.
 | [`accessibility-review.md`](./accessibility-review.md) | Comprehensive accessibility review guidelines |
 | [`junior-dev-code-review.md`](./junior-dev-code-review.md) | Guidelines for providing feedback to junior developers |
 | [`pattern-generation.md`](./pattern-generation.md) | Template for creating new WordPress block patterns |
+| [`suggest-awesome-github-copilot-prompts.prompt.md`](./suggest-awesome-github-copilot-prompts.prompt.md) | Suggest relevant GitHub Copilot prompt files from the awesome-copilot repository |
+| [`suggest-awesome-github-copilot-instructions.prompt.md`](./suggest-awesome-github-copilot-instructions.prompt.md) | Suggest relevant GitHub Copilot instruction files from the awesome-copilot repository |
+| [`suggest-awesome-github-copilot-collections.prompt.md`](./suggest-awesome-github-copilot-collections.prompt.md) | Suggest relevant GitHub Copilot collections from the awesome-copilot repository |
+| [`suggest-awesome-github-copilot-chatmodes.prompt.md`](./suggest-awesome-github-copilot-chatmodes.prompt.md) | Suggest relevant GitHub Copilot Custom Chat Modes files from the awesome-copilot repository |
+| [`prompt-builder.prompt.md`](./prompt-builder.prompt.md) | Guide users through creating high-quality GitHub Copilot prompts |
+| [`folder-structure-blueprint-generator.prompt.md`](./folder-structure-blueprint-generator.prompt.md) | Analyze and document project folder structures with visualization options |
+| [`create-readme.prompt.md`](./create-readme.prompt.md) | Create a README.md file for the project |
+| [`copilot-instructions-blueprint-generator.prompt.md`](./copilot-instructions-blueprint-generator.prompt.md) | Generate comprehensive copilot-instructions.md files for consistent code generation |
+| [`breakdown-plan.prompt.md`](./breakdown-plan.prompt.md) | Generate comprehensive project plans with Agile work item hierarchy |
 
 ## How to Use
 
