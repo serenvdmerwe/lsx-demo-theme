@@ -23,5 +23,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   ## 23-09-2025
 
   ### Added
-  - 9 prompt files in the /.github/prompts folder. (https://github.com/lightspeedwp/lsx-demo-theme/tree/main/.github/prompts)
-  - 10 chatmodes in the root of the repository. (https://github.com/lightspeedwp/lsx-demo-theme/tree/main/chatmodes)
+- 9 prompt files in the /.github/prompts folder. (https://github.com/lightspeedwp/lsx-demo-theme/tree/main/.github/prompts)
+- 10 chatmodes in the root of the repository. (https://github.com/lightspeedwp/lsx-demo-theme/tree/main/chatmodes)
