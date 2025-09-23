@@ -80,7 +80,7 @@ tags: [Optional: List of relevant tags or categories, e.g., `feature`, `upgrade`
 
 # Introduction
 
-![Status: <status>](https://img.shields.io/badge/status-<status>-<status_color>)
+![Status Badge](https://img.shields.io/badge/status-{status}-{status_color})
 
 [A short concise introduction to the plan and the goal it is intended to achieve.]
 
