@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Week 01 Log and Reflection
 
 ## Weekly Reflection
@@ -32,26 +31,3 @@ I learned how to set up and secure various accounts, work with Local Ollie and L
 ---
 
 Repeat the daily section for each day you work during Week 01.
-=======
-# Week 1 Reflection Template
-
-Complete this reflection at the end of Week 1.  Use it to think deeply about your progress and plan the next week.
-
-## What went well?
-
-Describe the successes of this week.  Which tasks or concepts were straightforward?  What are you proud of?
-
-## What can be improved?
-
-Identify areas where you struggled or could be more efficient.  Consider workflow, communication and time management.
-
-## What have you learned?
-
-Summarise the key takeaways from this week.  Mention new tools, concepts or patterns you mastered.
-
-## What are your next actions?
-
-List the concrete steps you will take next week to continue your progress.  These could be tasks from the curriculum, topics to study or goals to achieve.
-
-Use this reflection to prepare your Week 1 submission issue.  Reflective writing helps consolidate knowledge and demonstrates growth.
->>>>>>> 84035775b418a38f55bfab662a1850659ac339ec

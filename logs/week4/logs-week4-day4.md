@@ -1,60 +1,38 @@
-<<<<<<< HEAD
-# Week 3, Day 4 Log Template
+# Week 4, Day 4 Log 2025-09-25
 
-## Daily Standup
-### 2025‑09‑18
+## Today's Progress
 
-### How do you feel today?
-Feeling productive but a bit tired after an intense learning session.
+### What have you accomplished today?
 
-### What did you do yesterday?
-Met with Seren to finalize the planning approach, worked on the `.github` file, and added new templates to the repository.
+-   Had a daily catch-up with @Seren.
+-   Used and tested the spaces in VS Code and the new MCP server.
+-   Set aside 2 hours for learning and completed my study session.
+-   Filled out the brief details for the website project to prepare for the AI agent to start building the website.
 
-### What do you plan to do today?
-- [x] Attend a 5-hour session with Ash about the website project.
-- [x] Read forums and study material after the session.
+### How do you feel about today’s progress?
 
-### What are your blockers?
-Feeling a bit tired after the long session.
+I feel good about today’s progress. I managed to resolve the issues and complete the tasks I set out to do. Preparing the website brief was a significant step forward.
 
-## Daily Logs
-- 5.0 hrs – Attended a session with Ash about the website project.
-- 1.0 hrs – Catchup with Seren to discuss progress and next steps.
-- 2.0 hrs – Read forums and study material related to the website project.
-=======
-# Week 4, Day 4 Log Template
+---
 
-This template illustrates how to structure your daily log.  Duplicate this file for each day of the week and replace the placeholder text with your own entries.
+## Challenges Faced Today
 
-## Daily Standup
+-   Encountered a merge conflict that caused a blockage and required time to resolve.
 
-### How do you feel today?
+---
 
-Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
+## Time Logs
 
-### What did you do yesterday?
+-   2.0 hrs – Going through collections and instructions getting them ready for implementation.
+-   1.0 hrs – Daily catch-up with @Seren.
+-   2.0 hrs – Used and tested the spaces in VS Code and the new MCP server.
+-   2.0 hrs – Learning session.
+-   1.0 hrs – Filled out the brief details for the website project.
 
-Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
+---
 
-### What do you plan to do today?
+## Notes
 
-List the tasks you intend to work on today.  Use a checklist to break them down:
-
-- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
-- [ ] Add more tasks as needed.
-
-### What are your blockers?
-
-Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
-
-## Daily Logs
-
-Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
-
-```
-- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
-- 2.0 hrs – read WordPress block theme documentation and took notes
-```
-
-You can draft notes throughout the day in this section and refine them before committing.
->>>>>>> 84035775b418a38f55bfab662a1850659ac339ec
+-   Resolving the merge conflict was a good learning experience and helped ensure the repository remains clean and functional.
+-   Preparing the website brief was a key milestone, and I’m excited to see how the AI agent will handle the project.
+-   Testing the spaces in VS Code and the MCP server was insightful and will help streamline future workflows.

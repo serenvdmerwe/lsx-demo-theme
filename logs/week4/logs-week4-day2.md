@@ -1,64 +1,39 @@
-<<<<<<< HEAD
-# Week 3, Day 2 Log Template
+# Week 4, Day 2 Log 2025-09-23
 
-## Daily Standup
-### 2025‑09‑16
+## Today's Progress
 
-### How do you feel today?
-Feeling productive and motivated after learning new planning methods.
+### What have you accomplished today?
 
-### What did you do yesterday?
-Completed GitHub courses, caught up with Seren on Week 2 tasks, and finished minor tasks on Asana.
+-   Added prompts from the awesome-copilot repository that are relevant to our project.
+-   Had a daily catch-up with @Seren.
+-   Studied Copilot for 2 hours.
+-   Implemented chat modes into the repository with instructions on how to use them.
+-   Started working on tasks for the Web Project.
+-   Conducted additional research in the awesome-copilot repository regarding collections and instruction files.
 
-### What do you plan to do today?
-- [x] Catch up with Ash and learn about sprint planning, scrums, kanban boards, and WIP limits.
-- [x] Restructure planning for the lsx-demo-theme project based on new methods.
-- [x] Work with Seren to set up new planning methods.
-- [x] Update personal project logs and create a new branch for log templates.
+### How do you feel about today’s progress?
 
-### What are your blockers?
-None.
+I feel productive and focused. I made significant progress in integrating prompts and chat modes into the repository and started tackling tasks for the Web Project. The additional research in the awesome-copilot repository was insightful.
 
-## Daily Logs
-- 1.5 hrs – Attended a catch-up session with Ash and learned about sprint planning, scrums, kanban boards, and WIP limits.
-- 2.5 hrs – Restructured planning for the lsx-demo-theme project based on the new methods.
-- 2.0 hrs – Worked with Seren to set up new planning methods for the project.
-- 1.0 hrs – Updated personal project logs and ensured everything was up to date.
-- 1.0 hrs – Created a new branch for log templates and prepared them for merging into the main lsx-demo-theme repository.
-=======
-# Week 4, Day 2 Log Template
+---
 
-This template illustrates how to structure your daily log.  Duplicate this file for each day of the week and replace the placeholder text with your own entries.
+## Challenges Faced Today
 
-## Daily Standup
+-   None today.
 
-### How do you feel today?
+---
 
-Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
+## Time Logs
 
-### What did you do yesterday?
+-   1.5 hrs – Added prompts from the awesome-copilot repository to the project.
+-   1.0 hrs – Daily catch-up with @Seren.
+-   2.0 hrs – Studied Copilot for certification.
+-   1.5 hrs – Implemented chat modes into the repository with instructions.
+-   2.0 hrs – Conducted additional research in the awesome-copilot repository regarding collections and instruction files.
 
-Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
+---
 
-### What do you plan to do today?
+## Notes
 
-List the tasks you intend to work on today.  Use a checklist to break them down:
-
-- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
-- [ ] Add more tasks as needed.
-
-### What are your blockers?
-
-Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
-
-## Daily Logs
-
-Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
-
-```
-- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
-- 2.0 hrs – read WordPress block theme documentation and took notes
-```
-
-You can draft notes throughout the day in this section and refine them before committing.
->>>>>>> 84035775b418a38f55bfab662a1850659ac339ec
+-   The awesome-copilot repository continues to be a valuable resource for improving our workflow. The collections and instruction files could be useful for future enhancements.
+-   The integration of chat modes into the repository is a step forward in making the project more user-friendly.
