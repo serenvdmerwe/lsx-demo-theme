@@ -1,28 +1,28 @@
 # Week 1, Day 3 Log Template
 
-Use this template to record your third day’s stand‑up and work log.
+Follow the same structure each day.  Replace the examples with your own entries.
 
 ## Daily Standup
 
 ### How do you feel today?
 
-How are you feeling?  Are you energized, tired or somewhere in between?
+Write a brief statement about your mood or energy for the day.
 
 ### What did you do yesterday?
 
-Summarise yesterday’s achievements.  Include issue numbers if applicable.
+Summarise what you completed on Day 1.  Mention tasks or issues you closed.
 
 ### What do you plan to do today?
 
-List today’s tasks:
+Break down your tasks into a checklist:
 
-- [ ] Replace with an actual task description.
-- [ ] Add additional tasks as needed.
+- [ ] Replace this line with a real task.
+- [ ] Add more tasks as necessary.
 
 ### What are your blockers?
 
-Identify any blockers or uncertainties.
+List any obstacles or questions.  If none, write “None”.
 
 ## Daily Logs
 
-Record each Harvest entry with hours and a description.  Keep bullet points clear and concise.
+Add your Harvest time entries here using bullet points.  Include the hours and a short description for each entry.

@@ -1,28 +1,28 @@
 # Week 1, Day 4 Log Template
 
-Use this template on your fourth day.
+Follow the same structure each day.  Replace the examples with your own entries.
 
 ## Daily Standup
 
 ### How do you feel today?
 
-Briefly note your mood or energy.
+Write a brief statement about your mood or energy for the day.
 
 ### What did you do yesterday?
 
-Summarise the tasks you completed on Day 3.
+Summarise what you completed on Day 1.  Mention tasks or issues you closed.
 
 ### What do you plan to do today?
 
-Use a checklist to plan today’s work:
+Break down your tasks into a checklist:
 
-- [ ] Replace with a real task description.
-- [ ] Add more tasks as needed.
+- [ ] Replace this line with a real task.
+- [ ] Add more tasks as necessary.
 
 ### What are your blockers?
 
-Note any blockers.  If there are none, write “None”.
+List any obstacles or questions.  If none, write “None”.
 
 ## Daily Logs
 
-List your Harvest time entries with hours and descriptions here.
+Add your Harvest time entries here using bullet points.  Include the hours and a short description for each entry.

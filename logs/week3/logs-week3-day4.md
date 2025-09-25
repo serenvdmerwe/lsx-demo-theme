@@ -1,4 +1,4 @@
-# Week 1, Day 1 Log Template
+# Week 3, Day 4 Log Template
 
 This template illustrates how to structure your daily log.  Duplicate this file for each day of the week and replace the placeholder text with your own entries.
 
