@@ -261,7 +261,7 @@ test.describe('Fish Templates Accessibility', () => {
     
     // Test skip link works
     await page.keyboard.press('Enter');
-    await page.waitForTimeout(100); // Small delay for navigation
+    await expect(page.locator('#facts')).toBeFocused();
     
     // Continue tabbing through interactive elements
     const interactiveElements = await page.locator('a, button, input, [tabindex]:not([tabindex="-1"])').count();
