@@ -1,18 +1,19 @@
-# Week 03 Log and Reflection
+# Week 04 Log and Reflection
 
 ## Weekly Reflection
 
 ### What went well?
-This week was incredibly productive and insightful. I learned a lot about AI and GitHub Copilot, which has been fascinating. Collaborating with Seren has been a highlight, as we worked well together to finalize planning approaches and delegate tasks effectively. The 5-hour session with Ash about the website project was a significant milestone, and I’m excited to start applying what I’ve learned. Adding the `changelog.md` file and Epic ISSUE TEMPLATE to the repository was another success.
+This week was marked by steady progress and a deepening understanding of GitHub Copilot Spaces, custom instructions, and workflow integration. Each day brought its own set of accomplishments, including refining documentation, preparing and exporting instructional files, and collaborating with the team. Working closely with Seren, Ash, Zared, and Warick was valuable for both technical growth and team synergy. Resolving setup issues, updating the website brief, and experimenting with Copilot guidance led to more productive and enjoyable work sessions. Meetings about prompting strategies were especially insightful and contributed to improved project direction.
 
 ### What can be improved?
-While the week was productive, the 5-hour session with Ash left me feeling a bit tired, which reduced my focus for the rest of the day. I could improve by managing my energy better during long sessions. Additionally, I need to allocate more time for in-depth reviews of repositories and documentation to ensure I fully understand them before incorporating them into projects.
+While overall productivity was strong, there were minor workflow interruptions caused by file configuration errors (.gitattributes and .gitignore). Although these were resolved quickly, a more thorough review before running processes could help prevent such errors. Additionally, balancing meeting times and focused work blocks could optimize output and reduce context switching.
 
 ### What have you learned?
-I’ve deepened my understanding of GitHub Copilot and its applications, particularly through the `awesome-copilot` repository. The session with Ash provided valuable insights into the website project, and I learned how to approach it systematically. Collaborating with Seren has reinforced the importance of teamwork and effective task delegation.
+This week solidified my grasp of how to leverage Copilot Spaces and custom instructions effectively. I gained firsthand experience in preparing AI-ready documentation, troubleshooting integration errors, and orchestrating multi-step prompts for Copilot. Through meetings and collaborative work, I also learned new prompting techniques and approaches to instruction design that will be useful for future projects. Overall, my confidence in using Copilot for complex workflows has grown significantly.
 
 ### What are your next actions?
-- Continue working on the website project and apply the knowledge gained from the session with Ash.
-- Incorporate relevant files from the `awesome-copilot` repository into the lsx-demo-theme project.
-- Plan Week 4 tasks with Seren and ensure steady progress.
-- Allocate time for further learning and exploring advanced GitHub Copilot features.
+- Continue refining and expanding the Copilot instruction set and documentation.
+- Apply improved prompting strategies learned from team discussions to new tasks.
+- Further automate the integration of instructional files and streamline error handling.
+- Plan for deeper dives into advanced Copilot features and experiment with chat modes for more tailored AI assistance.
+- Maintain regular team check-ins while protecting blocks of uninterrupted work time to maximize productivity.
