@@ -23,7 +23,7 @@
 		<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","minimumColumnWidth":"20rem"}} -->
 			<!-- Fish species card -->
 			<!-- wp:group {"style":{"color":{"background":"var:preset|color|base"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|40","left":"0","right":"0"}},"border":{"radius":"12px"},"boxShadow":"0 4px 6px rgba(0, 0, 0, 0.1)"},"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group has-base-background-color has-background" style="border-radius:12px;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0">
+			<div class="wp-block-group has-base-background-color has-background" style="border-radius:var(--wp--custom--border--radius--large);padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0">
 				<!-- Featured image as species photo -->
 				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":{"topLeft":"12px","topRight":"12px","bottomLeft":"0px","bottomRight":"0px"}},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} /-->
 
@@ -34,7 +34,7 @@
 					<!-- wp:post-title {"level":2,"isLink":true,"style":{"color":{"text":"var:preset|color|accent-1"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|20"}}},"fontSize":"medium"} /-->
 
 					<!-- Species excerpt/description -->
-					<!-- wp:post-excerpt {"moreText":"Learn more about this species →","showMoreOnNewLine":false,"excerptLength":25,"style":{"color":{"text":"var:preset|color|light"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|30"}}},"fontSize":"small"} /-->
+					<!-- wp:post-excerpt {"moreText":"<?php echo esc_html_x( 'Learn more about this species →', 'Archive excerpt read more text', 'lsx-demo-theme' ); ?>","showMoreOnNewLine":false,"excerptLength":25,"style":{"color":{"text":"var:preset|color|light"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|30"}}},"fontSize":"small"} /-->
 
 					<!-- Meta information - species group and location -->
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
@@ -55,19 +55,19 @@
 		<!-- No results message -->
 		<!-- wp:query-no-results -->
 			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"color":{"background":"var:preset|color|light"},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group has-light-background-color has-background" style="border-radius:12px;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--40)">
+			<div class="wp-block-group has-light-background-color has-background" style="border-radius:var(--wp--custom--border--radius--large);padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--40)">
 				<!-- wp:heading {"textAlign":"center","level":2,"style":{"color":{"text":"var:preset|color|accent-1"}},"fontSize":"large"} -->
-				<h2 class="wp-block-heading has-text-align-center has-accent-1-color has-text-color has-large-font-size">No Fish Species Found</h2>
+				<h2 class="wp-block-heading has-text-align-center has-accent-1-color has-text-color has-large-font-size"><?php echo esc_html_x( 'No Fish Species Found', 'No results heading for fish archive', 'lsx-demo-theme' ); ?></h2>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","style":{"color":{"text":"var:preset|color|neutral"},"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
-				<p class="has-text-align-center has-neutral-color has-text-color has-medium-font-size" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--40)">Sorry, no fish species were found matching your criteria. Check back soon as we're always adding new species to our field guide.</p>
+				<p class="has-text-align-center has-neutral-color has-text-color has-medium-font-size" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--40)"><?php echo esc_html_x( 'Sorry, no fish species were found matching your criteria. Check back soon as we\'re always adding new species to our field guide.', 'No results message for fish archive', 'lsx-demo-theme' ); ?></p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 				<div class="wp-block-buttons">
 					<!-- wp:button {"style":{"color":{"background":"var:preset|color|accent-1","text":"var:preset|color|base"}}} -->
-					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button has-base-color has-accent-1-background-color has-text-color has-background" href="/">Return to Home</a></div>
+					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button has-base-color has-accent-1-background-color has-text-color has-background" href="/"><?php echo esc_html_x( 'Return to Home', 'Button text to return home from no results page', 'lsx-demo-theme' ); ?></a></div>
 					<!-- /wp:button -->
 				</div>
 				<!-- /wp:buttons -->

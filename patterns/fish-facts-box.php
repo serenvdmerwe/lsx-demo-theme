@@ -6,6 +6,7 @@
  * Keywords: fish, facts, stats, information, species
  * Description: A facts box displaying key information about fish species including habitat, size, and fishing tips.
  * Viewport width: 1400
+ * Post Types: fish
  *
  * @package WordPress
  * @subpackage LSX_Demo_Theme
@@ -14,6 +15,9 @@
 
 ?>
 
+<!-- Fish species facts display in responsive grid -->
+<!-- Contains 4 key data points: size, habitat, bait, and season -->
+<!-- Each fact card uses theme.json colors and spacing tokens -->
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|50"},"color":{"background":"var:preset|color|light"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-light-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
 	<!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"center"}} -->
@@ -27,7 +31,7 @@
 	<!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","minimumColumnWidth":"18rem"}} -->
 	<div class="wp-block-group alignwide">
 		<!-- wp:group {"style":{"color":{"background":"var:preset|color|base"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"border":{"radius":"8px"}},"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group has-base-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+		<div class="wp-block-group has-base-background-color has-background" style="border-radius:var(--wp--custom--border--radius--medium);padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"var:preset|color|accent-2"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"fontSize":"medium"} -->
 			<h3 class="wp-block-heading has-text-align-center has-accent-2-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--30)"><?php echo esc_html_x( 'Average Size', 'Fish fact category', 'lsx-demo-theme' ); ?></h3>
 			<!-- /wp:heading -->
@@ -43,7 +47,7 @@
 		<!-- /wp:group -->
 
 		<!-- wp:group {"style":{"color":{"background":"var:preset|color|base"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"border":{"radius":"8px"}},"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group has-base-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+		<div class="wp-block-group has-base-background-color has-background" style="border-radius:var(--wp--custom--border--radius--medium);padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"var:preset|color|accent-2"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"fontSize":"medium"} -->
 			<h3 class="wp-block-heading has-text-align-center has-accent-2-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--30)"><?php echo esc_html_x( 'Habitat', 'Fish fact category', 'lsx-demo-theme' ); ?></h3>
 			<!-- /wp:heading -->
@@ -55,7 +59,7 @@
 		<!-- /wp:group -->
 
 		<!-- wp:group {"style":{"color":{"background":"var:preset|color|base"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"border":{"radius":"8px"}},"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group has-base-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+		<div class="wp-block-group has-base-background-color has-background" style="border-radius:var(--wp--custom--border--radius--medium);padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"var:preset|color|accent-2"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"fontSize":"medium"} -->
 			<h3 class="wp-block-heading has-text-align-center has-accent-2-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--30)"><?php echo esc_html_x( 'Best Bait', 'Fish fact category', 'lsx-demo-theme' ); ?></h3>
 			<!-- /wp:heading -->
@@ -79,7 +83,7 @@
 		<!-- /wp:group -->
 
 		<!-- wp:group {"style":{"color":{"background":"var:preset|color|base"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"border":{"radius":"8px"}},"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group has-base-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+		<div class="wp-block-group has-base-background-color has-background" style="border-radius:var(--wp--custom--border--radius--medium);padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"var:preset|color|accent-2"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"fontSize":"medium"} -->
 			<h3 class="wp-block-heading has-text-align-center has-accent-2-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--30)"><?php echo esc_html_x( 'Best Season', 'Fish fact category', 'lsx-demo-theme' ); ?></h3>
 			<!-- /wp:heading -->
