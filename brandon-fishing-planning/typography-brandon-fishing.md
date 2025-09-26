@@ -66,101 +66,16 @@ Alternative: **Work Sans** (friendly, a bit more rounded).
 
 -   **Open Sans** keeps functional areas clean, ensuring accessibility and contrast in UI elements.
 
-This trio has excellent **Google Fonts performance**, so the site won’t get slowed down by heavy font loads.
+---
 
-![][image1]
+## **6\. Accessibility & Fallbacks**
 
-Great — let’s extend the **typography tokens** into a `theme.json` structure that matches both your **standardisation doc** and the Brandon project’s chosen fonts (Montserrat for headings, Lora for body, Open Sans for UI/microcopy).
-
-Here’s a **ready-to-use theme.json snippet**:
+-   Ensure all text meets **WCAG AA contrast ratios**.
+-   Use system fonts (e.g., Arial, Georgia) as fallbacks in case Google Fonts are unavailable.
 
 ---
 
-## **📄 theme.json – Typography Section**
+## **7\. Testing Typography**
 
-`{`
- `"$schema": "https://schemas.wp.org/wp/6.8/block.json",`
- `"version": 3,`
- `"settings": {`
- `"typography": {`
- `"fontFamilies": [`
- `{`
- `"fontFamily": "'Montserrat', sans-serif",`
- `"slug": "montserrat",`
- `"name": "Montserrat"`
- `},`
- `{`
- `"fontFamily": "'Lora', serif",`
- `"slug": "lora",`
- `"name": "Lora"`
- `},`
- `{`
- `"fontFamily": "'Open Sans', sans-serif",`
- `"slug": "open-sans",`
- `"name": "Open Sans"`
- `}`
- `],`
- `"fontSizes": [`
- `{ "slug": "font-size-100", "size": "0.75rem", "name": "Tiny" },`
- `{ "slug": "font-size-200", "size": "1rem",    "name": "Base" },`
- `{ "slug": "font-size-300", "size": "1.25rem", "name": "Small" },`
- `{ "slug": "font-size-400", "size": "1.5rem",  "name": "Medium" },`
- `{ "slug": "font-size-500", "size": "2rem",    "name": "Large" },`
- `{ "slug": "font-size-600", "size": "2.5rem",  "name": "X-Large" },`
- `{ "slug": "font-size-700", "size": "3rem",    "name": "Huge" },`
- `{ "slug": "font-size-800", "size": "4rem",    "name": "Gigantic" },`
- `{ "slug": "font-size-900", "size": "5rem",    "name": "Colossal" }`
- `],`
- `"lineHeight": true,`
- `"dropCap": false`
- `},`
- `"styles": {`
- `"typography": {`
- `"fontFamily": "var(--wp--preset--font-family--lora)",`
- `"fontSize": "var(--wp--preset--font-size--font-size-200)",`
- `"lineHeight": "1.6"`
- `},`
- `"elements": {`
- `"heading": {`
- `"typography": {`
- `"fontFamily": "var(--wp--preset--font-family--montserrat)",`
- `"fontWeight": "700",`
- `"lineHeight": "1.3"`
- `}`
- `},`
- `"button": {`
- `"typography": {`
- `"fontFamily": "var(--wp--preset--font-family--open-sans)",`
- `"fontWeight": "600",`
- `"textTransform": "uppercase",`
- `"fontSize": "var(--wp--preset--font-size--font-size-200)"`
- `}`
- `},`
- `"caption": {`
- `"typography": {`
- `"fontFamily": "var(--wp--preset--font-family--open-sans)",`
- `"fontSize": "var(--wp--preset--font-size--font-size-100)"`
- `}`
- `}`
- `}`
- `}`
- `}`
-`}`
-
----
-
-## **✅ Key Points**
-
--   **Fonts**: Montserrat (headings), Lora (body text), Open Sans (UI, buttons, captions).
-
--   **Font Sizes**: numeric scale `100–900`, multiples of 8px as per standardisation.
-
--   **Defaults**: body text \= Lora, base size \= 1rem (16px).
-
--   **Headings**: Montserrat, bold, tighter line-height for impact.
-
--   **Buttons/Captions**: Open Sans, more compact, clear for UI.
-
----
-
-Would you like me to **also generate a fluid typography extension** (using `clamp()` values in the theme.json) so font sizes adapt smoothly across mobile–desktop breakpoints?
+-   Test font sizes and line heights on mobile, tablet, and desktop.
+-   Use tools like Lighthouse or Axe to verify readability and accessibility.

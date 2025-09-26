@@ -4,106 +4,64 @@ Here’s a clean **one-pager brand guide** for Brandon’s Fishing Adventures �
 
 ---
 
-## **1\. Logo**
+## **1. Logo**
 
--   **Primary Logo:** Wordmark \+ fish illustration \+ tagline.
-
--   **Secondary Logo:** Wordmark \+ fish illustration (no tagline).
-
+-   **Primary Logo:** Wordmark + fish illustration + tagline.
+-   **Secondary Logo:** Wordmark + fish illustration (no tagline).
 -   **Icon:** Fish illustration only (for favicon/social).
-
 -   **Tagline:** _“Stories from the river, catches for a lifetime.”_
 
--   **Usage:**
+### **Usage Guidelines**
 
-    -   Clear space \= height of the “B” in Brandon’s.
-
-    -   Don’t stretch, skew, or place over busy backgrounds.
-
----
-
-## **2\. Colours**
-
-Nature-inspired palette, grounded in Huttenspruit/KZN environment:
-
--   **River Blue/Green:** `#3A6B68` (Headings, accents)
-
--   **Olive Green:** `#6B7C3A` (Buttons, hover states)
-
--   **Warm Grey/Sand:** `#D9D3C7` (Backgrounds)
-
--   **Burnt Orange:** `#C06028` (CTAs, highlights)
-
--   **Neutral White:** `#FFFFFF` (Text backgrounds, clarity)
+-   **Do:**
+    -   Use the logo on light, clean backgrounds.
+    -   Maintain clear space around the logo (minimum: height of the fish icon).
+-   **Don’t:**
+    -   Stretch, skew, or rotate the logo.
+    -   Place the logo over busy or low-contrast backgrounds.
 
 ---
 
-## **3\. Typography**
+## **2. Typography**
 
--   **Headings:** Bold sans-serif (Montserrat / Inter).
+-   **Headings:** Montserrat (Bold/Semi-Bold).
+-   **Body Text:** Lora (Regular/Italic).
+-   **UI Text:** Open Sans (Regular/Medium).
 
--   **Body Copy:** Warm serif (Lora / Merriweather).
+### **Font Pairing Justification**
 
--   **Accent/Text Notes:** Light sans-serif (Open Sans).
-
--   **Rules:**
-
-    -   Headlines \= value \+ verb, no filler.
-
-    -   Body \= short, plain sentences (8–18 words).
+-   Montserrat: Modern, clean, adventurous.
+-   Lora: Warm, human, storytelling-friendly.
+-   Open Sans: Neutral, highly legible for small text.
 
 ---
 
-## **4\. Imagery & Style**
+## **3. Colour Palette**
 
--   **Photography:** Real fishing shots, rivers, fish close-ups, KZN landscapes.
-
--   **Tone:** Natural, adventurous, human.
-
--   **Layout:** Clean grids, white/neutral backdrops, rounded corners on cards.
-
--   **Icons:** Simple line icons (fish, hooks, maps, pins).
+-   **Primary:** `#3A6B68` (River Blue-Green).
+-   **Secondary:** `#6B8E8D` (Muted Teal).
+-   **Highlight:** `#D97A3A` (Burnt Orange).
+-   **Neutral:** `#F9FAF9` (Light Grey), `#111111` (Text Black).
 
 ---
 
-## **5\. Voice & Tone**
+## **4. Imagery**
 
--   **Voice:** Friendly, personal, human, warm.
-
--   **Tone by Page:**
-
-    -   Homepage \= energetic, passionate.
-
-    -   About \= Brandon’s story, personal and reflective.
-
-    -   Fish \= informative, visual, guide-like.
-
-    -   Blog \= conversational, story-driven.
-
-    -   Contact \= simple, approachable.
+-   **Style:** Natural, outdoorsy, high-quality.
+-   **Subjects:** Rivers, fish species, Brandon in action.
+-   **Alt Text:** Always include descriptive alt text for accessibility.
 
 ---
 
-## **6\. Microcopy**
+## **5. Tone & Voice**
 
--   **Forms:** “Enter your email”, “Send your message”.
-
--   **Validation:** “Email is missing ‘@’. Add it to continue.”
-
--   **Success:** “Thanks\! Brandon will get back to you soon.”
+-   **Energetic, adventurous, and friendly.**
+-   Use short sentences and active voice.
+-   ZA English spelling and phrasing.
 
 ---
 
-## **7\. SEO Basics**
+## **6. Testing Consistency**
 
--   Human-first writing, ZA English.
-
--   Descriptive slugs (`/fish/smallmouth-yellowfish/`).
-
--   Alt text for every fish photo.
-
--   Internal links: Blog ↔ Fish pages.
-
----
-
-👉 This one-pager gives Brandon a **consistent identity** across web, print, and storytelling.
+-   Test the logo, typography, and colours across all devices.
+-   Ensure all branding elements align with the tone and voice.

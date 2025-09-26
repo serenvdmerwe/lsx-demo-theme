@@ -26,105 +26,63 @@ Here’s a **full set of content entries** you can use for the **Fish CPT** base
 
 ---
 
-### **1\. Smallmouth Yellowfish** {#1.-smallmouth-yellowfish}
+## **1. Smallmouth Yellowfish**
 
--   **Featured image:** `fish-smallmouth-yellowfish.jpg`
-
--   **Description:** A strong native freshwater fish, prized for its fight and agility.
-
--   **Habitat:** Huttenspruit, Tugela, Drakensberg streams.
-
--   **Season:** Spring to autumn.
-
--   **Average size:** 30–50 cm.
-
--   **Bait/Lure:** Nymph flies, small spinners.
-
--   **Conservation:** Common.
-
--   **Brandon’s notes:** “A favourite in the Huttenspruit – aggressive and quick, best on fly tackle.”
-
-![][image1]
+-   **Featured Image:** Smallmouth Yellowfish in a river.
+-   **Description:** A strong swimmer found in fast-flowing rivers. Known for its golden scales and challenging fight.
+-   **Habitat:** Tugela River, Huttenspruit.
+-   **Fishing Season:** Spring and early summer.
+-   **Bait/Techniques:** Fly fishing with nymphs or streamers.
+-   **Conservation Status:** Common.
+-   **Brandon’s Notes:** “One of my favorite catches — always puts up a fight!”
 
 ---
 
-### **2\. Largemouth Yellowfish** {#2.-largemouth-yellowfish}
+## **2. Largemouth Yellowfish**
 
--   **Featured image:** `fish-largemouth-yellowfish.jpg`
-
--   **Description:** Larger cousin of the Smallmouth, known for predatory behaviour.
-
--   **Habitat:** Deeper pools of KwaZulu-Natal rivers.
-
--   **Season:** Summer and early autumn.
-
--   **Average size:** 50–80 cm.
-
--   **Bait/Lure:** Streamers, crankbaits.
-
--   **Conservation:** Sensitive – catch and release recommended.
-
--   **Brandon’s notes:** “Powerful strikes – feels more like bass fishing than typical yellowfish.”
+-   **Featured Image:** Largemouth Yellowfish in calm waters.
+-   **Description:** Larger and slower than the Smallmouth Yellowfish, but equally rewarding to catch.
+-   **Habitat:** Still pools and slow-moving rivers.
+-   **Fishing Season:** Summer.
+-   **Bait/Techniques:** Live bait or artificial lures.
+-   **Conservation Status:** Vulnerable.
+-   **Brandon’s Notes:** “Patience is key with this one — they’re cautious but worth the wait.”
 
 ---
 
-### **3\. Mozambique Tilapia** {#3.-mozambique-tilapia}
+## **3. Mozambique Tilapia**
 
--   **Featured image:** `fish-mozambique-tilapia.jpg`
-
--   **Description:** Hardy, adaptable species common in warm KZN waters.
-
--   **Habitat:** Shallow dams, slow rivers.
-
--   **Season:** Year-round.
-
--   **Average size:** 20–35 cm.
-
--   **Bait/Lure:** Worms, small soft plastics.
-
--   **Conservation:** Common.
-
--   **Brandon’s notes:** “Often caught when targeting other species – great fun for kids.”
+-   **Featured Image:** Mozambique Tilapia in shallow waters.
+-   **Description:** A hardy fish found in warm, shallow waters. Recognizable by its dark stripes.
+-   **Habitat:** Dams, ponds, and slow rivers.
+-   **Fishing Season:** Year-round.
+-   **Bait/Techniques:** Worms, bread, or small lures.
+-   **Conservation Status:** Invasive in some areas.
+-   **Brandon’s Notes:** “Great for beginners — easy to catch and fun to reel in.”
 
 ---
 
-### **4\. Sharptooth Catfish (Barbel)** {#4.-sharptooth-catfish-(barbel)}
+## **4. Sharptooth Catfish (Barbel)**
 
--   **Featured image:** `fish-sharptooth-catfish.jpg`
-
--   **Description:** Large, whiskered fish capable of reaching huge sizes.
-
--   **Habitat:** Almost all stillwaters and rivers in KZN.
-
--   **Season:** Best in summer.
-
--   **Average size:** 60–120 cm.
-
--   **Bait/Lure:** Chicken livers, worms, cut bait.
-
--   **Conservation:** Common.
-
--   **Brandon’s notes:** “The giants of local waters – slow, heavy fights that test patience.”
+-   **Featured Image:** Large Sharptooth Catfish.
+-   **Description:** A bottom-dwelling predator with a distinctive whiskered face.
+-   **Habitat:** Deep pools and muddy riverbeds.
+-   **Fishing Season:** Late summer.
+-   **Bait/Techniques:** Dead bait or chicken liver.
+-   **Conservation Status:** Common.
+-   **Brandon’s Notes:** “These guys are tough — bring a strong line!”
 
 ---
 
-### **5\. Tigerfish** {#5.-tigerfish}
+## **5. Tigerfish**
 
--   **Featured image:** `fish-tigerfish.jpg`
-
--   **Description:** Ferocious predator with sharp teeth, iconic African gamefish.
-
--   **Habitat:** Larger rivers and dams, rare in KZN but present in connected waters.
-
--   **Season:** Late summer.
-
--   **Average size:** 40–70 cm.
-
--   **Bait/Lure:** Spoons, spinners, live bait.
-
--   **Conservation:** Locally scarce, often protected.
-
--   **Brandon’s notes:** “Rare encounter in KZN – unforgettable if you hook one.”
+-   **Featured Image:** Tigerfish with sharp teeth.
+-   **Description:** A fierce predator with sharp teeth and a silver body.
+-   **Habitat:** Fast-flowing rivers.
+-   **Fishing Season:** Winter.
+-   **Bait/Techniques:** Spinners or live bait.
+-   **Conservation Status:** Near Threatened.
+-   **Brandon’s Notes:** “The ultimate challenge — they’re fast, aggressive, and thrilling to catch.”
 
 ---
 
