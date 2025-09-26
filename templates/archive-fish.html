@@ -1,0 +1,93 @@
+<!-- wp:template-part {"slug":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" role="main" style="margin-top:var(--wp--preset--spacing--60)">
+	<!-- Archive Header Section - Title and description for fish CPT archive -->
+	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|50"},"margin":{"bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50)">
+		<!-- Archive title -->
+		<!-- wp:query-title {"type":"archive","textAlign":"center","style":{"color":{"text":"var:preset|color|accent-1"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"fontSize":"x-large"} /-->
+		
+		<!-- Archive description -->
+		<!-- wp:term-description {"textAlign":"center","style":{"color":{"text":"var:preset|color|neutral"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}},"fontSize":"medium"} /-->
+		
+		<!-- Optional search functionality for fish species -->
+		<!-- wp:search {"label":"Search fish species","showLabel":false,"placeholder":"Search fish species...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"8px"}},"backgroundColor":"light","textColor":"base"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Fish Species Grid - Query loop displaying fish species in card format -->
+	<!-- wp:query {"query":{"perPage":12,"pages":0,"offset":0,"postType":"fish","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide"} -->
+	<div class="wp-block-query alignwide">
+		<!-- Fish species post template in grid layout -->
+		<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","minimumColumnWidth":"20rem"}} -->
+			<!-- Fish species card -->
+			<!-- wp:group {"style":{"color":{"background":"var:preset|color|base"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|40","left":"0","right":"0"}},"border":{"radius":"12px"},"boxShadow":"0 4px 6px rgba(0, 0, 0, 0.1)"},"layout":{"type":"constrained"}} -->
+			<div class="wp-block-group has-base-background-color has-background" style="border-radius:12px;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0">
+				<!-- Featured image as species photo -->
+				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":{"topLeft":"12px","topRight":"12px","bottomLeft":"0px","bottomRight":"0px"}},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} /-->
+
+				<!-- Card content area -->
+				<!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+				<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+					<!-- Species name as title -->
+					<!-- wp:post-title {"level":2,"isLink":true,"style":{"color":{"text":"var:preset|color|accent-1"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|20"}}},"fontSize":"medium"} /-->
+
+					<!-- Species excerpt/description -->
+					<!-- wp:post-excerpt {"moreText":"Learn more about this species →","showMoreOnNewLine":false,"excerptLength":25,"style":{"color":{"text":"var:preset|color|light"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|30"}}},"fontSize":"small"} /-->
+
+					<!-- Meta information - species group and location -->
+					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+					<div class="wp-block-group">
+						<!-- Species taxonomy -->
+						<!-- wp:post-terms {"term":"species","style":{"color":{"text":"var:preset|color|accent-2"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontSize":"tiny"} /-->
+
+						<!-- Location taxonomy -->
+						<!-- wp:post-terms {"term":"location","style":{"color":{"text":"var:preset|color|neutral"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontSize":"tiny"} /-->
+					</div>
+					<!-- /wp:group -->
+				</div>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
+		<!-- /wp:post-template -->
+
+		<!-- No results message -->
+		<!-- wp:query-no-results -->
+			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"color":{"background":"var:preset|color|light"},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+			<div class="wp-block-group has-light-background-color has-background" style="border-radius:12px;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--40)">
+				<!-- wp:heading {"textAlign":"center","level":2,"style":{"color":{"text":"var:preset|color|accent-1"}},"fontSize":"large"} -->
+				<h2 class="wp-block-heading has-text-align-center has-accent-1-color has-text-color has-large-font-size">No Fish Species Found</h2>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"align":"center","style":{"color":{"text":"var:preset|color|neutral"},"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+				<p class="has-text-align-center has-neutral-color has-text-color has-medium-font-size" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--40)">Sorry, no fish species were found matching your criteria. Check back soon as we're always adding new species to our field guide.</p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+				<div class="wp-block-buttons">
+					<!-- wp:button {"style":{"color":{"background":"var:preset|color|accent-1","text":"var:preset|color|base"}}} -->
+					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button has-base-color has-accent-1-background-color has-text-color has-background" href="/">Return to Home</a></div>
+					<!-- /wp:button -->
+				</div>
+				<!-- /wp:buttons -->
+			</div>
+			<!-- /wp:group -->
+		<!-- /wp:query-no-results -->
+
+		<!-- Pagination -->
+		<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group alignwide" style="margin-top:var(--wp--preset--spacing--60)">
+			<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
+				<!-- wp:query-pagination-previous {"style":{"color":{"text":"var:preset|color|accent-1"}}} /-->
+				<!-- wp:query-pagination-numbers {"style":{"color":{"text":"var:preset|color|light"}}} /-->
+				<!-- wp:query-pagination-next {"style":{"color":{"text":"var:preset|color|accent-1"}}} /-->
+			<!-- /wp:query-pagination -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer"} /-->

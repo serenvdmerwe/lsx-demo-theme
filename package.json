@@ -19,9 +19,9 @@
     "version": "1.0.0",
     "description": "A modern WordPress block theme with Full Site Editing capabilities",
     "scripts": {
-        "build:css": "sass src/scss/style.scss | postcss > assets/css/style.css && cat src/style-header.css assets/css/style.css > style.css",
-        "build:editor": "sass src/scss/editor.scss | postcss > assets/css/editor.css",
-        "watch:css": "concurrently \"sass --watch src/scss/style.scss:tmp/style.css\" \"postcss --watch tmp/style.css -o style.css\"",
+        // "build:css": "sass src/style.scss | postcss > assets/css/style.css && cat src/style-header.css assets/css/style.css > style.css",
+        // "build:editor": "sass src/editor.scss | postcss > assets/css/editor.css",
+        // "watch:css": "concurrently \"sass --watch src/style.scss:tmp/style.css\" \"postcss --watch tmp/style.css -o style.css\"",
         "start": "wp-scripts start",
         "build": "wp-scripts build && npm run build:css && npm run build:editor",
         "format": "wp-scripts format",
