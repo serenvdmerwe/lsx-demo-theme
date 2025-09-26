@@ -6,6 +6,7 @@
  * Keywords: fish, gallery, images, photos, species
  * Description: A responsive gallery showcasing multiple fish species images with captions.
  * Viewport width: 1400
+ * Post Types: fish
  *
  * @package WordPress
  * @subpackage LSX_Demo_Theme
@@ -14,6 +15,9 @@
 
 ?>
 
+<!-- Responsive fish species photo gallery -->
+<!-- 3-column grid layout with proper alt text and captions -->
+<!-- All images use get_theme_file_uri() for proper asset handling -->
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|50"},"color":{"background":"var:preset|color|base"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
 	<!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->

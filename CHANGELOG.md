@@ -9,7 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Enhanced the ISSUE_TEMPLATES by removing unwanted templates, adding required templates and editing the existing templates where required. Issues [#9](https://github.com/lightspeedwp/lsx-demo-theme/issues/9), [#11](https://github.com/lightspeedwp/lsx-demo-theme/issues/11)
+- **QA & Polish for Fish CPT Patterns**: Completed comprehensive quality assurance pass
+  - Updated all hardcoded strings in fish templates to use proper translation functions
+  - Replaced inline CSS with theme.json custom properties for border-radius and min-height
+  - Enhanced pattern headers with Post Types field for better contextual discovery
+  - Added developer documentation comments for improved code clarity
+  - Verified accessibility compliance with proper heading hierarchy (H1→H2→H3)
+  - Confirmed all images use get_theme_file_uri() with proper alt text translations
+
 ### Added
+- **Theme.json Enhancements**: Added custom properties for consistent border-radius and min-height values
+  - `--wp--custom--border--radius--small`: 4px
+  - `--wp--custom--border--radius--medium`: 8px  
+  - `--wp--custom--border--radius--large`: 12px
+  - `--wp--custom--spacing--min-height--hero`: 600px
 - Added custom-instructions.md. The content of the file is according to the current project scope. [#15](https://github.com/lightspeedwp/lsx-demo-theme/issues/15)
 - Added requested files to ISSUE_TEMPLATE. [#8](https://github.com/lightspeedwp/lsx-demo-theme/pull/8)
 - Added contributing guidelines to enhance collaboration and maintain code quality. [#21](https://github.com/lightspeedwp/lsx-demo-theme/pull/21)

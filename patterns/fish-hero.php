@@ -6,6 +6,7 @@
  * Keywords: fish, hero, species, banner
  * Description: A hero section for fish species with full width image, heading, description and call-to-action button.
  * Viewport width: 1400
+ * Post Types: fish
  *
  * @package WordPress
  * @subpackage LSX_Demo_Theme
@@ -14,8 +15,10 @@
 
 ?>
 
+<!-- Full-width hero section for showcasing fish species -->
+<!-- Designed to be used on single fish posts or landing pages -->
 <!-- wp:cover {"url":"<?php echo esc_url( get_theme_file_uri( '/assets/images/fish-hero-placeholder.webp' ) ); ?>","alt":"<?php echo esc_attr_x( 'Beautiful fish swimming in clear water', 'Alt text for fish hero image.', 'lsx-demo-theme' ); ?>","dimRatio":30,"isUserOverlayColor":true,"focalPoint":{"x":0.5,"y":0.6},"minHeight":600,"minHeightUnit":"px","contentPosition":"center center","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignfull has-custom-content-position is-position-center-center" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50);min-height:600px">
+<div class="wp-block-cover alignfull has-custom-content-position is-position-center-center" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50);min-height:var(--wp--custom--spacing--min-height--hero)">
 	<span aria-hidden="true" class="wp-block-cover__background has-background-dim-30 has-background-dim"></span>
 	<img class="wp-block-cover__image-background" alt="<?php echo esc_attr_x( 'Beautiful fish swimming in clear water', 'Alt text for fish hero image.', 'lsx-demo-theme' ); ?>" src="<?php echo esc_url( get_theme_file_uri( '/assets/images/fish-hero-placeholder.webp' ) ); ?>" style="object-position:50% 60%" data-object-fit="cover" data-object-position="50% 60%"/>
 	<div class="wp-block-cover__inner-container">
