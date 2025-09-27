@@ -8,13 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - 2025-09-25
+## [1.0.0-beta] - 2025-09-25
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### 🎉 Initial Release
 
-## [0.1.0] - 2025-09-25
+## [1.0.0-beta] - 2025-09-25
 
 This is the initial release of the LSX Demo Theme - a comprehensive WordPress block theme designed for learning and production use with Full Site Editing (FSE) capabilities.
 
