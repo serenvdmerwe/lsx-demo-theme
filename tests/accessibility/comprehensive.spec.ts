@@ -81,7 +81,7 @@ test.describe('Comprehensive Accessibility Tests', () => {
       const headingElements = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6'));
       return headingElements.map(h => ({
         level: parseInt(h.tagName.substring(1)),
-        text: (h.textContent && h.textContent.trim()) || ''
+        text: h.textContent?.trim() ?? ''
       }));
     });
 
