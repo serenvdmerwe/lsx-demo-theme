@@ -820,11 +820,21 @@ if ( ! function_exists( 'lsx_demo_theme_manual_import_demo_content' ) ) :
 		lsx_demo_theme_import_demo_content();
 		
 		// Show admin notice
-		add_action( 'admin_notices', function() {
-			echo '<div class="notice notice-success is-dismissible">';
-			echo '<p>' . esc_html__( 'Demo content imported successfully!', 'lsx-demo-theme' ) . '</p>';
-			echo '</div>';
-		} );
+		add_action( 'admin_notices', 'lsx_demo_theme_admin_notice_demo_imported' );
+	}
+
+/**
+ * Displays a success notice after demo content import.
+ *
+ * @since lsx-demo-theme 1.0
+ *
+ * @return void
+ */
+function lsx_demo_theme_admin_notice_demo_imported() {
+	echo '<div class="notice notice-success is-dismissible">';
+	echo '<p>' . esc_html__( 'Demo content imported successfully!', 'lsx-demo-theme' ) . '</p>';
+	echo '</div>';
+}
 	}
 endif;
 add_action( 'admin_init', 'lsx_demo_theme_manual_import_demo_content' );
