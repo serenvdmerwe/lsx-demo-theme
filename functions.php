@@ -839,6 +839,153 @@ function lsx_demo_theme_admin_notice_demo_imported() {
 endif;
 add_action( 'admin_init', 'lsx_demo_theme_manual_import_demo_content' );
 
+// Add comprehensive SEO meta tags to all pages
+if ( ! function_exists( 'lsx_demo_theme_add_seo_meta_tags' ) ) :
+	/**
+	 * Add SEO meta tags including Open Graph and Twitter Cards.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_add_seo_meta_tags() {
+		global $post;
+		
+		// Basic meta tags
+		$site_name = get_bloginfo( 'name' );
+		$site_description = get_bloginfo( 'description' );
+		$site_url = home_url();
+		
+		// Page-specific data
+		$page_title = wp_get_document_title();
+		$page_description = '';
+		$page_image = '';
+		$page_url = '';
+		
+		if ( is_singular() ) {
+			$page_url = get_permalink();
+			$page_description = get_the_excerpt( $post ) ?: $site_description;
+			
+			// Get featured image
+			if ( has_post_thumbnail() ) {
+				$page_image = get_the_post_thumbnail_url( $post, 'large' );
+			}
+			
+			// Custom descriptions for Fish CPT
+			if ( is_singular( 'fish' ) ) {
+				$species_info = get_post_meta( $post->ID, 'species_info', true );
+				if ( $species_info ) {
+					$page_description = wp_trim_words( $species_info, 25 );
+				}
+			}
+		} elseif ( is_home() || is_front_page() ) {
+			$page_url = $site_url;
+			$page_description = $site_description;
+			$page_image = get_template_directory_uri() . '/assets/images/homepage-hero.jpg';
+		} elseif ( is_post_type_archive( 'fish' ) ) {
+			$page_url = get_post_type_archive_link( 'fish' );
+			$page_description = __( 'Discover the diverse fish species of KwaZulu-Natal rivers. Learn about their habitats, fishing techniques, and conservation status.', 'lsx-demo-theme' );
+			$page_image = get_template_directory_uri() . '/assets/images/fish-archive-header.jpg';
+		} elseif ( is_category() || is_tag() || is_archive() ) {
+			$page_url = get_permalink();
+			$page_description = get_the_archive_description() ?: $site_description;
+			$page_image = get_template_directory_uri() . '/assets/images/blog-archive-header.jpg';
+		}
+		
+		// Fallback image
+		if ( empty( $page_image ) ) {
+			$page_image = get_template_directory_uri() . '/assets/images/homepage-hero.jpg';
+		}
+		
+		// Clean descriptions
+		$page_description = wp_strip_all_tags( $page_description );
+		$page_description = wp_trim_words( $page_description, 25 );
+		
+		// Output meta tags
+		echo '<meta name="description" content="' . esc_attr( $page_description ) . '">' . "\n";
+		
+		// Open Graph tags
+		echo '<meta property="og:title" content="' . esc_attr( $page_title ) . '">' . "\n";
+		echo '<meta property="og:description" content="' . esc_attr( $page_description ) . '">' . "\n";
+		echo '<meta property="og:image" content="' . esc_url( $page_image ) . '">' . "\n";
+		echo '<meta property="og:url" content="' . esc_url( $page_url ) . '">' . "\n";
+		echo '<meta property="og:type" content="' . ( is_singular() ? 'article' : 'website' ) . '">' . "\n";
+		echo '<meta property="og:site_name" content="' . esc_attr( $site_name ) . '">' . "\n";
+		echo '<meta property="og:locale" content="' . esc_attr( get_locale() ) . '">' . "\n";
+		
+		// Twitter Card tags
+		echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+		echo '<meta name="twitter:title" content="' . esc_attr( $page_title ) . '">' . "\n";
+		echo '<meta name="twitter:description" content="' . esc_attr( $page_description ) . '">' . "\n";
+		echo '<meta name="twitter:image" content="' . esc_url( $page_image ) . '">' . "\n";
+		
+		// Additional meta tags for Fish CPT
+		if ( is_singular( 'fish' ) ) {
+			$habitat = get_post_meta( $post->ID, 'habitat', true );
+			$conservation_status = get_post_meta( $post->ID, 'conservation_status', true );
+			
+			if ( $habitat ) {
+				echo '<meta name="fish:habitat" content="' . esc_attr( $habitat ) . '">' . "\n";
+			}
+			if ( $conservation_status ) {
+				echo '<meta name="fish:conservation_status" content="' . esc_attr( $conservation_status ) . '">' . "\n";
+			}
+		}
+	}
+endif;
+add_action( 'wp_head', 'lsx_demo_theme_add_seo_meta_tags', 1 );
+
+// Add structured data for Fish CPT
+if ( ! function_exists( 'lsx_demo_theme_add_fish_structured_data' ) ) :
+	/**
+	 * Add structured data for Fish CPT entries.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_add_fish_structured_data() {
+		if ( ! is_singular( 'fish' ) ) {
+			return;
+		}
+		
+		global $post;
+		
+		$structured_data = array(
+			'@context' => 'https://schema.org',
+			'@type' => 'Animal',
+			'name' => get_the_title(),
+			'description' => get_the_excerpt(),
+			'url' => get_permalink(),
+			'image' => get_the_post_thumbnail_url( $post, 'large' ),
+		);
+		
+		// Add custom fields if they exist
+		$habitat = get_post_meta( $post->ID, 'habitat', true );
+		$conservation_status = get_post_meta( $post->ID, 'conservation_status', true );
+		$species_info = get_post_meta( $post->ID, 'species_info', true );
+		
+		if ( $habitat ) {
+			$structured_data['habitat'] = $habitat;
+		}
+		
+		if ( $conservation_status ) {
+			$structured_data['conservationStatus'] = $conservation_status;
+		}
+		
+		if ( $species_info ) {
+			$structured_data['additionalProperty'] = array(
+				'@type' => 'PropertyValue',
+				'name' => 'Species Information',
+				'value' => wp_strip_all_tags( $species_info )
+			);
+		}
+		
+		echo '<script type="application/ld+json">' . wp_json_encode( $structured_data, JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+	}
+endif;
+add_action( 'wp_head', 'lsx_demo_theme_add_fish_structured_data', 5 );
+
 // Add FAQ Schema to Contact page and relevant pages for SEO
 if ( ! function_exists( 'lsx_demo_theme_add_faq_schema' ) ) :
 	/**
@@ -897,3 +1044,339 @@ if ( ! function_exists( 'lsx_demo_theme_add_faq_schema' ) ) :
 	}
 endif;
 add_action( 'wp_head', 'lsx_demo_theme_add_faq_schema' );
+
+// Add Google Search Console verification and other SEO head tags
+if ( ! function_exists( 'lsx_demo_theme_add_verification_tags' ) ) :
+	/**
+	 * Add verification tags for search engines.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_add_verification_tags() {
+		// Google Search Console verification (placeholder - replace with actual value)
+		echo '<meta name="google-site-verification" content="placeholder-google-verification-code" />' . "\n";
+		
+		// Bing verification (placeholder - replace with actual value)
+		echo '<meta name="msvalidate.01" content="placeholder-bing-verification-code" />' . "\n";
+		
+		// Pinterest verification (placeholder - replace with actual value)
+		echo '<meta name="p:domain_verify" content="placeholder-pinterest-verification-code" />' . "\n";
+		
+		// Add canonical URL
+		if ( ! is_404() ) {
+			$canonical_url = '';
+			if ( is_singular() ) {
+				$canonical_url = get_permalink();
+			} elseif ( is_home() || is_front_page() ) {
+				$canonical_url = home_url();
+			} elseif ( is_archive() ) {
+				$canonical_url = get_permalink();
+			}
+			
+			if ( $canonical_url ) {
+				echo '<link rel="canonical" href="' . esc_url( $canonical_url ) . '" />' . "\n";
+			}
+		}
+		
+		// Add robots meta tag
+		if ( is_search() || is_404() ) {
+			echo '<meta name="robots" content="noindex, nofollow" />' . "\n";
+		} else {
+			echo '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />' . "\n";
+		}
+	}
+endif;
+add_action( 'wp_head', 'lsx_demo_theme_add_verification_tags', 2 );
+
+// Generate simple XML sitemap
+if ( ! function_exists( 'lsx_demo_theme_generate_sitemap' ) ) :
+	/**
+	 * Generate a simple XML sitemap.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_generate_sitemap() {
+		if ( ! isset( $_GET['sitemap'] ) || $_GET['sitemap'] !== 'xml' ) {
+			return;
+		}
+		
+		header( 'Content-Type: application/xml; charset=utf-8' );
+		
+		echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+		echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+		
+		// Homepage
+		echo '<url>' . "\n";
+		echo '<loc>' . esc_url( home_url() ) . '</loc>' . "\n";
+		echo '<lastmod>' . date( 'c' ) . '</lastmod>' . "\n";
+		echo '<changefreq>weekly</changefreq>' . "\n";
+		echo '<priority>1.0</priority>' . "\n";
+		echo '</url>' . "\n";
+		
+		// Pages
+		$pages = get_pages( array( 'post_status' => 'publish' ) );
+		foreach ( $pages as $page ) {
+			echo '<url>' . "\n";
+			echo '<loc>' . esc_url( get_permalink( $page->ID ) ) . '</loc>' . "\n";
+			echo '<lastmod>' . date( 'c', strtotime( $page->post_modified ) ) . '</lastmod>' . "\n";
+			echo '<changefreq>monthly</changefreq>' . "\n";
+			echo '<priority>0.8</priority>' . "\n";
+			echo '</url>' . "\n";
+		}
+		
+		// Posts
+		$posts = get_posts( array( 
+			'post_status' => 'publish',
+			'numberposts' => -1
+		) );
+		foreach ( $posts as $post ) {
+			echo '<url>' . "\n";
+			echo '<loc>' . esc_url( get_permalink( $post->ID ) ) . '</loc>' . "\n";
+			echo '<lastmod>' . date( 'c', strtotime( $post->post_modified ) ) . '</lastmod>' . "\n";
+			echo '<changefreq>monthly</changefreq>' . "\n";
+			echo '<priority>0.6</priority>' . "\n";
+			echo '</url>' . "\n";
+		}
+		
+		// Fish CPT
+		$fish_posts = get_posts( array( 
+			'post_type' => 'fish',
+			'post_status' => 'publish',
+			'numberposts' => -1
+		) );
+		foreach ( $fish_posts as $fish ) {
+			echo '<url>' . "\n";
+			echo '<loc>' . esc_url( get_permalink( $fish->ID ) ) . '</loc>' . "\n";
+			echo '<lastmod>' . date( 'c', strtotime( $fish->post_modified ) ) . '</lastmod>' . "\n";
+			echo '<changefreq>monthly</changefreq>' . "\n";
+			echo '<priority>0.7</priority>' . "\n";
+			echo '</url>' . "\n";
+		}
+		
+		// Archives
+		echo '<url>' . "\n";
+		echo '<loc>' . esc_url( get_post_type_archive_link( 'fish' ) ) . '</loc>' . "\n";
+		echo '<lastmod>' . date( 'c' ) . '</lastmod>' . "\n";
+		echo '<changefreq>weekly</changefreq>' . "\n";
+		echo '<priority>0.9</priority>' . "\n";
+		echo '</url>' . "\n";
+		
+		echo '</urlset>' . "\n";
+		exit;
+	}
+endif;
+add_action( 'init', 'lsx_demo_theme_generate_sitemap' );
+
+// Add sitemap reference to robots.txt
+if ( ! function_exists( 'lsx_demo_theme_add_sitemap_to_robots' ) ) :
+	/**
+	 * Add sitemap reference to robots.txt.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @param string $output The robots.txt output.
+	 * @return string Modified robots.txt content.
+	 */
+	function lsx_demo_theme_add_sitemap_to_robots( $output ) {
+		$output .= "\nSitemap: " . home_url( '/?sitemap=xml' ) . "\n";
+		return $output;
+	}
+endif;
+add_filter( 'robots_txt', 'lsx_demo_theme_add_sitemap_to_robots' );
+
+// Add lazy loading and performance optimizations
+if ( ! function_exists( 'lsx_demo_theme_add_performance_optimizations' ) ) :
+	/**
+	 * Add performance optimizations including lazy loading and resource hints.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_add_performance_optimizations() {
+		// Add resource hints for better performance
+		echo '<link rel="dns-prefetch" href="//fonts.googleapis.com">' . "\n";
+		echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+		
+		// Add viewport meta tag if not already present
+		if ( ! current_theme_supports( 'title-tag' ) ) {
+			echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
+		}
+		
+		// Add theme color for mobile browsers
+		echo '<meta name="theme-color" content="#ff5f1f">' . "\n";
+		echo '<meta name="msapplication-TileColor" content="#ff5f1f">' . "\n";
+	}
+endif;
+add_action( 'wp_head', 'lsx_demo_theme_add_performance_optimizations', 3 );
+
+// Add lazy loading to images
+if ( ! function_exists( 'lsx_demo_theme_add_lazy_loading' ) ) :
+	/**
+	 * Add lazy loading attributes to images.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @param string $html The HTML content.
+	 * @return string Modified HTML with lazy loading attributes.
+	 */
+	function lsx_demo_theme_add_lazy_loading( $html ) {
+		// Don't add lazy loading to images in the admin or if it's already present
+		if ( is_admin() || strpos( $html, 'loading=' ) !== false ) {
+			return $html;
+		}
+		
+		// Add loading="lazy" to img tags
+		$html = str_replace( '<img ', '<img loading="lazy" ', $html );
+		
+		return $html;
+	}
+endif;
+add_filter( 'the_content', 'lsx_demo_theme_add_lazy_loading' );
+add_filter( 'post_thumbnail_html', 'lsx_demo_theme_add_lazy_loading' );
+
+// Optimize CSS delivery
+if ( ! function_exists( 'lsx_demo_theme_optimize_css_delivery' ) ) :
+	/**
+	 * Optimize CSS delivery by adding preload hints for critical CSS.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_optimize_css_delivery() {
+		if ( is_admin() ) {
+			return;
+		}
+		
+		// Preload critical CSS files
+		$theme_version = wp_get_theme()->get( 'Version' );
+		$style_uri = get_stylesheet_uri();
+		
+		echo '<link rel="preload" href="' . esc_url( $style_uri ) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
+		echo '<noscript><link rel="stylesheet" href="' . esc_url( $style_uri ) . '"></noscript>' . "\n";
+	}
+endif;
+add_action( 'wp_head', 'lsx_demo_theme_optimize_css_delivery', 4 );
+
+// Add performance monitoring for Core Web Vitals
+if ( ! function_exists( 'lsx_demo_theme_add_web_vitals_monitoring' ) ) :
+	/**
+	 * Add Web Vitals monitoring script for performance tracking.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_add_web_vitals_monitoring() {
+		if ( is_admin() || ! WP_DEBUG ) {
+			return;
+		}
+		
+		?>
+		<script>
+		// Web Vitals monitoring for development
+		(function() {
+			if ('performance' in window && 'PerformanceObserver' in window) {
+				// Monitor Largest Contentful Paint (LCP)
+				new PerformanceObserver((entryList) => {
+					for (const entry of entryList.getEntries()) {
+						console.log('LCP:', entry.startTime);
+					}
+				}).observe({entryTypes: ['largest-contentful-paint']});
+
+				// Monitor First Input Delay (FID)
+				new PerformanceObserver((entryList) => {
+					for (const entry of entryList.getEntries()) {
+						console.log('FID:', entry.processingStart - entry.startTime);
+					}
+				}).observe({entryTypes: ['first-input']});
+
+				// Monitor Cumulative Layout Shift (CLS)
+				let clsValue = 0;
+				new PerformanceObserver((entryList) => {
+					for (const entry of entryList.getEntries()) {
+						if (!entry.hadRecentInput) {
+							clsValue += entry.value;
+							console.log('CLS:', clsValue);
+						}
+					}
+				}).observe({entryTypes: ['layout-shift']});
+			}
+		})();
+		</script>
+		<?php
+	}
+endif;
+add_action( 'wp_footer', 'lsx_demo_theme_add_web_vitals_monitoring', 100 );
+
+// Add internal linking optimization
+if ( ! function_exists( 'lsx_demo_theme_optimize_internal_linking' ) ) :
+	/**
+	 * Add internal linking suggestions and optimize existing links.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @param string $content The post content.
+	 * @return string Modified content with optimized internal links.
+	 */
+	function lsx_demo_theme_optimize_internal_linking( $content ) {
+		if ( is_admin() || ! is_singular() ) {
+			return $content;
+		}
+		
+		global $post;
+		
+		// Auto-link fish species mentioned in blog posts to fish CPT entries
+		if ( $post->post_type === 'post' ) {
+			$fish_posts = get_posts( array(
+				'post_type' => 'fish',
+				'post_status' => 'publish',
+				'numberposts' => -1
+			) );
+			
+			foreach ( $fish_posts as $fish ) {
+				$fish_name = get_the_title( $fish->ID );
+				$fish_link = get_permalink( $fish->ID );
+				
+				// Replace fish name with link if not already linked
+				$pattern = '/\b(' . preg_quote( $fish_name, '/' ) . ')\b(?![^<]*>)/i';
+				$replacement = '<a href="' . esc_url( $fish_link ) . '" title="Learn more about ' . esc_attr( $fish_name ) . '">${1}</a>';
+				
+				// Only replace first occurrence to avoid overlinking
+				$content = preg_replace( $pattern, $replacement, $content, 1 );
+			}
+		}
+		
+		// Add related blog posts to fish CPT entries
+		if ( $post->post_type === 'fish' ) {
+			$fish_name = get_the_title();
+			$related_posts = get_posts( array(
+				'post_type' => 'post',
+				's' => $fish_name,
+				'numberposts' => 3,
+				'post__not_in' => array( $post->ID )
+			) );
+			
+			if ( $related_posts ) {
+				$related_content = '<div class="related-blog-posts">';
+				$related_content .= '<h3>' . __( 'Related Fishing Stories', 'lsx-demo-theme' ) . '</h3>';
+				$related_content .= '<ul>';
+				
+				foreach ( $related_posts as $related_post ) {
+					$related_content .= '<li><a href="' . get_permalink( $related_post->ID ) . '">' . get_the_title( $related_post->ID ) . '</a></li>';
+				}
+				
+				$related_content .= '</ul></div>';
+				$content .= $related_content;
+			}
+		}
+		
+		return $content;
+	}
+endif;
+add_filter( 'the_content', 'lsx_demo_theme_optimize_internal_linking', 20 );
