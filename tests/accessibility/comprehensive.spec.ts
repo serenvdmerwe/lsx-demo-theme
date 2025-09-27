@@ -81,7 +81,7 @@ test.describe('Comprehensive Accessibility Tests', () => {
       const headingElements = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6'));
       return headingElements.map(h => ({
         level: parseInt(h.tagName.substring(1)),
-        text: h.textContent?.trim() || ''
+        text: (h.textContent && h.textContent.trim()) || ''
       }));
     });
 
@@ -211,7 +211,7 @@ test.describe('Comprehensive Accessibility Tests', () => {
       // Check alt text is meaningful
       const altText = await image.getAttribute('alt');
       expect(altText).toBeTruthy();
-      expect(altText?.length).toBeGreaterThan(10);
+      expect(altText && altText.length).toBeGreaterThan(10);
     }
 
     // Test definition lists are properly structured
@@ -388,7 +388,7 @@ test.describe('Comprehensive Accessibility Tests', () => {
       
       // Alt text should be descriptive
       const altText = await image.getAttribute('alt');
-      expect(altText?.length).toBeGreaterThan(20);
+      expect(altText && altText.length).toBeGreaterThan(20);
     }
 
     // Test breadcrumb navigation
