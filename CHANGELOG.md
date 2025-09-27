@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Fish Custom Post Type** with comprehensive species profiles and taxonomies
+- **Demo Content Import System** with 10 fish species and 7 blog posts
+- **Fishing-specific FAQ Pattern** for contact page implementation
+- **Brandon's Fishing Demo Content** including species profiles, fishing tips, and conservation content
+- **Automatic Demo Import** on theme activation with manual trigger option
+- **Taxonomies** for species categories (Yellowfish, Tilapia, Catfish, etc.) and locations
+- **Meta Fields** for habitat, season, bait, conservation status, and personal notes
+- **Placeholder Assets** for fish species images and page headers
+- **Internationalization** for all new strings with proper text domain
+
 ### Changed
 - Enhanced the ISSUE_TEMPLATES by removing unwanted templates, adding required templates and editing the existing templates where required. Issues [#9](https://github.com/lightspeedwp/lsx-demo-theme/issues/9), [#11](https://github.com/lightspeedwp/lsx-demo-theme/issues/11)
 ### Added
