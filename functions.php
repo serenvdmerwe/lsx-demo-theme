@@ -863,6 +863,9 @@ if ( ! function_exists( 'lsx_demo_theme_add_seo_meta_tags' ) ) :
 		$page_url = '';
 		
 		if ( is_singular() ) {
+			if ( ! isset( $post ) || ! is_object( $post ) ) {
+				return;
+			}
 			$page_url = get_permalink();
 			$page_description = get_the_excerpt( $post ) ?: $site_description;
 			
