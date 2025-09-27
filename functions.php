@@ -413,6 +413,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'A beautiful endemic species found in the rivers of South Africa. Known for their golden coloration and fighting spirit when hooked.',
 			'species' => 'Yellowfish',
 			'location' => 'Huttenspruit',
+			'featured_image' => 'fish-smallmouth-yellowfish.jpg',
 			'meta' => array(
 				'habitat' => 'Fast-flowing rivers and streams',
 				'season' => 'Spring and Summer',
@@ -427,6 +428,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'The larger cousin of the Smallmouth Yellowfish, these impressive fish can grow quite substantial and provide excellent sport fishing opportunities.',
 			'species' => 'Yellowfish',
 			'location' => 'Tugela River',
+			'featured_image' => 'fish-largemouth-yellowfish.jpg',
 			'meta' => array(
 				'habitat' => 'Deep pools in large rivers',
 				'season' => 'Year-round, best in summer',
@@ -441,6 +443,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'A hardy and adaptable species that thrives in various water conditions. Popular among anglers for their accessibility and good table fare.',
 			'species' => 'Tilapia',
 			'location' => 'Local Dams',
+			'featured_image' => 'fish-mozambique-tilapia.jpg',
 			'meta' => array(
 				'habitat' => 'Dams, slow rivers, warm water',
 				'season' => 'Year-round',
@@ -455,6 +458,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'A formidable bottom-dwelling predator with distinctive whiskers. These powerful fish provide an excellent challenge for anglers seeking something different.',
 			'species' => 'Catfish',
 			'location' => 'Huttenspruit',
+			'featured_image' => 'fish-sharptooth-catfish.jpg',
 			'meta' => array(
 				'habitat' => 'Deep pools and muddy riverbeds',
 				'season' => 'Late summer',
@@ -469,6 +473,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'The apex predator of South African rivers. With their razor-sharp teeth and aggressive nature, tigerfish are the ultimate challenge for any angler.',
 			'species' => 'Tigerfish',
 			'location' => 'Tugela River',
+			'featured_image' => 'fish-tigerfish.jpg',
 			'meta' => array(
 				'habitat' => 'Fast current, rocky areas',
 				'season' => 'Summer months',
@@ -483,6 +488,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'A smaller member of the catfish family that prefers rocky areas and fast-flowing water. They provide good sport on light tackle.',
 			'species' => 'Catfish',
 			'location' => 'Drakensberg Streams',
+			'featured_image' => 'fish-rock-catfish.jpg',
 			'meta' => array(
 				'habitat' => 'Rocky streams, fast water',
 				'season' => 'Summer and autumn',
@@ -497,6 +503,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'A beautiful silvery fish that inhabits the quieter sections of rivers and provides excellent table fare when harvested sustainably.',
 			'species' => 'Other River Fish',
 			'location' => 'Huttenspruit',
+			'featured_image' => 'fish-river-bream.jpg',
 			'meta' => array(
 				'habitat' => 'Slow sections of rivers, near vegetation',
 				'season' => 'Spring and summer',
@@ -511,6 +518,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'A regional variant of yellowfish found specifically in KwaZulu-Natal waters. Similar to their cousins but with unique characteristics.',
 			'species' => 'Yellowfish',
 			'location' => 'KwaZulu-Natal',
+			'featured_image' => 'fish-natal-yellowfish.jpg',
 			'meta' => array(
 				'habitat' => 'Clear mountain streams',
 				'season' => 'Spring through autumn',
@@ -525,6 +533,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'Small but colorful tilapia species often found in dams and slower water. Their bright colors make them a joy to catch.',
 			'species' => 'Tilapia',
 			'location' => 'Local Dams',
+			'featured_image' => 'fish-redbreast-tilapia.jpg',
 			'meta' => array(
 				'habitat' => 'Warm stillwaters, streams',
 				'season' => 'Year-round',
@@ -539,6 +548,7 @@ function lsx_demo_theme_import_fish_species() {
 			'content' => 'A slender, snake-like species that migrates to the ocean to spawn. These mysterious fish are often caught by surprise when targeting other species.',
 			'species' => 'Other River Fish',
 			'location' => 'Huttenspruit',
+			'featured_image' => 'fish-longfin-eel.jpg',
 			'meta' => array(
 				'habitat' => 'Rivers, dams, hiding under logs',
 				'season' => 'Rainy season',
@@ -575,6 +585,10 @@ function lsx_demo_theme_import_fish_species() {
 			foreach ( $fish['meta'] as $key => $value ) {
 				update_post_meta( $post_id, '_fish_' . $key, $value );
 			}
+			
+			// Set featured image placeholder (in production, you would upload actual images)
+			// For now, we'll just store the image filename for reference
+			update_post_meta( $post_id, '_fish_image_filename', $fish['featured_image'] );
 		}
 	}
 }
@@ -783,3 +797,93 @@ function lsx_demo_theme_create_contact_page() {
 
 // Run demo content import on theme activation
 add_action( 'after_switch_theme', 'lsx_demo_theme_import_demo_content' );
+
+// Admin function to manually trigger demo content import (for testing)
+if ( ! function_exists( 'lsx_demo_theme_manual_import_demo_content' ) ) :
+	/**
+	 * Manual trigger for demo content import (for testing/development).
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_manual_import_demo_content() {
+		// Only allow for admin users and if GET parameter is set
+		if ( ! current_user_can( 'manage_options' ) || ! isset( $_GET['import_demo'] ) ) {
+			return;
+		}
+		
+		// Reset the import flag to allow re-import
+		delete_option( 'lsx_demo_theme_demo_imported' );
+		
+		// Run the import
+		lsx_demo_theme_import_demo_content();
+		
+		// Show admin notice
+		add_action( 'admin_notices', function() {
+			echo '<div class="notice notice-success is-dismissible">';
+			echo '<p>' . esc_html__( 'Demo content imported successfully!', 'lsx-demo-theme' ) . '</p>';
+			echo '</div>';
+		} );
+	}
+endif;
+add_action( 'admin_init', 'lsx_demo_theme_manual_import_demo_content' );
+
+// Add FAQ Schema to Contact page and relevant pages for SEO
+if ( ! function_exists( 'lsx_demo_theme_add_faq_schema' ) ) :
+	/**
+	 * Add FAQ Schema JSON-LD to pages with FAQ content.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_add_faq_schema() {
+		// Only add on specific pages or if FAQ pattern is present
+		if ( ! is_page( 'contact' ) && ! is_post_type_archive( 'fish' ) && ! is_singular( 'fish' ) ) {
+			return;
+		}
+		
+		$faq_data = array(
+			'@context'   => 'https://schema.org',
+			'@type'      => 'FAQPage',
+			'mainEntity' => array(
+				array(
+					'@type'          => 'Question',
+					'name'           => __( 'How can I learn more about the fish you catch?', 'lsx-demo-theme' ),
+					'acceptedAnswer' => array(
+						'@type' => 'Answer',
+						'text'  => __( 'Check out the Fish Guide for detailed profiles of each species, including habitat information, best fishing techniques, and conservation status.', 'lsx-demo-theme' )
+					)
+				),
+				array(
+					'@type'          => 'Question',
+					'name'           => __( 'Do you offer guided fishing trips?', 'lsx-demo-theme' ),
+					'acceptedAnswer' => array(
+						'@type' => 'Answer',
+						'text'  => __( 'Not yet, but I\'m happy to share tips for your next adventure. Feel free to contact me with specific questions about fishing locations, techniques, or gear recommendations.', 'lsx-demo-theme' )
+					)
+				),
+				array(
+					'@type'          => 'Question',
+					'name'           => __( 'What\'s the best time to fish in KwaZulu-Natal?', 'lsx-demo-theme' ),
+					'acceptedAnswer' => array(
+						'@type' => 'Answer',
+						'text'  => __( 'Early morning and late afternoon are generally the most productive times. Spring and early summer offer the best action for most species, especially yellowfish. Water temperature and weather conditions play a big role in fish activity.', 'lsx-demo-theme' )
+					)
+				),
+				array(
+					'@type'          => 'Question',
+					'name'           => __( 'Are yellowfish protected species?', 'lsx-demo-theme' ),
+					'acceptedAnswer' => array(
+						'@type' => 'Answer',
+						'text'  => __( 'Yes, all yellowfish species are protected in South Africa. They must be released immediately after being caught. This helps preserve these magnificent native fish for future generations.', 'lsx-demo-theme' )
+					)
+				)
+			)
+		);
+		
+		echo '<script type="application/ld+json">' . wp_json_encode( $faq_data, JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+	}
+endif;
+add_action( 'wp_head', 'lsx_demo_theme_add_faq_schema' );
