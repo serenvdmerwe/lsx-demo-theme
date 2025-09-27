@@ -5,7 +5,6 @@
 
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
-const { join } = require('path');
 
 /**
  * Playwright Configuration for WordPress Block Theme Testing
