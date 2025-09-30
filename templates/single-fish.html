@@ -1,44 +1,195 @@
-<!-- wp:template-part {"slug":"header"} /-->
+<!--
+Template: single-fish.html
+Purpose: Single Fish post template (content between header and footer)
+Notes: Uses Post Featured Image, Post Title, Post Custom Field blocks (meta keys follow fish_*). Where bindings are required (gallery), mark with comments — bind these blocks to SCF fields or use Block Bindings in Site Editor.
+-->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
-<main class="wp-block-group" role="main">
-	<!-- Fish Hero Section - Full-width hero with species image, name, and description -->
-	<!-- wp:pattern {"slug":"lsx-demo-theme/fish-hero"} /-->
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group">
 
-	<!-- Fish Facts Box - Key species information in grid layout -->
-	<!-- wp:pattern {"slug":"lsx-demo-theme/fish-facts-box"} /-->
+	<!-- Featured image / Hero -->
+	<!-- wp:group {"className":"fish-hero","style":{"spacing":{"blockGap":"12px"}}} -->
+	<div class="wp-block-group fish-hero">
 
-	<!-- Main Content Section - Post content for detailed species information -->
-	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group alignfull" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
-		<!-- wp:post-content {"align":"wide","layout":{"type":"constrained"}} /-->
-	</div>
-	<!-- /wp:group -->
+		<!-- Large featured image -->
+		<!-- wp:post-featured-image {"align":"full","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} /-->
 
-	<!-- Fish Gallery Section - Optional image gallery for species photos -->
-	<!-- wp:pattern {"slug":"lsx-demo-theme/fish-gallery"} /-->
+		<!-- Overlay content -->
+		<!-- wp:group {"className":"hero-overlay","style":{"spacing":{"blockGap":"6px"}}} -->
+		<div class="wp-block-group hero-overlay">
+			<!-- wp:post-title {"level":1} /-->
+			<!-- scientific name (meta) -->
+			<!-- wp:post-custom-field {"metaKey":"fish_scientific_name","textColor":"muted"} /-->
 
-	<!-- Related Fish Species - Query loop showing similar fish -->
-	<!-- wp:pattern {"slug":"lsx-demo-theme/fish-related"} /-->
-
-	<!-- Post Meta Section - Terms, tags, and navigation -->
-	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|40"},"color":{"background":"var:preset|color|light"}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group alignfull has-light-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
-		<!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group alignwide">
-			<!-- Species taxonomy terms -->
-			<!-- wp:post-terms {"term":"species","style":{"color":{"text":"var:preset|color|accent-2"},"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}},"fontSize":"small"} /-->
-			
-			<!-- Location taxonomy terms -->
-			<!-- wp:post-terms {"term":"location","style":{"color":{"text":"var:preset|color|accent-1"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"fontSize":"small"} /-->
+			<!-- conservation status badge -->
+			<!-- wp:post-custom-field {"metaKey":"fish_conservation_status","className":"conservation-badge"} /-->
 		</div>
 		<!-- /wp:group -->
 
-		<!-- Post navigation for browsing between fish species -->
-		<!-- wp:pattern {"slug":"lsx-demo-theme/post-navigation"} /-->
 	</div>
 	<!-- /wp:group -->
-</main>
-<!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer"} /-->
+	<!-- Quick Facts strip -->
+	<!-- wp:group {"className":"quick-facts","style":{"spacing":{"blockGap":"12px"}}} -->
+	<div class="wp-block-group quick-facts">
+		<!-- Use a responsive list or dl in markup; here we use simple key/value items -->
+
+		<!-- Common name (title already shows main common name) - extra common names -->
+		<!-- wp:post-custom-field {"metaKey":"fish_common_name"} /-->
+
+		<!-- Habitat / Locations (taxonomy terms) -->
+		<!-- wp:post-terms {"term":"habitat","before":"Habitat: "} /-->
+
+		<!-- Fishing season -->
+		<!-- wp:post-custom-field {"metaKey":"fish_fishing_season"} /-->
+
+		<!-- Average size -->
+		<!-- wp:post-custom-field {"metaKey":"fish_average_size_value"} /-->
+		<!-- wp:post-custom-field {"metaKey":"fish_average_size_unit"} /-->
+
+		<!-- Preferred bait -->
+		<!-- wp:post-custom-field {"metaKey":"fish_preferred_bait"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Gallery (optional) -->
+	<!-- NOTE: Bind this Gallery block to the fish_gallery meta (fish_gallery) using Block Bindings or an SCF gallery block. -->
+	<!-- wp:group {"className":"fish-gallery","style":{"spacing":{"blockGap":"8px"}}} -->
+	<div class="wp-block-group fish-gallery">
+		<!-- wp:heading {"level":2} -->
+		<h2>Gallery</h2>
+		<!-- /wp:heading -->
+
+		<!-- wp:gallery {"columns":3} -->
+		<figure class="wp-block-gallery columns-3"></figure>
+		<!-- /wp:gallery -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Main Content: Description & Personal Story -->
+	<!-- wp:group {"className":"fish-content","style":{"spacing":{"blockGap":"16px"}}} -->
+	<div class="wp-block-group fish-content">
+
+		<!-- Description (meta) -->
+		<!-- wp:heading {"level":2} -->
+		<h2>About this species</h2>
+		<!-- /wp:heading -->
+
+		<!-- wp:post-custom-field {"metaKey":"fish_description","className":"species-description"} /-->
+
+		<!-- Brandon's personal story -->
+		<!-- wp:heading {"level":3} -->
+		<h3>Brandon’s Note</h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:post-custom-field {"metaKey":"fish_personal_story"} /-->
+
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Details & Related Info -->
+	<!-- wp:group {"className":"details-related","style":{"spacing":{"blockGap":"16px"}}} -->
+	<div class="wp-block-group details-related">
+
+		<!-- Details grid -->
+		<!-- wp:columns -->
+		<div class="wp-block-columns">
+			<!-- wp:column -->
+			<div class="wp-block-column">
+				<!-- wp:heading {"level":4} -->
+				<h4>Details</h4>
+				<!-- /wp:heading -->
+
+				<!-- habitat -->
+				<!-- wp:post-terms {"term":"habitat","before":"Habitat: "} /-->
+
+				<!-- season -->
+				<!-- wp:post-custom-field {"metaKey":"fish_fishing_season","before":"Season: "} /-->
+
+				<!-- bait -->
+				<!-- wp:post-custom-field {"metaKey":"fish_preferred_bait","before":"Bait: "} /-->
+			</div>
+			<!-- /wp:column -->
+
+			<!-- wp:column -->
+			<div class="wp-block-column">
+				<!-- wp:heading {"level":4} -->
+				<h4>Measurements</h4>
+				<!-- /wp:heading -->
+
+				<!-- size -->
+				<!-- wp:post-custom-field {"metaKey":"fish_average_size_value","before":"Average: "} /-->
+				<!-- wp:post-custom-field {"metaKey":"fish_average_size_unit"} /-->
+
+				<!-- regulations (optional field) -->
+				<!-- wp:post-custom-field {"metaKey":"fish_regulations"} /-->
+			</div>
+			<!-- /wp:column -->
+		</div>
+		<!-- /wp:columns -->
+
+		<!-- Related fish (by taxonomy) -->
+		<!-- wp:heading {"level":3} -->
+		<h3>Related fish</h3>
+		<!-- /wp:heading -->
+
+		<!-- Query Loop showing other fish in same habitat -->
+		<!-- wp:query {"queryId":3,"query":{"perPage":3,"postType":"fish","order":"asc","orderby":"title","inherit":true},"displayLayout":{"type":"flex","columns":3}} -->
+		<div class="wp-block-query">
+			<!-- wp:post-template -->
+			<!-- wp:group {"className":"related-card"} -->
+			<div class="wp-block-group related-card">
+				<!-- wp:post-featured-image {"isLink":true} /-->
+				<!-- wp:post-title {"level":4,"isLink":true} /-->
+				<!-- wp:post-custom-field {"metaKey":"fish_conservation_status","className":"conservation-badge-small"} /-->
+			</div>
+			<!-- /wp:group -->
+			<!-- /wp:post-template -->
+		</div>
+		<!-- /wp:query -->
+
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Actions & Links -->
+	<!-- wp:group {"className":"fish-actions","style":{"spacing":{"blockGap":"12px"}}} -->
+	<div class="wp-block-group fish-actions">
+		<!-- social share (use theme's social block) -->
+		<!-- wp:social-links {"iconColor":"foreground","iconColorValue":"#ffffff","size":"has-normal-icon-size"} -->
+		<ul class="wp-block-social-links"></ul>
+		<!-- /wp:social-links -->
+
+		<!-- action buttons -->
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"className":"is-primary"} -->
+			<div class="wp-block-button is-primary"><a class="wp-block-button__link" href="/book">Book a guided trip</a></div>
+			<!-- /wp:button -->
+
+			<!-- wp:button {"className":"is-secondary"} -->
+			<div class="wp-block-button is-secondary"><a class="wp-block-button__link" href="/fish">Back to species</a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Footer CTA (just above site footer) -->
+	<!-- wp:group {"style":{"spacing":{"padding":"20px"}},"backgroundColor":"tertiary"} -->
+	<div class="wp-block-group has-tertiary-background-color" style="padding:20px">
+		<!-- wp:heading {"level":3} -->
+		<h3>Want a printable ID sheet?</h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"className":"is-primary"} -->
+			<div class="wp-block-button is-primary"><a class="wp-block-button__link" href="/download/id-sheet">Download ID Sheet</a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->
