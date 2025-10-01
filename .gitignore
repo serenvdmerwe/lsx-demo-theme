@@ -7,101 +7,101 @@
 # =============================================================================
 
 # macOS system files - Exclude Finder and system metadata
-.DS_Store                    # Finder folder settings
-.AppleDouble                 # Resource fork files
-.LSOverride                  # Launch Services override
-Thumbs.db                    # Windows thumbnail cache
-Icon?                        # Custom folder icons
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Icon?
 
 # macOS thumbnails and caches
-._*                          # AppleDouble files
+._*
 
 # macOS system directories
-.Spotlight-V100              # Spotlight search index
-.Trashes                     # Trash folder contents
-*.swp                        # Vi/Vim swap files
-*.swo                        # Vi/Vim swap files
+.Spotlight-V100
+.Trashes
+*.swp
+*.swo
 
 # =============================================================================
 # WORDPRESS CORE AND CONTENT
 # =============================================================================
 
 # WordPress core directories - Exclude if theme is in standalone repository
-/wp-admin/                   # WordPress admin interface
-/wp-includes/                # WordPress core functions
-wordpress/                   # WordPress installation directory
+/wp-admin/
+/wp-includes/
+wordpress/
 
 # WordPress content directories - Exclude user uploads and cache
-wp-content/uploads/          # Media library uploads
-wp-content/cache/            # WordPress caching directories
+wp-content/uploads/
+wp-content/cache/
 
 # =============================================================================
 # NODE.JS AND BUILD SYSTEM
 # =============================================================================
 
 # Node.js dependencies and build artifacts - WordPress development tooling
-node_modules/                # npm/yarn package dependencies
-npm-debug.log*               # npm error logs
-yarn-debug.log*              # Yarn error logs
-yarn-error.log*              # Yarn error logs
-dist/                        # Distribution build output
-build/                       # Webpack/build tool output
-.env                         # Environment variables (sensitive)
-.env.example                 # Environment template file
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+.env
+.env.example
 
 # =============================================================================
 # PHP DEPENDENCIES AND BUILD ARTIFACTS
 # =============================================================================
 
 # Composer PHP dependencies - WordPress coding standards tools
-vendor/                      # Composer packages (PHPCS, PHPUnit)
+vendor/
 # Note: composer.lock is included for reproducible WordPress development builds
 
 # CSS/Sass build artifacts - Generated files from source
-*.css.map                    # Sass source maps for debugging
-*.scssc                      # Sass cache files
+*.css.map
+*.scssc
 
 # =============================================================================
 # DEVELOPMENT TOOLS AND EDITORS
 # =============================================================================
 
 # IDE and editor configurations - Personal development environment settings
-.vscode/                     # VS Code workspace settings (exclude personal configs)
-.idea/                       # JetBrains IDE settings
-*.code-workspace             # VS Code workspace files
-.devcontainer/.env           # Development container environment
+.vscode/
+.idea/
+*.code-workspace
+.devcontainer/.env
 
 # =============================================================================
 # LOCAL DEVELOPMENT ENVIRONMENTS
 # =============================================================================
 
 # WordPress local development tools
-.local/                      # Local by Flywheel sites
-.localwp-site/               # LocalWP site configurations
+.local/
+.localwp-site/
 
 # =============================================================================
 # TEMPORARY AND LOG FILES
 # =============================================================================
 
 # General temporary files
-*.log                        # All log files
-*.tmp                        # Temporary files
-*.bak                        # Backup files
+*.log
+*.tmp
+*.bak
 
 # =============================================================================
 # THEME-SPECIFIC BUILD ARTIFACTS
 # =============================================================================
 
 # WordPress theme build outputs
-style.css.map                # Main theme CSS source map
-theme.zip                    # Theme distribution package
+style.css.map
+theme.zip
 
 # =============================================================================
 # TESTING FRAMEWORKS
 # =============================================================================
 
 # Playwright end-to-end testing artifacts
-/test-results/               # Test execution results
-/playwright-report/          # HTML test reports
-/blob-report/                # Binary test artifacts
-/playwright/.cache/          # Playwright browser cache
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

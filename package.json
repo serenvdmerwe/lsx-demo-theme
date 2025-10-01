@@ -19,11 +19,8 @@
     "version": "1.0.0",
     "description": "A modern WordPress block theme with Full Site Editing capabilities",
     "scripts": {
-        "build:css": "sass src/scss/style.scss | postcss > assets/css/style.css && cat src/style-header.css assets/css/style.css > style.css",
-        "build:editor": "sass src/scss/editor.scss | postcss > assets/css/editor.css",
-        "watch:css": "concurrently \"sass --watch src/scss/style.scss:tmp/style.css\" \"postcss --watch tmp/style.css -o style.css\"",
         "start": "wp-scripts start",
-        "build": "wp-scripts build && npm run build:css && npm run build:editor",
+        "build": "wp-scripts build",
         "format": "wp-scripts format",
         "lint:css": "wp-scripts lint-style",
         "lint:js": "wp-scripts lint-js",
@@ -32,6 +29,7 @@
         "test:a11y": "playwright test tests/accessibility"
     },
     "devDependencies": {
+        "@axe-core/playwright": "4.10.2",
         "@playwright/test": "1.55.0",
         "@types/node": "24.3.1",
         "@wordpress/scripts": "^27.0.0",

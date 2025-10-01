@@ -1,21 +1,19 @@
-# Week 4 Reflection Template
+# Week 04 Log and Reflection
 
-Complete this reflection at the end of Week 1.  Use it to think deeply about your progress and plan the next week.
+## Weekly Reflection
 
-## What went well?
+### What went well?
+This week was marked by steady progress and a deepening understanding of GitHub Copilot Spaces, custom instructions, and workflow integration. Each day brought its own set of accomplishments, including refining documentation, preparing and exporting instructional files, and collaborating with the team. Working closely with Seren, Ash, Zared, and Warick was valuable for both technical growth and team synergy. Resolving setup issues, updating the website brief, and experimenting with Copilot guidance led to more productive and enjoyable work sessions. Meetings about prompting strategies were especially insightful and contributed to improved project direction.
 
-Describe the successes of this week.  Which tasks or concepts were straightforward?  What are you proud of?
+### What can be improved?
+While overall productivity was strong, there were minor workflow interruptions caused by file configuration errors (.gitattributes and .gitignore). Although these were resolved quickly, a more thorough review before running processes could help prevent such errors. Additionally, balancing meeting times and focused work blocks could optimize output and reduce context switching.
 
-## What can be improved?
+### What have you learned?
+This week solidified my grasp of how to leverage Copilot Spaces and custom instructions effectively. I gained firsthand experience in preparing AI-ready documentation, troubleshooting integration errors, and orchestrating multi-step prompts for Copilot. Through meetings and collaborative work, I also learned new prompting techniques and approaches to instruction design that will be useful for future projects. Overall, my confidence in using Copilot for complex workflows has grown significantly.
 
-Identify areas where you struggled or could be more efficient.  Consider workflow, communication and time management.
-
-## What have you learned?
-
-Summarise the key takeaways from this week.  Mention new tools, concepts or patterns you mastered.
-
-## What are your next actions?
-
-List the concrete steps you will take next week to continue your progress.  These could be tasks from the curriculum, topics to study or goals to achieve.
-
-Use this reflection to prepare your Week 1 submission issue.  Reflective writing helps consolidate knowledge and demonstrates growth.
+### What are your next actions?
+- Continue refining and expanding the Copilot instruction set and documentation.
+- Apply improved prompting strategies learned from team discussions to new tasks.
+- Further automate the integration of instructional files and streamline error handling.
+- Plan for deeper dives into advanced Copilot features and experiment with chat modes for more tailored AI assistance.
+- Maintain regular team check-ins while protecting blocks of uninterrupted work time to maximize productivity.

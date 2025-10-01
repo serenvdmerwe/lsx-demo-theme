@@ -1,35 +1,28 @@
-# Week 4, Day 3 Log Template
+# Week 4, Day 3 Log 2025-09-24
 
-This template illustrates how to structure your daily log.  Duplicate this file for each day of the week and replace the placeholder text with your own entries.
+## Today's Progress
 
-## Daily Standup
+### What have you accomplished today?
 
-### How do you feel today?
+-   Today was a public holiday, so no work-related tasks were completed.
 
-Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
+### How do you feel about today’s progress?
 
-### What did you do yesterday?
+I took the day off to rest and recharge. I feel refreshed and ready to tackle tasks tomorrow.
 
-Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
+---
 
-### What do you plan to do today?
+## Challenges Faced Today
 
-List the tasks you intend to work on today.  Use a checklist to break them down:
+-   None today, as it was a public holiday.
 
-- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
-- [ ] Add more tasks as needed.
+---
 
-### What are your blockers?
+## Time Logs
 
-Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
+---
 
-## Daily Logs
+## Notes
 
-Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
-
-```
-- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
-- 2.0 hrs – read WordPress block theme documentation and took notes
-```
-
-You can draft notes throughout the day in this section and refine them before committing.
+-   Taking a break today was important for maintaining productivity and focus for the rest of the week.
+-   I’ll resume work tomorrow with a focus on pending tasks and priorities.

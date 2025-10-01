@@ -1,0 +1,137 @@
+<!--
+Template: taxonomy-species.html
+Purpose: Species taxonomy archive (content between header and footer)
+Notes:
+- Shows the species term (name/description), optional representative image (term meta), and lists all content tagged with this species.
+- Query Loop is configured to show multiple post types (fish, catches, posts) as appropriate.
+- If you maintain a canonical Fish post for each species, surface a "Species Guide" card/link at the top linking to that post (term meta or editorial field can store the canonical post ID).
+-->
+
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group">
+
+  <!-- Hero -->
+  <!-- wp:group {"style":{"spacing":{"blockGap":"8px"}}} -->
+  <div class="wp-block-group">
+    <!-- wp:archive-title {"level":1} /-->
+    <!-- wp:archive-description /-->
+
+    <!-- Optional representative image (term meta 'species_featured_image') -->
+    <!-- wp:image {"className":"term-hero-image"} -->
+    <figure class="wp-block-image term-hero-image"></figure>
+    <!-- /wp:image -->
+
+    <!-- Optional canonical species guide link (term meta 'species_canonical_post_id') -->
+    <!-- wp:group {"className":"species-guide-cta"} -->
+    <div class="wp-block-group species-guide-cta">
+      <!-- wp:paragraph -->
+      <p>Looking for the full species guide? See the canonical entry below if available.</p>
+      <!-- /wp:paragraph -->
+      <!-- wp:buttons -->
+      <div class="wp-block-buttons">
+        <!-- wp:button {"className":"is-primary"} -->
+        <div class="wp-block-button is-primary"><a class="wp-block-button__link" id="species-guide-link">View species guide</a></div>
+        <!-- /wp:button -->
+      </div>
+      <!-- /wp:buttons -->
+    </div>
+    <!-- /wp:group -->
+
+  </div>
+  <!-- /wp:group -->
+
+  <!-- Context / Stats -->
+  <!-- wp:group {"className":"term-stats","style":{"spacing":{"blockGap":"8px"}}} -->
+  <div class="wp-block-group term-stats">
+    <!-- wp:paragraph -->
+    <p><strong><!-- dynamic: total items for this species --></strong> items tagged with this species</p>
+    <!-- /wp:paragraph -->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- Query Loop: show all content tagged with the current species term -->
+  <!-- wp:query {"queryId":4,"query":{"perPage":12,"pages":0,"offset":0,"postType":["fish","catch","post"],"order":"desc","orderby":"date","inherit":true},"displayLayout":{"type":"flex","columns":3}} -->
+  <div class="wp-block-query">
+    <!-- wp:query-wrapper -->
+    <div class="wp-block-query__wrapper">
+
+      <!-- wp:post-template -->
+      <!-- Card: Mixed Content Card (shows thumbnail, title, post type label, excerpt, and link) -->
+      <!-- wp:group {"className":"species-content-card","style":{"spacing":{"blockGap":"8px"}}} -->
+      <div class="wp-block-group species-content-card">
+
+        <!-- thumbnail -->
+        <!-- wp:post-featured-image {"isLink":true} /-->
+
+        <!-- post-type label -->
+        <!-- wp:post-template {"className":"post-type-label"} -->
+        <p class="post-type-label"><!-- dynamic: post type label --></p>
+        <!-- /wp:post-template -->
+
+        <!-- title -->
+        <!-- wp:post-title {"level":3,"isLink":true} /-->
+
+        <!-- excerpt -->
+        <!-- wp:post-excerpt {"moreText":"Read more","isLink":true} /-->
+
+      </div>
+      <!-- /wp:group -->
+      <!-- /wp:post-template -->
+
+      <!-- wp:query-no-results -->
+      <!-- wp:group -->
+      <div class="wp-block-group">
+        <!-- wp:heading {"level":3} -->
+        <h3>No content found for this species</h3>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph -->
+        <p>There are currently no posts, catches, or guides tagged with this species. Try exploring related species or report a sighting.</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:buttons -->
+        <div class="wp-block-buttons">
+          <!-- wp:button {"className":"is-primary"} -->
+          <div class="wp-block-button is-primary"><a class="wp-block-button__link" href="/fish">Browse all species</a></div>
+          <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+      </div>
+      <!-- /wp:group -->
+      <!-- /wp:query-no-results -->
+
+    </div>
+    <!-- /wp:query-wrapper -->
+  </div>
+  <!-- /wp:query -->
+
+  <!-- Pagination -->
+  <!-- wp:group {"style":{"spacing":{"blockGap":"12px"}}} -->
+  <div class="wp-block-group">
+    <!-- wp:query-pagination {"className":"is-centered"} -->
+      <!-- wp:query-pagination-previous /-->
+      <!-- wp:query-pagination-numbers /-->
+      <!-- wp:query-pagination-next /-->
+    <!-- /wp:query-pagination -->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- Call to Action Pattern -->
+  <!-- wp:group {"style":{"spacing":{"padding":"20px"}},"backgroundColor":"quaternary"} -->
+  <div class="wp-block-group has-quaternary-background-color" style="padding:20px">
+    <!-- wp:heading {"level":3} -->
+    <h3>Help improve species data</h3>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph -->
+    <p>Report a sighting, send a photo, or suggest edits to the species guide.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:buttons -->
+    <div class="wp-block-buttons">
+      <!-- wp:button {"className":"is-primary"} -->
+      <div class="wp-block-button is-primary"><a class="wp-block-button__link" href="/report-sighting">Report a sighting</a></div>
+      <!-- /wp:button -->
+    </div>
+    <!-- /wp:buttons -->
+  </div>
+  <!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->
