@@ -1,35 +1,42 @@
-# Week 4, Day 5 Log Template
+# Week 4, Day 5 Log 2025-09-26
 
-This template illustrates how to structure your daily log.  Duplicate this file for each day of the week and replace the placeholder text with your own entries.
+## Today's Progress
 
-## Daily Standup
+### What have you accomplished today?
 
-### How do you feel today?
+-   Re-formatted the tabs in the Website Structure document.
+-   Made final updates to my website brief in the docs.
+-   Exported 16 tabs from my document into .md format to use as instructions for Copilot agent/spaces. Edited and added them to my repo.
+-   Used the new .md instruction files as guidelines, along with the WordPress block theme spaces in lightspeed, to prompt Copilot to start the tasks. Experienced and resolved some errors during this process and had to re-run some jobs.
+-   Attended a meeting with Ash, Seren, Zared, and Warick regarding the incredible prompting Zared developed.
+-   Had a catch-up meeting with Seren.
 
-Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
+### How do you feel about today’s progress?
 
-### What did you do yesterday?
+Today was a really good day. I got through a lot of work and my understanding of Copilot Spaces, custom instructions, prompts, and chat modes is improving. I’m really enjoying this learning process.
 
-Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
+---
 
-### What do you plan to do today?
+## Challenges Faced Today
 
-List the tasks you intend to work on today.  Use a checklist to break them down:
+No major challenges today. I encountered some errors related to .gitattributes and .gitignore, but I managed to resolve them quickly.
 
-- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
-- [ ] Add more tasks as needed.
+---
 
-### What are your blockers?
+## Time Logs
 
-Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
+-   1.0 hrs – Re-formatting tabs in Website Structure document.
+-   1.0 hrs – Final updates to website brief.
+-   2.0 hrs – Exporting 16 tabs to .md, formatting, and adding to repo.
+-   4.0 hrs – Using instruction files and block theme spaces to prompt Copilot, resolving errors and re-running jobs.
+-   0.75 hrs – Meeting with Ash, Seren, Zared, and Warick.
+-   1.0 hrs – Catch-up meeting with Seren.
 
-## Daily Logs
+---
 
-Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
+## Notes
 
-```
-- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
-- 2.0 hrs – read WordPress block theme documentation and took notes
-```
-
-You can draft notes throughout the day in this section and refine them before committing.
+-   Exporting the instruction files and integrating them into the repo was a productive step, allowing for more effective use of Copilot Spaces.
+-   The meeting about prompting techniques was insightful—excited to apply some of Zared’s methods to future tasks.
+-   Overall, today demonstrated significant progress in both technical skills and workflow efficiency.
+-   I’m feeling more confident using Copilot Spaces and customizing instructions, and I’m enjoying the learning journey.
