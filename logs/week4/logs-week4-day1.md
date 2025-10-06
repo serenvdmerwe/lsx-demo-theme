@@ -1,35 +1,39 @@
-# Week 4, Day 1 Log Template
+# Week 4, Day 1 Log 2025-09-22
 
-This template illustrates how to structure your daily log.  Duplicate this file for each day of the week and replace the placeholder text with your own entries.
+## Today's Progress
 
-## Daily Standup
+### What have you accomplished today?
 
-### How do you feel today?
+-   Read through the project scope for the web project.
+-   Caught up with @Seren for this week's planning.
+-   Explored the awesome-copilot repository to look for prompts and chat modes to add to our repo.
+-   Studied GitHub skills for certification.
+-   Reviewed the file @Ash created over the weekend regarding Copilot.
 
-Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
+### How do you feel about today’s progress?
 
-### What did you do yesterday?
+I feel productive and focused. I made good progress on understanding the project scope and identifying useful prompts for our repository. The catch-up sessions were helpful for planning the week ahead.
 
-Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
+---
 
-### What do you plan to do today?
+## Challenges Faced Today
 
-List the tasks you intend to work on today.  Use a checklist to break them down:
+-   It took longer than expected to go through the awesome-copilot repository due to the volume of content.
+-   Balancing time between studying and project tasks was a bit challenging.
 
-- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
-- [ ] Add more tasks as needed.
+---
 
-### What are your blockers?
+## Time Logs
 
-Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
+-   1.5 hrs – Read through the project scope for the web project.
+-   1.0 hrs – Caught up with @Seren for this week's planning.
+-   3.0 hrs – Explored the awesome-copilot repository to look for prompts and chat modes to add to our repo.
+-   2.0 hrs – Studied GitHub skills for certification.
+-   0.5 hrs – Reviewed the file @Ash created over the weekend regarding Copilot.
 
-## Daily Logs
+---
 
-Copy your Harvest time entries here.  Use bullets to list each time entry along with a brief description.  For example:
+## Notes
 
-```
-- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
-- 2.0 hrs – read WordPress block theme documentation and took notes
-```
-
-You can draft notes throughout the day in this section and refine them before committing.
+-   The awesome-copilot repository has a lot of potential for improving our workflow. I’ll need to revisit it later to finalize the prompts and chat modes.
+-   The file from @Ash provided some great insights into using Copilot more effectively.
