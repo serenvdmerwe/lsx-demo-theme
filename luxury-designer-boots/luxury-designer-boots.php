@@ -21,7 +21,13 @@ if (! class_exists('LBC_Designer_Boots')) {
 		const PREFIX  = 'lbc_';
 
 		/**
-		 * Singleton.
+		 * Initializes the singleton instance of the plugin class and sets up all WordPress hooks.
+		 *
+		 * This method ensures that only one instance of the plugin class exists during runtime,
+		 * following the singleton design pattern. Call this method once to bootstrap the plugin.
+		 *
+		 * @return void
+		 * @since 1.0.0
 		 */
 		public static function init(): void
 		{
