@@ -596,8 +596,8 @@ if (! class_exists('LBC_Designer_Boots')) {
 			 * @since 1.0.1 Added CSV based seeding.
 			 * @return array[] List of seed post arrays (title, excerpt, meta[], tax[])
 			 */
-			// Use dirname(__FILE__) instead of plugin_dir_path to avoid issues in certain lint contexts.
-			$csv_path = dirname(__FILE__) . '/seed-designer-boots.csv';
+			// Use plugin_dir_path(__FILE__) for WordPress standard and better edge case handling.
+			$csv_path = plugin_dir_path(__FILE__) . 'seed-designer-boots.csv';
 			$posts    = [];
 			if (file_exists($csv_path) && is_readable($csv_path)) {
 				$lines = file($csv_path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
