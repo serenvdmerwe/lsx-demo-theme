@@ -1,0 +1,56 @@
+<!--
+ Single template for Designer Boot (CPT designer_boot)
+ Layout: Hero (Featured) -> Two-column (Description vs Fact Box pattern) -> Gallery -> Notes
+ Accessibility: One visible H1; Gallery and Description use proper headings; list semantics for facts via pattern
+-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- Hero (featured image + title) -->
+<!-- wp:group {"tagName":"section","className":"boot-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group boot-hero">
+    <!-- wp:post-featured-image {"aspectRatio":"3/2"} /-->
+    <!-- wp:post-title {"level":1,"fontSize":"font-size-800"} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- Main content + facts -->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained","contentSize":"1200px"}} -->
+<main class="wp-block-group">
+    <!-- wp:columns {"align":"wide"} -->
+    <div class="wp-block-columns alignwide">
+        <!-- wp:column -->
+        <div class="wp-block-column">
+            <!-- Rich Description -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->
+            <div class="wp-block-group">
+                <!-- wp:heading {"level":2} -->
+                <h2>Description</h2>
+                <!-- /wp:heading -->
+                <!-- wp:post-content /-->
+                <!-- If using meta field lbc_description_rich, consider a custom dynamic block to inject its content here. -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column -->
+        <div class="wp-block-column">
+            <!-- wp:pattern {"slug":"heels-luxe/boot-fact-box"} /-->
+        </div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+
+    <!-- Gallery -->
+    <!-- wp:heading {"level":2} -->
+    <h2>Gallery</h2>
+    <!-- /wp:heading -->
+    <!-- wp:gallery {"linkTo":"none"} /-->
+
+    <!-- Personal Notes (optional) -->
+    <!-- You can map meta (lbc_personal_notes) with a custom dynamic block or shortcode if desired. -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

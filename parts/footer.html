@@ -1,1 +1,70 @@
+<!-- Footer Template Part (custom markup) -->
+<!-- Original pattern reference retained: -->
 <!-- wp:pattern {"slug":"lsx-demo-theme/footer"} /-->
+
+<!-- wp:group {"tagName":"footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-70","bottom":"var:preset|spacing|spacing-50"}},"border":{"top":{"color":"var:preset|color|neutral-300","width":"1px"}}},"layout":{"type":"constrained"}} -->
+<footer id="footer">
+    <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-50","left":"var:preset|spacing|spacing-50"}}}} -->
+    <div class="wp-block-columns">
+        <!-- Column 1 -->
+        <!-- wp:column -->
+        <div class="wp-block-column">
+            <!-- wp:site-logo {"width":48} /-->
+            <!-- wp:paragraph {"fontSize":"small"} -->Crafted to Command<!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- Column 2 Shop -->
+        <!-- wp:column -->
+        <div class="wp-block-column">
+            <!-- wp:heading {"level":6} -->Shop<!-- /wp:heading -->
+            <!-- wp:navigation {"overlayMenu":"never","className":"footer-shop"} /-->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- Column 3 Journal -->
+        <!-- wp:column -->
+        <div class="wp-block-column">
+            <!-- wp:heading {"level":6} -->Journal<!-- /wp:heading -->
+            <!-- wp:navigation {"overlayMenu":"never","className":"footer-journal"} /-->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- Column 4 Brand -->
+        <!-- wp:column -->
+        <div class="wp-block-column">
+            <!-- wp:heading {"level":6} -->Brand<!-- /wp:heading -->
+            <!-- wp:navigation {"overlayMenu":"never","className":"footer-brand"} /-->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- Column 5 Contact -->
+        <!-- wp:column -->
+        <div class="wp-block-column">
+            <!-- wp:heading {"level":6} -->Connect<!-- /wp:heading -->
+            <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#000","layout":{"type":"flex","justifyContent":"left"}} -->
+            <ul class="wp-block-social-links">
+                <!-- wp:social-link {"service":"instagram"} /-->
+                <!-- wp:social-link {"service":"pinterest"} /-->
+                <!-- wp:social-link {"service":"youtube"} /-->
+                <!-- wp:social-link {"service":"linkedin"} /-->
+            </ul>
+            <!-- /wp:social-links -->
+        </div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+
+    <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-50","bottom":"var:preset|spacing|spacing-30"}}}} /-->
+
+    <!-- Bottom bar -->
+    <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"},"style":{"spacing":{"blockGap":"1rem"}}} -->
+    <div>
+        <!-- wp:paragraph {"fontSize":"small"} -->©
+        <?php echo date('Y'); ?>
+        Luxury Black Heels.<!-- /wp:paragraph -->
+        <!-- wp:navigation {"className":"footer-legal","overlayMenu":"never"} /-->
+    </div>
+    <!-- /wp:group -->
+</footer>
+<!-- /wp:group -->
