@@ -652,7 +652,7 @@ if (! class_exists('LBC_Designer_Boots')) {
 						$tax = [];
 						foreach ($tax_map as $csv_col => $tax_name) {
 							if (! empty($data[$csv_col])) {
-								$terms = array_filter(array_map('trim', preg_split('/\|/', $data[$csv_col])));
+								$terms = array_filter(array_map('trim', explode('|', $data[$csv_col])));
 								if ($terms) {
 									$tax[$tax_name] = $terms;
 								}
