@@ -11,7 +11,7 @@
  */
 
 // Adds theme support for post formats.
-if (! function_exists('lsx_demo_theme_post_format_setup')) :
+if (! function_exists('lsx_demo_theme_post_format_setup')) {
 	/**
 	 * Adds theme support for post formats.
 	 *
@@ -23,7 +23,7 @@ if (! function_exists('lsx_demo_theme_post_format_setup')) :
 	{
 		add_theme_support('post-formats', array('aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'));
 	}
-endif;
+}
 add_action('after_setup_theme', 'lsx_demo_theme_post_format_setup');
 
 // Enqueues editor-style.css in the editors.
@@ -43,7 +43,7 @@ if (! function_exists('lsx_demo_theme_editor_style')) {
 add_action('after_setup_theme', 'lsx_demo_theme_editor_style');
 
 // Enqueues style.css on the front.
-if (! function_exists('lsx_demo_theme_enqueue_styles')) :
+if (! function_exists('lsx_demo_theme_enqueue_styles')) {
 	/**
 	 * Enqueues style.css on the front.
 	 *
@@ -60,11 +60,11 @@ if (! function_exists('lsx_demo_theme_enqueue_styles')) :
 			wp_get_theme()->get('Version')
 		);
 	}
-endif;
+}
 add_action('wp_enqueue_scripts', 'lsx_demo_theme_enqueue_styles');
 
 // Registers custom block styles.
-if (! function_exists('lsx_demo_theme_block_styles')) :
+if (! function_exists('lsx_demo_theme_block_styles')) {
 	/**
 	 * Registers custom block styles.
 	 *
@@ -83,11 +83,11 @@ if (! function_exists('lsx_demo_theme_block_styles')) :
 			)
 		);
 	}
-endif;
+}
 add_action('init', 'lsx_demo_theme_block_styles');
 
 // Registers pattern categories.
-if (! function_exists('lsx_demo_theme_pattern_categories')) :
+if (! function_exists('lsx_demo_theme_pattern_categories')) {
 	/**
 	 * Registers pattern categories.
 	 *
@@ -97,7 +97,6 @@ if (! function_exists('lsx_demo_theme_pattern_categories')) :
 	 */
 	function lsx_demo_theme_pattern_categories()
 	{
-
 		register_block_pattern_category(
 			'lsx_demo_theme_page',
 			array(
@@ -122,11 +121,11 @@ if (! function_exists('lsx_demo_theme_pattern_categories')) :
 			)
 		);
 	}
-endif;
+}
 add_action('init', 'lsx_demo_theme_pattern_categories');
 
 // Registers block binding sources.
-if (! function_exists('lsx_demo_theme_register_block_bindings')) :
+if (! function_exists('lsx_demo_theme_register_block_bindings')) {
 	/**
 	 * Registers the post format block binding source.
 	 *
@@ -144,11 +143,11 @@ if (! function_exists('lsx_demo_theme_register_block_bindings')) :
 			)
 		);
 	}
-endif;
+}
 add_action('init', 'lsx_demo_theme_register_block_bindings');
 
 // Registers block binding callback function for the post format name.
-if (! function_exists('lsx_demo_theme_format_binding')) :
+if (! function_exists('lsx_demo_theme_format_binding')) {
 	/**
 	 * Callback function for the post format name block binding source.
 	 *
@@ -164,7 +163,7 @@ if (! function_exists('lsx_demo_theme_format_binding')) :
 			return get_post_format_string($post_format_slug);
 		}
 	}
-endif;
+}
 
 /**
  * -----------------------------------------------------------------------------
