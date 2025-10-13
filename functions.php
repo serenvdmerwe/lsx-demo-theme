@@ -29,9 +29,21 @@ if (! defined('LSX_DEMO_THEME_VERSION')) {
  */
 function lsx_demo_theme_require_inc($file)
 {
+	// Only allow filenames ending with .php, no slashes or traversal
+	if (
+		!is_string($file) ||
+		strpos($file, '/') !== false ||
+		strpos($file, '\\') !== false ||
+		strpos($file, '..') !== false ||
+		substr($file, -4) !== '.php'
+	) {
+		return;
+	}
+	$inc_dir = realpath(get_theme_file_path('inc'));
 	$path = get_theme_file_path('inc/' . $file);
-	if (file_exists($path)) {
-		require_once $path; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
+	$real_path = realpath($path);
+	if ($real_path && strpos($real_path, $inc_dir) === 0 && file_exists($real_path)) {
+		require_once $real_path; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
 	}
 }
 
