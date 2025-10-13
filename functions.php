@@ -203,6 +203,17 @@ if (! function_exists('lsx_demo_theme_core_setup')) {
 		add_theme_support('html5', array('script', 'style', 'gallery', 'caption', 'comment-form', 'comment-list', 'navigation-widgets', 'search-form'));
 		add_theme_support('automatic-feed-links');
 		add_theme_support('editor-styles');
+		// Custom logo (allow flexible for SVG sizing). Width/height nominal; style via CSS.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 128,
+				'width'       => 128,
+				'flex-height' => true,
+				'flex-width'  => true,
+				'unlink-homepage-logo' => true,
+			)
+		);
 
 		// Editor stylesheet (already adding editor-style.css above – keep both if file exists).
 		add_editor_style('assets/css/editor.css');
@@ -302,6 +313,101 @@ add_action('init', function () {
 		}
 	}
 });
+
+/**
+ * Inline SVG logo helper.
+ *
+ * Loads the theme's stiletto boot SVG and returns sanitized markup. Allows replacing
+ * accessible name via parameter. Designed for usage as a fallback custom logo or
+ * anywhere a small vector site mark is needed.
+ *
+ * @since 1.0.2
+ *
+ * @param array $args Optional args: aria_label (string), class (string), title (string).
+ * @return string Sanitized SVG or empty string if file missing.
+ */
+function lsx_demo_theme_inline_logo_svg($args = array())
+{
+	$defaults = array(
+		'aria_label' => get_bloginfo('name'),
+		'class'      => 'site-logo-svg',
+		'title'      => '',
+	);
+	$args = wp_parse_args($args, $defaults);
+	$relative = 'assets/images/icons/boot-stiletto.svg';
+	$path = get_theme_file_path($relative);
+	if (! file_exists($path)) {
+		return '';
+	}
+	$raw = file_get_contents($path); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+	// Tight allowlist of elements & attributes.
+	$allowed = array(
+		'svg'  => array(
+			'xmlns'      => true,
+			'viewBox'    => true,
+			'width'      => true,
+			'height'     => true,
+			'role'       => true,
+			'aria-label' => true,
+			'class'      => true,
+		),
+		'title' => array(),
+		'path' => array(
+			'd'    => true,
+			'fill' => true,
+		),
+	);
+	$svg = wp_kses($raw, $allowed);
+	// Ensure we add / replace class & aria-label.
+	$class_attr = esc_attr(trim($args['class']));
+	$aria = esc_attr($args['aria_label']);
+	// Remove existing title if we will insert a custom one.
+	if (! empty($args['title'])) {
+		$svg = preg_replace('/<title>.*?<\/title>/is', '', $svg);
+	}
+	// Inject aria-label & class (first <svg ...>). Keep role="img" for AT consistency.
+	$svg = preg_replace(
+		'/<svg\b([^>]*)>/i',
+		'<svg$1 class="' . $class_attr . '" role="img" aria-label="' . $aria . '">',
+		$svg,
+		1
+	);
+	if (! empty($args['title'])) {
+		$svg = preg_replace('/<svg([^>]*)>/', '<svg$1><title>' . esc_html($args['title']) . '</title>', $svg, 1);
+	}
+	return $svg;
+}
+
+/**
+ * Fallback custom logo output.
+ *
+ * Filters get_custom_logo: if no custom logo set, outputs inline SVG wrapped in link.
+ *
+ * @since 1.0.2
+ * @param string $html Current HTML.
+ * @return string Modified/fallback HTML.
+ */
+function lsx_demo_theme_custom_logo_fallback($html)
+{
+	if (! has_custom_logo()) {
+		$svg = lsx_demo_theme_inline_logo_svg(array('title' => get_bloginfo('name')));
+		if ($svg) {
+			$home = esc_url(home_url('/'));
+			$name = esc_attr(get_bloginfo('name'));
+			// Ensure svg carries the core "custom-logo" class for consistent styling with WP core expectations.
+			if (false === strpos($svg, 'custom-logo')) {
+				$svg = preg_replace('/<svg(\b[^>]*)class="([^"]*)"/i', '<svg$1class="$2 custom-logo"', $svg, 1);
+				// If no class attr at all, inject one.
+				if (false === strpos($svg, 'class="')) {
+					$svg = preg_replace('/<svg(\b[^>]*)>/i', '<svg$1 class="custom-logo">', $svg, 1);
+				}
+			}
+			$html = '<a href="' . $home . '" class="custom-logo-link" rel="home" aria-label="' . $name . '">' . $svg . '</a>';
+		}
+	}
+	return $html;
+}
+add_filter('get_custom_logo', 'lsx_demo_theme_custom_logo_fallback');
 
 /**
  * (Optional) CPT & taxonomies were supplied in snippet but already implemented via plugin.
