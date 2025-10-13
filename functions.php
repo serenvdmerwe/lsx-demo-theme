@@ -27,7 +27,7 @@ endif;
 add_action('after_setup_theme', 'lsx_demo_theme_post_format_setup');
 
 // Enqueues editor-style.css in the editors.
-if (! function_exists('lsx_demo_theme_editor_style')) :
+if (! function_exists('lsx_demo_theme_editor_style')) {
 	/**
 	 * Enqueues editor-style.css in the editors.
 	 *
@@ -39,7 +39,7 @@ if (! function_exists('lsx_demo_theme_editor_style')) :
 	{
 		add_editor_style(get_parent_theme_file_uri('assets/css/editor-style.css'));
 	}
-endif;
+}
 add_action('after_setup_theme', 'lsx_demo_theme_editor_style');
 
 // Enqueues style.css on the front.
