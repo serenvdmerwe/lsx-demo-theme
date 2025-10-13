@@ -79,14 +79,7 @@ if (! function_exists('lsx_demo_theme_block_styles')) :
 			array(
 				'name'         => 'checkmark-list',
 				'label'        => __('Checkmark', 'lsx-demo-theme'),
-				'inline_style' => '
-				ul.is-style-checkmark-list {
-					list-style-type: "\2713";
-				}
-
-				ul.is-style-checkmark-list li {
-					padding-inline-start: 1ch;
-				}',
+				'inline_style' => 'ul.is-style-checkmark-list { list-style-type: "\2713"; } ul.is-style-checkmark-list li { padding-inline-start: 1ch; }',
 			)
 		);
 	}
