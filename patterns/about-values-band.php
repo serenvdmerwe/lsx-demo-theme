@@ -9,7 +9,7 @@
  * ViewportWidth: 1400
  */
 ?>
-<!-- wp:group {"style":{"color":{"background":"var:preset|color|neutral-200"},"spacing":{"padding":{"top":"var:preset|spacing|spacing-70","bottom":"var:preset|spacing|spacing-70"},"blockGap":"var:preset|spacing|spacing-50"}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"style":{"color":{"background":"var:preset|color|neutral-300"},"spacing":{"padding":{"top":"var:preset|spacing|spacing-70","bottom":"var:preset|spacing|spacing-70"},"blockGap":"var:preset|spacing|spacing-50"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
 	<!-- wp:heading {"level":2} -->Values<!-- /wp:heading -->
 	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-40","left":"var:preset|spacing|spacing-40"}}}} -->

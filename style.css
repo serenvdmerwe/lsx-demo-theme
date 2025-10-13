@@ -1,9 +1,9 @@
 /*
 Theme Name: lsx-demo-theme
-Theme URI: 
-Author: 
-Author URI: 
-Description: 
+Theme URI:
+Author:
+Author URI:
+Description:
 Requires at least: 6.8
 Tested up to: 6.8
 Requires PHP: 7.2
@@ -23,43 +23,86 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
  * https://github.com/WordPress/gutenberg/issues/42319
  */
 a {
-	text-decoration-thickness: 1px !important;
-	text-underline-offset: .1em;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 0.1em;
 }
 
-/* Focus styles */
+/* Focus styles (dark theme) */
 :where(.wp-site-blocks *:focus) {
-	outline-width: 2px;
-	outline-style: solid;
+    outline: 2px solid var(--wp--preset--color--accent-2, #4a1c2c);
+    outline-offset: 2px;
 }
 
 /* Increase the bottom margin on submenus, so that the outline is visible. */
-.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
-	margin-bottom: 3px;
+.wp-block-navigation
+    .wp-block-navigation-submenu
+    .wp-block-navigation-item:not(:last-child) {
+    margin-bottom: 3px;
 }
 
 /* Increase the outline offset on the parent menu items, so that the outline does not touch the text. */
-.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
-	outline-offset: 4px;
+.wp-block-navigation
+    .wp-block-navigation-item
+    .wp-block-navigation-item__content {
+    outline-offset: 4px;
 }
 
 /* Remove outline offset from the submenus, otherwise the outline is visible outside the submenu container. */
-.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-	outline-offset: 0;
+.wp-block-navigation
+    .wp-block-navigation-item
+    ul.wp-block-navigation__submenu-container
+    .wp-block-navigation-item__content {
+    outline-offset: 0;
 }
 
 /*
  * Progressive enhancement to reduce widows and orphans
  * https://github.com/WordPress/gutenberg/issues/55190
  */
-h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
-	text-wrap: pretty;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+caption,
+figcaption,
+p {
+    text-wrap: pretty;
 }
+
+/* Site logo SVG normalization */
+.custom-logo-link .custom-logo {
+    display: inline-block;
+    width: clamp(48px, 6vw, 96px);
+    height: auto;
+}
+.custom-logo-link .custom-logo path {
+    fill: currentColor; /* inherit text color for easy theming */
+}
+/* Variant handling: hide wordmark on very small screens */
+.custom-logo-link .logo-wordmark {
+    display: none;
+}
+.custom-logo-link .logo-icon {
+    display: inline-block;
+}
+@media (min-width: 640px) {
+    .custom-logo-link .logo-wordmark {
+        display: inline-block;
+        width: clamp(160px, 30vw, 320px);
+    }
+    .custom-logo-link .logo-icon {
+        display: none;
+    }
+}
+/* Dark-only theme: no alternate light mode; logo path already inherits currentColor */
 
 /*
  * Change the position of the more block on the front, by making it a block level element.
  * https://github.com/WordPress/gutenberg/issues/65934
 */
 .more-link {
-	display: block;
+    display: block;
 }
