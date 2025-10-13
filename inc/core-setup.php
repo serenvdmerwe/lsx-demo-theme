@@ -21,6 +21,9 @@ endif;
 if (! function_exists('lsx_demo_theme_core_setup')) {
 	function lsx_demo_theme_core_setup()
 	{
+		// Internationalization: make theme available for translation.
+		// Looks for .mo files in /languages directory (create if missing).
+		load_theme_textdomain('lsx-demo-theme', get_template_directory() . '/languages');
 		add_theme_support('title-tag');
 		add_theme_support('post-thumbnails');
 		add_theme_support('responsive-embeds');
