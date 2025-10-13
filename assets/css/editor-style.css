@@ -3,15 +3,16 @@
  * https://github.com/WordPress/gutenberg/issues/42319
  */
 a {
-    text-decoration-thickness: 1px !important;
-    text-underline-offset: 0.1em;
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 0.1em;
 }
 
 /* Editor refinements */
 .editor-styles-wrapper {
-    --radius-card: 12px;
+	--radius-card: 12px;
 }
+
 .editor-styles-wrapper .lbh-breadcrumb {
-    opacity: 0.6;
-    pointer-events: none;
+	opacity: 0.6;
+	pointer-events: none;
 }

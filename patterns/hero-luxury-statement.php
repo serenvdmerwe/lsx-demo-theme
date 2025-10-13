@@ -23,7 +23,7 @@
 			<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-accent-c-300-background-color has-text-color has-background" href="/designer-boots/">Browse Catalog</a></div>
 			<!-- /wp:button -->
 			<!-- wp:button {"className":"is-style-outline"} -->
-			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="/journal/">Read the Journal</a></div>
+			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="/journal/">Explore the Journal</a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

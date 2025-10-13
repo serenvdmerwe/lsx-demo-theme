@@ -41,27 +41,15 @@ Reference: DEVELOPMENT.md contains step-by-step setup, workflow, and troubleshoo
 
 ### Built for Modern WordPress Development
 
-**Full Site Editing (FSE)** with comprehensive `theme.json` configuration
-**Block patterns and template parts** for rapid development
-**AI-enhanced development** with GitHub Copilot integration
-**Comprehensive testing** with Playwright and accessibility checks
-**WordPress coding standards** enforcement via automated linting
 **Performance optimized** for Core Web Vitals
 **Fish Species Demo Content** with comprehensive CPT implementation
 **SEO & Accessibility Optimized** - WCAG 2.2 AA compliant with comprehensive SEO
 
 ### 🎣 Brandon's Fishing Adventures Demo
 
-This theme showcases a complete fishing adventure website featuring:
-
--   **Fish Species Guide**: Custom post type with detailed species profiles
--   **Conservation Focus**: Protected species information and sustainable fishing practices
 -   **Blog Integration**: Fishing stories and educational content
 -   **Rich Structured Data**: Schema.org implementation for enhanced search results
 -   **Internal Linking**: Automatic cross-linking between species and related content
-
-### ✨ Technical Highlights
-
 -   **🔍 SEO Excellence**: Comprehensive meta tags, XML sitemaps, structured data
 -   **♿ Accessibility**: WCAG 2.2 AA compliant with zero axe-core violations
 -   **⚡ Performance**: Core Web Vitals optimized with lazy loading and resource hints
@@ -132,9 +120,6 @@ This theme extends the WordPress [Twenty Twenty-Five](https://make.wordpress.org
 │   ├── configuration.md    # Development guidelines for Copilot
 │   ├── extensions.json     # WordPress development extensions
 │   └── settings.json       # WordPress-optimized editor settings
-├── 📁 patterns/            # Block patterns for content creation
-├── 📁 parts/               # Template parts (header, footer, etc.)
-├── 📁 templates/           # Block templates for FSE
 ├── 📁 styles/              # Theme style variations
 ├── 📁 e2e/                 # Playwright end-to-end tests
 ├── 📁 src/                 # Source files (SCSS, JS)
@@ -149,10 +134,6 @@ This theme extends the WordPress [Twenty Twenty-Five](https://make.wordpress.org
 
 ## 🖼️ Image Placeholder & Alt Text
 
-The theme provides an automatic **featured image fallback** for the `designer_boot` custom post type. If no featured image is set, a placeholder located at `assets/images/shoes/placeholder-boot.jpg` (or `.webp`) is injected via a filter in `functions.php`.
-
-Alt text strategy:
-
 -   Placeholder uses the alt text: `Placeholder boot image` so people using a screen reader know the image is a stand‑in.
 -   If you later replace all placeholders with real photography, either remove the filter or change the alt text to describe the actual catalog item (e.g., `Black leather stiletto ankle boot with gold zip`).
 -   If the placeholder conveys no meaningful info in your context, you may switch to an empty alt attribute by editing the filter and setting `alt=""` (this hides it from assistive tech while keeping visual layout).
@@ -165,25 +146,51 @@ To customize:
 
 Accessibility note: Alt text was written with accessibility in mind but should still be reviewed manually to ensure it accurately conveys catalog item context on real content pages.
 
+## 🌐 Internationalization & CI Readiness
+
+-   **Text Domain**: `lsx-demo-theme` (declared in `style.css` and enforced in PHPCS ruleset)
+-   **Loading**: `load_theme_textdomain( 'lsx-demo-theme', get_template_directory() . '/languages' );` inside `inc/core-setup.php`
+-   **Languages Directory**: A tracked `languages/` folder (with `.gitkeep`) is present for future `.po/.mo` files
+    To add translations:
+
+1. Generate a POT file (e.g. using `wp i18n make-pot . languages/lsx-demo-theme.pot`)
+2. Create locale files (`lsx-demo-theme-fr_FR.po` → compile to `.mo`)
+3. Commit `.po/.mo` files (optional: ignore `.mo` if generating during build)
+
+CI passes will fail if text domain mismatches or untranslated strings intentionally bypass escaping outside allowed contexts. Follow WordPress coding standards for future strings: `__( 'String', 'lsx-demo-theme' )` and escape on output (`esc_html__`, `esc_attr__`, `wp_kses_post`, etc.) as appropriate.
+
+## 📇 Catalog-Only Mode
+
+This instance of the theme has been intentionally converted to a **catalog / showcase** presentation. All commerce‑oriented UI elements (Shop column in the footer, “Shop the Collection” buttons, filter sidebar, shop FAQ pattern, and filter template parts) were removed to simplify the experience and reduce cognitive noise. Patterns fully deleted:
+
+-   `patterns/sidebar-shop-filters-placeholder.php`
+-   `parts/filters-shop.html` (disabled content)
+
+Key adjustments:
+
+-   Hero components no longer surface purchase CTAs; remaining optional secondary CTAs were neutralized or removed.
+-   Footer removed the dedicated Shop navigation column.
+
+Re‑enabling commerce later:
+
+1. Restore the deleted pattern files from version control history (or recreate them) and reintroduce navigation menus with product / cart / account items.
+2. Reinstate CTAs in `parts/hero-front.html` or relevant hero patterns, linking to a collection archive or product directory.
+
+Accessibility note: Removing extraneous interactive elements can benefit users with cognitive and motor impairments by shortening the tab order and focusing on core content. Always re‑verify focus order and landmark structure if commerce features are reintroduced.
+
 <!--
 Reference: Key documentation files are listed above. See each file for details on security, contributing, code of conduct, changelog, license, and support.
 -->
-
-## 📝 Changelog
 
 See [CHANGELOG.md](./CHANGELOG.md) for a complete release history and notable changes.
 
 <!--
 CHANGELOG.md documents all notable changes using Keep a Changelog format and semantic versioning. Review this file for release notes and upgrade guidance.
--->
-
 ## 🤝 Contributing & Support
 
 <!--
 This section covers contributor recognition, support channels, and links to key documentation. See .all-contributorsrc for contributor config and badges.
 -->
-
-### Contributors
 
 This project recognizes contributors from the LightSpeed organization and key external contributors. See [.all-contributorsrc](./.all-contributorsrc) for configuration.
 
@@ -198,30 +205,14 @@ Contributor badges are automatically updated in README.md by the all-contributor
 -   **LightSpeedWP** ([profile](https://github.com/lightspeedwp))
 -   **Ashley Shaw (LightSpeed)** ([profile](https://lightspeedwp.agency))
 
-### Funding
-
-Support professional WordPress block theme development and open source contributions by LightSpeed.
-
--   [Sponsor via GitHub](https://github.com/sponsors/lightspeedwp)
 -   [LightSpeed Professional Services](https://lightspeedwp.agency/services)
 -   [Contact for custom sponsorship](https://lightspeedwp.agency/contact)
 
 See [.github/FUNDING.yml](./.github/FUNDING.yml) for full funding configuration.
 
-### For Contributors
-
-1. **Fork the repository** and create a feature branch
-2. **Follow WordPress coding standards** (automated linting enforced)
-3. **Write tests** for new functionality (Playwright for E2E, unit tests for PHP)
 4. **Update documentation** for any new features or changes
 5. **Submit a pull request** with clear description and issue references
 
-### Getting Help
-
--   **📖 Documentation**: Check [DEVELOPMENT.md](./DEVELOPMENT.md) for technical setup
--   **🤖 AI Assistance**: Use GitHub Copilot with enhanced WordPress context
--   **📋 Issues**: Create GitHub issues for bugs or feature requests
--   **💬 Community**: WordPress.org forums and Slack communities
 -   **🎓 Learning**: Review [/docs](./docs/) for curriculum and resources
 
 ### Issue Templates
@@ -229,17 +220,12 @@ See [.github/FUNDING.yml](./.github/FUNDING.yml) for full funding configuration.
 Use the provided issue templates in `.github/ISSUE_TEMPLATE/`:
 
 -   **🐛 Bug Report** - Report functionality issues
--   **✨ Feature Request** - Suggest new features
--   **📖 Documentation** - Request or improve documentation
--   **⚡ Performance** - Report performance issues
--   **♿ Accessibility** - Report accessibility concerns
 
 ### Key Documentation & Policies
 
 -   [Security Policy](./SECURITY.md)
 -   [Contributing Guide](./CONTRIBUTING.md)
 -   [Code of Conduct](./CODE_OF_CONDUCT.md)
--   [Changelog](./CHANGELOG.md)
 -   [License](./LICENSE)
 -   [Support Policy](./SUPPORT.md)
 
