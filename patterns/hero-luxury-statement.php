@@ -19,11 +19,8 @@
 		<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|spacing-40"}}}} -->Premium black high‑heel boots in curated silhouettes—materials, fit, and craftsmanship elevated.<!-- /wp:paragraph -->
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
-			<!-- wp:button {"backgroundColor":"accent-c-300","textColor":"contrast"} -->
-			<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-accent-c-300-background-color has-text-color has-background" href="/designer-boots/">Shop the Collection</a></div>
-			<!-- /wp:button -->
 			<!-- wp:button {"className":"is-style-outline"} -->
-			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="/journal/">Read the Journal</a></div>
+			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="/journal/">Explore the Journal</a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

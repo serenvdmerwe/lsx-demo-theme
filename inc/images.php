@@ -6,6 +6,14 @@
  * @package lsx-demo-theme
  */
 
+// Register custom image sizes for catalog presentation.
+add_action('after_setup_theme', function () {
+	// Portrait card (cropped) for grid displays.
+	add_image_size('boot-card', 480, 640, true);
+	// Wide hero / feature (hard crop for consistent aspect).
+	add_image_size('boot-hero', 1600, 900, true);
+});
+
 if (! function_exists('lsx_demo_theme_get_boot_placeholder_url')) {
 	function lsx_demo_theme_get_boot_placeholder_url()
 	{
