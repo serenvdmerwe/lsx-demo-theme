@@ -21,7 +21,7 @@
 	<!-- wp:details -->
 	<details class="wp-block-details">
 		<summary>Who is this collection for?</summary>
-		<p>Style-led shoppers and agencies evaluating premium, accessible e‑commerce execution.</p>
+		<p>Style-led visitors and agencies evaluating premium, accessible catalog execution.</p>
 	</details>
 	<!-- /wp:details -->
 </div>

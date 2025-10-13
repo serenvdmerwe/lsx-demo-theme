@@ -878,16 +878,6 @@
         },
         {
             "area": "uncategorized",
-            "name": "product-facts",
-            "title": "Product Facts"
-        },
-        {
-            "area": "uncategorized",
-            "name": "filters-shop",
-            "title": "Shop Filters"
-        },
-        {
-            "area": "uncategorized",
             "name": "skip-links",
             "title": "Skip Links"
         },

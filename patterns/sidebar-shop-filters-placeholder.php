@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Title: Sidebar — Shop Filters (Placeholder)
- * Slug: lbh/sidebar-shop-filters
- * Categories: sidebar, product
- * Keywords: filters, shop
- * Description: Placeholder filter sidebar (replace with facet plugin later).
+ * Title: Sidebar — Catalog Filters (Placeholder)
+ * Slug: lbh/sidebar-catalog-filters
+ * Categories: sidebar, catalog
+ * Keywords: filters, catalog
+ * Description: Placeholder filter sidebar for catalog browsing (replace with facet plugin later).
  * ViewportWidth: 400
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-30","padding":{"top":"var:preset|spacing|spacing-40","bottom":"var:preset|spacing|spacing-40"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
-	<!-- wp:heading {"level":3,"fontSize":"medium"} -->Filter Boots<!-- /wp:heading -->
-	<!-- wp:paragraph {"fontSize":"small"} -->Static placeholders—swap with dynamic facet blocks or plugin integration.<!-- /wp:paragraph -->
+	<!-- wp:heading {"level":3,"fontSize":"medium"} -->Browse Catalog<!-- /wp:heading -->
+	<!-- wp:paragraph {"fontSize":"small"} -->Static placeholders—swap with dynamic facet blocks for catalog browsing.<!-- /wp:paragraph -->
 	<!-- wp:buttons {"style":{"spacing":{"blockGap":"0.5rem"}}} -->
 	<div class="wp-block-buttons">
 		<!-- wp:button {"className":"is-style-outline","fontSize":"small"} -->

@@ -272,10 +272,10 @@ function lsx_demo_theme_breadcrumb()
 	echo '<nav class="lsx-demo-theme-breadcrumb" aria-label="' . esc_attr__('Breadcrumb', 'lsx-demo-theme') . '"><ol>';
 	echo '<li><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'lsx-demo-theme') . '</a></li>';
 	if (is_singular('designer_boot')) {
-		echo '<li><a href="' . esc_url(get_post_type_archive_link('designer_boot')) . '">' . esc_html__('Designer Boots', 'lsx-demo-theme') . '</a></li>';
+		echo '<li><a href="' . esc_url(get_post_type_archive_link('designer_boot')) . '">' . esc_html__('Designer Boots Catalog', 'lsx-demo-theme') . '</a></li>';
 		echo '<li aria-current="page">' . esc_html(get_the_title()) . '</li>';
 	} elseif (is_post_type_archive('designer_boot')) {
-		echo '<li aria-current="page">' . esc_html__('Designer Boots', 'lsx-demo-theme') . '</li>';
+		echo '<li aria-current="page">' . esc_html__('Designer Boots Catalog', 'lsx-demo-theme') . '</li>';
 	} elseif (is_single()) {
 		echo '<li aria-current="page">' . esc_html(get_the_title()) . '</li>';
 	} elseif (is_archive()) {
@@ -301,7 +301,7 @@ add_action('init', function () {
 		'hero'           => __('Hero', 'lsx-demo-theme'),
 		'section'        => __('Sections', 'lsx-demo-theme'),
 		'query'          => __('Queries / Grids', 'lsx-demo-theme'),
-		'product'        => __('Product', 'lsx-demo-theme'),
+		'catalog'        => __('Catalog', 'lsx-demo-theme'),
 		'meta'           => __('Meta / Specs', 'lsx-demo-theme'),
 		'blog'           => __('Journal', 'lsx-demo-theme'),
 		'call-to-action' => __('Calls to Action', 'lsx-demo-theme'),
