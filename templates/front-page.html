@@ -3,12 +3,12 @@
 <!-- wp:template-part {"slug":"header","tagName":"div"} /-->
 <!-- wp:template-part {"slug":"hero-front","tagName":"section"} /-->
 
-<!-- Featured Products Pattern Placeholder -->
+<!-- Featured Catalog Items Pattern -->
 <!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-70","bottom":"var:preset|spacing|spacing-70"}}}} -->
 <div id="content">
-    <!-- wp:heading {"level":2} -->Featured Boots<!-- /wp:heading -->
-    <!-- wp:paragraph {"fontSize":"small"} -->Curated selection highlighting
-    material, silhouette, and heel height.<!-- /wp:paragraph -->
+    <!-- wp:heading {"level":2} -->Featured Catalog<!-- /wp:heading -->
+    <!-- wp:paragraph {"fontSize":"small"} -->Explore our curated collection
+    highlighting material, silhouette, and heel height.<!-- /wp:paragraph -->
     <!-- wp:query {"query":{"perPage":3,"postType":"designer_boot"}} -->
     <div class="wp-block-query">
         <!-- wp:post-template -->
@@ -16,7 +16,7 @@
         <div class="wp-block-group">
             <!-- wp:post-featured-image {"height":"300px","style":{"border":{"radius":"var(--radius-card)"}}} /-->
             <!-- wp:post-title {"level":3,"isLink":true} /-->
-            <!-- wp:post-excerpt {"moreText":"View details"} /-->
+            <!-- wp:post-excerpt {"moreText":"View in catalog"} /-->
         </div>
         <!-- /wp:group -->
         <!-- /wp:post-template -->
@@ -62,7 +62,8 @@
             <div class="wp-block-button">
                 <a
                     class="wp-block-button__link has-accent-b-500-color has-contrast-background-color has-text-color has-background"
-                    >See the Collection</a
+                    href="/designer-boots/"
+                    >Browse Catalog</a
                 >
             </div>
             <!-- /wp:button -->

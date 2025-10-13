@@ -39,6 +39,21 @@ function lsx_demo_theme_require_inc($file)
 	) {
 		return;
 	}
+	echo '<nav class="lsx-demo-theme-breadcrumb" aria-label="' . esc_attr__('Breadcrumb', 'lsx-demo-theme') . '"><ol>';
+	echo '<li><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'lsx-demo-theme') . '</a></li>';
+	if (is_singular('designer_boot')) {
+		echo '<li><a href="' . esc_url(get_post_type_archive_link('designer_boot')) . '">' . esc_html__('Designer Boots Catalog', 'lsx-demo-theme') . '</a></li>';
+		echo '<li aria-current="page">' . esc_html(get_the_title()) . '</li>';
+	} elseif (is_post_type_archive('designer_boot')) {
+		echo '<li aria-current="page">' . esc_html__('Designer Boots Catalog', 'lsx-demo-theme') . '</li>';
+	} elseif (is_single()) {
+		echo '<li aria-current="page">' . esc_html(get_the_title()) . '</li>';
+	} elseif (is_archive()) {
+		echo '<li aria-current="page">' . esc_html(get_the_archive_title()) . '</li>';
+	} elseif (is_search()) {
+		echo '<li aria-current="page">' . sprintf(esc_html__('Search: %s', 'lsx-demo-theme'), esc_html(get_search_query())) . '</li>';
+	} elseif (is_404()) {
+		echo '<li aria-current="page">' . esc_html__('Not Found', 'lsx-demo-theme') . '</li>';
 	$inc_dir = realpath(get_theme_file_path('inc'));
 	$path = get_theme_file_path('inc/' . $file);
 	$real_path = realpath($path);
@@ -47,6 +62,31 @@ function lsx_demo_theme_require_inc($file)
 	}
 }
 
+// Skip links template part injection early in body.
+add_action('wp_body_open', function () {
+	if (locate_template('parts/skip-links.html')) {
+		get_template_part('parts/skip-links');
+	}
+});
+
+// Additional pattern categories from snippet (guard for duplicates).
+add_action('init', function () {
+	$extra = array(
+		'hero'           => __('Hero', 'lsx-demo-theme'),
+		'section'        => __('Sections', 'lsx-demo-theme'),
+		'query'          => __('Queries / Grids', 'lsx-demo-theme'),
+		'catalog'        => __('Catalog', 'lsx-demo-theme'),
+		'meta'           => __('Meta / Specs', 'lsx-demo-theme'),
+		'blog'           => __('Journal', 'lsx-demo-theme'),
+		'call-to-action' => __('Calls to Action', 'lsx-demo-theme'),
+		'testimonials'   => __('Testimonials / Social Proof', 'lsx-demo-theme'),
+	);
+	foreach ($extra as $slug => $label) {
+		if (! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered($slug)) {
+			register_block_pattern_category($slug, array('label' => $label));
+		}
+	}
+});
 // Load modular includes (order matters for dependency: core first, then others).
 lsx_demo_theme_require_inc('core-setup.php');
 lsx_demo_theme_require_inc('assets.php');

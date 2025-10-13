@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Plugin Name: Luxury Designer Boots (CPT: designer_boot)
- * Description: Registers the Designer Boot CPT, taxonomies, meta fields, patterns, REST support, and seed content per project spec.
+ * Plugin Name: Luxury Designer Boots Catalog (CPT: designer_boot)
+ * Description: Registers the Designer Boot CPT for catalog display with taxonomies, meta fields, patterns, REST support, and seed content.
  * Version: 1.0.0
- * Author: Luxury Black Heels Demo
+ * Author: Luxury Black Heels Catalog
  * Text Domain: lbc
  * Domain Path: /languages
  */
@@ -146,7 +146,6 @@ if (! class_exists('LBC_Designer_Boots')) {
 				'lbc_leather_color'       => ['string', true, 'sanitize_text_field'],
 				'lbc_country_of_origin'   => ['string', true, 'sanitize_text_field'],
 				'lbc_care'                => ['string', true, 'sanitize_textarea_field'],
-				'lbc_product_link'        => ['string', true, 'esc_url_raw'],
 				'lbc_gallery'             => ['array', true, [$this, 'sanitize_gallery']],
 				'lbc_videos'              => ['array', true, [$this, 'sanitize_videos']],
 				'lbc_personal_notes'      => ['string', true, 'sanitize_textarea_field'],
@@ -247,7 +246,6 @@ if (! class_exists('LBC_Designer_Boots')) {
 				'lbc_leather_color'     => __('Leather Color', 'lbc'),
 				'lbc_country_of_origin' => __('Country of Origin', 'lbc'),
 				'lbc_care'              => __('Care Instructions', 'lbc'),
-				'lbc_product_link'      => __('External Product Link', 'lbc'),
 				'lbc_personal_notes'    => __('Personal Notes', 'lbc'),
 				'lbc_prompt_notes'      => __('Prompt Notes (AI)', 'lbc'),
 			];
@@ -421,7 +419,6 @@ if (! class_exists('LBC_Designer_Boots')) {
 				'lbc_leather_color',
 				'lbc_country_of_origin',
 				'lbc_care',
-				'lbc_product_link',
 				'lbc_personal_notes',
 				'lbc_prompt_notes',
 			];
@@ -483,7 +480,6 @@ if (! class_exists('LBC_Designer_Boots')) {
 							'country_of_origin' => get_post_meta($id, 'lbc_country_of_origin', true),
 							'sizes_eu'         => get_post_meta($id, 'lbc_sizes_eu', true),
 							'care'             => get_post_meta($id, 'lbc_care', true),
-							'product_link'     => get_post_meta($id, 'lbc_product_link', true),
 						];
 					},
 					'schema'       => null,
@@ -687,7 +683,6 @@ if (! class_exists('LBC_Designer_Boots')) {
 						'lbc_leather_color'     => 'Black',
 						'lbc_country_of_origin' => 'Italy',
 						'lbc_care'              => 'Wipe with soft cloth; avoid saturation.',
-						'lbc_product_link'      => 'https://example.com/gucci-boot',
 						'lbc_gallery'           => [],
 						'lbc_videos'            => [],
 						'lbc_personal_notes'    => '',
@@ -718,7 +713,6 @@ if (! class_exists('LBC_Designer_Boots')) {
 						'lbc_leather_color'     => 'Black',
 						'lbc_country_of_origin' => 'Italy',
 						'lbc_care'              => 'Condition occasionally; avoid abrasive contact.',
-						'lbc_product_link'      => '',
 						'lbc_gallery'           => [],
 						'lbc_videos'            => [],
 						'lbc_personal_notes'    => '',
@@ -749,7 +743,6 @@ if (! class_exists('LBC_Designer_Boots')) {
 						'lbc_leather_color'     => 'Black',
 						'lbc_country_of_origin' => 'Italy',
 						'lbc_care'              => 'Use shoe trees; store in dust bags.',
-						'lbc_product_link'      => '',
 						'lbc_gallery'           => [],
 						'lbc_videos'            => [],
 						'lbc_personal_notes'    => 'Closer fit through ankle.',

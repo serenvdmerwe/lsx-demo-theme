@@ -1,6 +1,6 @@
 # 🧱 LSX Demo Theme
 
-A modern WordPress block theme built with Full Site Editing (FSE) capabilities, enhanced with AI development tools and comprehensive testing. This theme serves as both a learning project and production-ready WordPress block theme template.
+A modern WordPress block theme built with Full Site Editing (FSE) capabilities, enhanced with AI development tools and comprehensive testing. This theme serves as both a learning project and production-ready WordPress block theme for catalog websites.
 
 [![WordPress](https://img.shields.io/badge/WordPress-6.0+-blue.svg)](https://wordpress.org/)
 [![Block Theme](https://img.shields.io/badge/Block%20Theme-FSE-green.svg)](https://developer.wordpress.org/themes/block-themes/)
@@ -135,7 +135,7 @@ This theme extends the WordPress [Twenty Twenty-Five](https://make.wordpress.org
 ## 🖼️ Image Placeholder & Alt Text
 
 -   Placeholder uses the alt text: `Placeholder boot image` so people using a screen reader know the image is a stand‑in.
--   If you later replace all placeholders with real photography, either remove the filter or change the alt text to describe the actual product (e.g., `Black leather stiletto ankle boot with gold zip`).
+-   If you later replace all placeholders with real photography, either remove the filter or change the alt text to describe the actual catalog item (e.g., `Black leather stiletto ankle boot with gold zip`).
 -   If the placeholder conveys no meaningful info in your context, you may switch to an empty alt attribute by editing the filter and setting `alt=""` (this hides it from assistive tech while keeping visual layout).
 
 To customize:
@@ -144,7 +144,7 @@ To customize:
 2. (Optional) Update the fallback alt text or CSS class in `functions.php` inside the `post_thumbnail_html` filter.
 3. Regenerate thumbnails if you introduce new registered image sizes (e.g., via `add_image_size`).
 
-Accessibility note: Alt text was written with accessibility in mind but should still be reviewed manually to ensure it accurately conveys product context on real content pages.
+Accessibility note: Alt text was written with accessibility in mind but should still be reviewed manually to ensure it accurately conveys catalog item context on real content pages.
 
 ## 🌐 Internationalization & CI Readiness
 
