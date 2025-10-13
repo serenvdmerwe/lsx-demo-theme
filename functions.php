@@ -413,3 +413,84 @@ add_filter('get_custom_logo', 'lsx_demo_theme_custom_logo_fallback');
  * (Optional) CPT & taxonomies were supplied in snippet but already implemented via plugin.
  * Not re-registering here to avoid duplication. If plugin removal is planned, port logic.
  */
+
+/**
+ * -----------------------------------------------------------------------------
+ * Designer Boot Featured Image Fallback
+ * -----------------------------------------------------------------------------
+ * Ensures a placeholder image is always displayed for designer_boot posts when
+ * no featured image is set. Add an actual file at:
+ * assets/images/shoes/placeholder-boot.jpg (or .webp)
+ *
+ * Accessibility: Provides meaningful alt text so screen reader users know it's
+ * a placeholder. If you later feel it's redundant, set alt to empty string.
+ */
+
+if (! function_exists('lsx_demo_theme_get_boot_placeholder_url')) {
+	function lsx_demo_theme_get_boot_placeholder_url()
+	{
+		return get_template_directory_uri() . '/assets/images/shoes/placeholder-boot.jpg';
+	}
+}
+
+add_filter('post_thumbnail_html', function ($html, $post_id, $post_thumbnail_id, $size, $attr) {
+	// Only act for our custom post type and only if there is no existing HTML.
+	if ($html || get_post_type($post_id) !== 'designer_boot') {
+		return $html;
+	}
+	$src = esc_url(lsx_demo_theme_get_boot_placeholder_url());
+	$alt = esc_attr__('Placeholder boot image', 'lsx-demo-theme');
+	$classes = 'wp-post-image boot-placeholder';
+	// Merge any passed class attribute.
+	if (is_array($attr) && ! empty($attr['class'])) {
+		$classes .= ' ' . sanitize_html_class($attr['class']);
+	}
+	return '<img src="' . $src . '" alt="' . $alt . '" class="' . esc_attr($classes) . '" loading="lazy" decoding="async" />';
+}, 10, 5);
+
+// (Optional future) Register custom image sizes for designer boot displays.
+// add_action( 'after_setup_theme', function() {
+// 	add_image_size( 'boot-card', 480, 640, true );
+// });
+
+/**
+ * -----------------------------------------------------------------------------
+ * Global Image Alt Text Fallback
+ * -----------------------------------------------------------------------------
+ * Ensures that attachment images without an explicit alt attribute receive a
+ * sensible, localized fallback based on the attachment's stored meta or title.
+ *
+ * Rationale: Empty alt attributes should be intentional (purely decorative
+ * images). Often, editors forget to add alt text – this filter reduces the
+ * number of silent accessibility regressions. Site owners should still review
+ * and provide meaningful, context‑specific alt text where appropriate.
+ *
+ * @since 1.0.3
+ * @param array        $attr       Attributes for the image markup.
+ * @param WP_Post      $attachment Attachment post object.
+ * @param string|array $size       Requested size.
+ * @return array Filtered attributes.
+ */
+function lsx_demo_theme_image_alt_fallback($attr, $attachment, $size)
+{ // phpcs:ignore WordPress.NamingConventions.ValidFunctionName
+	// If alt already present (even empty string), respect editor intent.
+	if (array_key_exists('alt', $attr) && '' !== trim((string) $attr['alt'])) {
+		return $attr;
+	}
+
+	// Attachment explicit alt meta.
+	$explicit = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+	if (is_string($explicit) && '' !== trim($explicit)) {
+		$attr['alt'] = wp_strip_all_tags($explicit);
+		return $attr;
+	}
+
+	// Fallback to attachment title (minus file extension artifacts).
+	$title = get_the_title($attachment->ID);
+	if ($title) {
+		$attr['alt'] = wp_strip_all_tags($title);
+	}
+
+	return $attr;
+}
+add_filter('wp_get_attachment_image_attributes', 'lsx_demo_theme_image_alt_fallback', 10, 3);

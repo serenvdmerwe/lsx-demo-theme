@@ -27,10 +27,10 @@ a {
     text-underline-offset: 0.1em;
 }
 
-/* Focus styles */
+/* Focus styles (dark theme) */
 :where(.wp-site-blocks *:focus) {
-    outline-width: 2px;
-    outline-style: solid;
+    outline: 2px solid var(--wp--preset--color--accent-2, #d4af37);
+    outline-offset: 2px;
 }
 
 /* Increase the bottom margin on submenus, so that the outline is visible. */
@@ -82,18 +82,22 @@ p {
     fill: currentColor; /* inherit text color for easy theming */
 }
 /* Variant handling: hide wordmark on very small screens */
-.custom-logo-link .logo-wordmark { display: none; }
-.custom-logo-link .logo-icon { display: inline-block; }
-@media (min-width: 640px) {
-    .custom-logo-link .logo-wordmark { display: inline-block; width: clamp(160px, 30vw, 320px); }
-    .custom-logo-link .logo-icon { display: none; }
+.custom-logo-link .logo-wordmark {
+    display: none;
 }
-/* High contrast mode (prefers-color-scheme) adjustments if text color changes */
-@media (prefers-color-scheme: dark) {
-    .custom-logo-link .custom-logo path {
-        fill: var(--wp--preset--color--contrast, #fff);
+.custom-logo-link .logo-icon {
+    display: inline-block;
+}
+@media (min-width: 640px) {
+    .custom-logo-link .logo-wordmark {
+        display: inline-block;
+        width: clamp(160px, 30vw, 320px);
+    }
+    .custom-logo-link .logo-icon {
+        display: none;
     }
 }
+/* Dark-only theme: no alternate light mode; logo path already inherits currentColor */
 
 /*
  * Change the position of the more block on the front, by making it a block level element.

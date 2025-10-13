@@ -9,7 +9,7 @@
  * ViewportWidth: 1200
  */
 ?>
-<!-- wp:group {"style":{"color":{"background":"var:preset|color|neutral-200"},"spacing":{"padding":{"top":"var:preset|spacing|spacing-40","bottom":"var:preset|spacing|spacing-40","left":"var:preset|spacing|spacing-40","right":"var:preset|spacing|spacing-40"},"blockGap":"var:preset|spacing|spacing-30"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+<!-- wp:group {"style":{"color":{"background":"var:preset|color|neutral-300"},"spacing":{"padding":{"top":"var:preset|spacing|spacing-40","bottom":"var:preset|spacing|spacing-40","left":"var:preset|spacing|spacing-40","right":"var:preset|spacing|spacing-40"},"blockGap":"var:preset|spacing|spacing-30"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group">
 	<!-- wp:paragraph {"fontSize":"small"} --><strong>Heel:</strong> 100 mm Stiletto<!-- /wp:paragraph -->
 	<!-- wp:paragraph {"fontSize":"small"} --><strong>Material:</strong> Italian calfskin<!-- /wp:paragraph -->

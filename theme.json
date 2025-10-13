@@ -15,8 +15,16 @@
             "defaultGradients": false,
             "defaultDuotone": false,
             "palette": [
-                { "slug": "base", "name": "Base", "color": "#F8F8F8" },
-                { "slug": "contrast", "name": "Contrast", "color": "#000000" },
+                {
+                    "slug": "base",
+                    "name": "Base (Dark Background)",
+                    "color": "#121212"
+                },
+                {
+                    "slug": "contrast",
+                    "name": "Contrast (Primary Text)",
+                    "color": "#F5F5F5"
+                },
                 {
                     "slug": "primary",
                     "name": "Primary Black",
@@ -34,6 +42,23 @@
                     "color": "#C98C1A"
                 },
                 {
+                    "slug": "accent-1",
+                    "name": "Accent 1 (Burgundy)",
+                    "color": "#4A1C2C"
+                },
+                {
+                    "slug": "accent-2",
+                    "name": "Accent 2 (Gold)",
+                    "color": "#D4AF37"
+                },
+                {
+                    "slug": "accent-3",
+                    "name": "Accent 3 (Amber)",
+                    "color": "#C98C1A"
+                },
+                { "slug": "neutral", "name": "Neutral", "color": "#CCCCCC" },
+                { "slug": "light", "name": "Light", "color": "#FFFFFF" },
+                {
                     "slug": "neutral-0",
                     "name": "Neutral 0",
                     "color": "#FFFFFF"
@@ -41,47 +66,47 @@
                 {
                     "slug": "neutral-100",
                     "name": "Neutral 100",
-                    "color": "#F8F8F8"
+                    "color": "#121212"
                 },
                 {
                     "slug": "neutral-200",
                     "name": "Neutral 200",
-                    "color": "#F0F0F0"
+                    "color": "#1A1A1A"
                 },
                 {
                     "slug": "neutral-300",
                     "name": "Neutral 300",
-                    "color": "#E5E5E5"
+                    "color": "#212121"
                 },
                 {
                     "slug": "neutral-400",
                     "name": "Neutral 400",
-                    "color": "#CCCCCC"
+                    "color": "#2A2A2A"
                 },
                 {
                     "slug": "neutral-500",
                     "name": "Neutral 500",
-                    "color": "#A6A6A6"
+                    "color": "#343434"
                 },
                 {
                     "slug": "neutral-600",
                     "name": "Neutral 600",
-                    "color": "#808080"
+                    "color": "#444444"
                 },
                 {
                     "slug": "neutral-700",
                     "name": "Neutral 700",
-                    "color": "#4D4D4D"
+                    "color": "#555555"
                 },
                 {
                     "slug": "neutral-800",
                     "name": "Neutral 800",
-                    "color": "#333333"
+                    "color": "#666666"
                 },
                 {
                     "slug": "neutral-900",
                     "name": "Neutral 900",
-                    "color": "#000000"
+                    "color": "#777777"
                 },
                 {
                     "slug": "accent-a-100",
@@ -681,8 +706,8 @@
             }
         },
         "color": {
-            "background": "var(--wp--preset--color--light)",
-            "text": "var(--wp--preset--color--base)"
+            "background": "var(--wp--preset--color--base)",
+            "text": "var(--wp--preset--color--contrast)"
         },
         "elements": {
             "button": {
@@ -780,7 +805,7 @@
                     "text": "var(--wp--preset--color--accent-1)"
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--aleo)",
+                    "fontFamily": "var(--wp--preset--font-family--heading-font)",
                     "fontStyle": "normal",
                     "fontWeight": "700",
                     "letterSpacing": "-0.1px",

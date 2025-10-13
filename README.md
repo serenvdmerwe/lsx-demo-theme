@@ -147,6 +147,24 @@ This theme extends the WordPress [Twenty Twenty-Five](https://make.wordpress.org
 ├── SUPPORT.md              # Support policy
 ```
 
+## 🖼️ Image Placeholder & Alt Text
+
+The theme provides an automatic **featured image fallback** for the `designer_boot` custom post type. If no featured image is set, a placeholder located at `assets/images/shoes/placeholder-boot.jpg` (or `.webp`) is injected via a filter in `functions.php`.
+
+Alt text strategy:
+
+-   Placeholder uses the alt text: `Placeholder boot image` so people using a screen reader know the image is a stand‑in.
+-   If you later replace all placeholders with real photography, either remove the filter or change the alt text to describe the actual product (e.g., `Black leather stiletto ankle boot with gold zip`).
+-   If the placeholder conveys no meaningful info in your context, you may switch to an empty alt attribute by editing the filter and setting `alt=""` (this hides it from assistive tech while keeping visual layout).
+
+To customize:
+
+1. Add your file to `assets/images/shoes/` named `placeholder-boot.(jpg|webp)`.
+2. (Optional) Update the fallback alt text or CSS class in `functions.php` inside the `post_thumbnail_html` filter.
+3. Regenerate thumbnails if you introduce new registered image sizes (e.g., via `add_image_size`).
+
+Accessibility note: Alt text was written with accessibility in mind but should still be reviewed manually to ensure it accurately conveys product context on real content pages.
+
 <!--
 Reference: Key documentation files are listed above. See each file for details on security, contributing, code of conduct, changelog, license, and support.
 -->
@@ -237,7 +255,7 @@ Each documentation file above provides detailed guidance on its topic. Review th
 -   **Typography**: [Lexend](https://fonts.google.com/specimen/Lexend) and [Manrope](https://fonts.google.com/specimen/Manrope) from Google Fonts
 -   **Testing**: Powered by [Playwright](https://playwright.dev/)
 
-**Built with ❤️ for the WordPress community**
+### Built with ❤️ for the WordPress community
 
 <!--
 License is GPL-3.0-or-later, inherited from WordPress. See LICENSE for full terms. Credits are listed for base theme, design system, typography, and testing tools.
