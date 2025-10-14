@@ -81,5 +81,6 @@ lsx_demo_theme_require_inc('breadcrumbs.php');
 lsx_demo_theme_require_inc('logo.php');
 lsx_demo_theme_require_inc('images.php');
 lsx_demo_theme_require_inc('accessibility.php');
+lsx_demo_theme_require_inc('page-management.php');
 
 // Future: add conditional loading (e.g., only in admin) here if needed.
