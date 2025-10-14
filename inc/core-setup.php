@@ -59,7 +59,7 @@ if (! function_exists('lsx_demo_theme_register_pattern_categories')) {
 			'query'          => __('Queries / Grids', 'lsx-demo-theme'),
 			'catalog'        => __('Catalog', 'lsx-demo-theme'),
 			'meta'           => __('Meta / Specs', 'lsx-demo-theme'),
-			'blog'           => __('Journal', 'lsx-demo-theme'),
+			'blog'           => __('Blog', 'lsx-demo-theme'),
 			'call-to-action' => __('Calls to Action', 'lsx-demo-theme'),
 			'testimonials'   => __('Testimonials / Social Proof', 'lsx-demo-theme'),
 		);

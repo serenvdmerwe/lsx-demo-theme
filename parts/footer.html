@@ -1,69 +1,50 @@
-<!-- Footer Template Part (custom markup) -->
-<!-- Original pattern reference retained: -->
-<!-- wp:pattern {"slug":"lsx-demo-theme/footer"} /-->
-
-<!-- wp:group {"tagName":"footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-70","bottom":"var:preset|spacing|spacing-50"}},"border":{"top":{"color":"var:preset|color|neutral-300","width":"1px"}}},"layout":{"type":"constrained"}} -->
-<footer id="footer">
-    <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-50","left":"var:preset|spacing|spacing-50"}}}} -->
-    <div class="wp-block-columns">
-        <!-- Column 1 -->
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:site-logo {"width":48} /-->
-            <!-- wp:paragraph {"fontSize":"small"} -->Crafted to Command<!-- /wp:paragraph -->
+<!-- Simple Footer Template Part -->
+<!-- wp:group {"tagName":"footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|40"}},"border":{"top":{"color":"var:preset|color|neutral-300","width":"1px"}}},"layout":{"type":"constrained"}} -->
+<footer class="wp-block-group">
+    <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->
+    <div class="wp-block-group">
+        <!-- Left side: Logo and tagline -->
+        <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
+        <div class="wp-block-group">
+            <!-- wp:site-logo {"width":32} /-->
+            <!-- wp:group -->
+            <div class="wp-block-group">
+                <!-- wp:site-title {"fontSize":"medium"} /-->
+                <!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"var:preset|color|neutral-600"}}} -->
+                <p
+                    class="has-neutral-600-color has-text-color has-small-font-size"
+                >
+                    Crafted to Command
+                </p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:group -->
         </div>
-        <!-- /wp:column -->
+        <!-- /wp:group -->
 
-        <!-- Column 2 Catalog -->
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:heading {"level":6} -->Catalog<!-- /wp:heading -->
-            <!-- wp:navigation {"overlayMenu":"never","className":"footer-catalog"} /-->
-        </div>
-        <!-- /wp:column -->
-        <!-- Column 2 (removed former Shop navigation for catalog-only mode) -->
-
-        <!-- Column 3 Journal -->
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:heading {"level":6} -->Journal<!-- /wp:heading -->
-            <!-- wp:navigation {"overlayMenu":"never","className":"footer-journal"} /-->
-        </div>
-        <!-- /wp:column -->
-
-        <!-- Column 4 Brand -->
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:heading {"level":6} -->Brand<!-- /wp:heading -->
-            <!-- wp:navigation {"overlayMenu":"never","className":"footer-brand"} /-->
-        </div>
-        <!-- /wp:column -->
-
-        <!-- Column 5 Contact -->
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:heading {"level":6} -->Connect<!-- /wp:heading -->
-            <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#000","layout":{"type":"flex","justifyContent":"left"}} -->
-            <ul class="wp-block-social-links">
-                <!-- wp:social-link {"service":"instagram"} /-->
-                <!-- wp:social-link {"service":"pinterest"} /-->
-                <!-- wp:social-link {"service":"youtube"} /-->
-                <!-- wp:social-link {"service":"linkedin"} /-->
-            </ul>
-            <!-- /wp:social-links -->
-        </div>
-        <!-- /wp:column -->
+        <!-- Right side: Social links -->
+        <!-- wp:social-links {"iconColor":"neutral-600","iconColorValue":"var:preset|color|neutral-600","size":"has-small-icon-size","className":"is-style-logos-only"} -->
+        <ul
+            class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only"
+        >
+            <!-- wp:social-link {"url":"#","service":"instagram"} /-->
+            <!-- wp:social-link {"url":"#","service":"pinterest"} /-->
+            <!-- wp:social-link {"url":"#","service":"youtube"} /-->
+        </ul>
+        <!-- /wp:social-links -->
     </div>
-    <!-- /wp:columns -->
+    <!-- /wp:group -->
 
-    <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-50","bottom":"var:preset|spacing|spacing-30"}}}} /-->
-
-    <!-- Bottom bar -->
-    <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"},"style":{"spacing":{"blockGap":"1rem"}}} -->
-    <div>
-        <!-- wp:paragraph {"fontSize":"small"} -->© <?php echo date('Y'); ?>
-        Luxury Black Heels.<!-- /wp:paragraph -->
-        <!-- wp:navigation {"className":"footer-legal","overlayMenu":"never"} /-->
+    <!-- Copyright -->
+    <!-- wp:group {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|30"},"margin":{"top":"var:preset|spacing|30"}},"border":{"top":{"color":"var:preset|color|neutral-200","width":"1px"}}}} -->
+    <div class="wp-block-group">
+        <!-- wp:paragraph {"align":"center","fontSize":"small","style":{"color":{"text":"var:preset|color|neutral-600"}}} -->
+        <p
+            class="has-text-align-center has-neutral-600-color has-text-color has-small-font-size"
+        >
+            © 2025 LSX Demo Theme. All rights reserved.
+        </p>
+        <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
 </footer>
