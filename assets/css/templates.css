@@ -41,7 +41,7 @@
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--wp--preset--color--primary);
-    box-shadow: 0 0 0 2px rgba(var(--wp--preset--color--primary), 0.1);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--wp--preset--color--primary) 10%, transparent);
 }
 
 .contact-form button {
