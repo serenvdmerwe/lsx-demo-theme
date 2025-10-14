@@ -6,11 +6,17 @@
         padding-bottom: var(--wp--preset--spacing--30);
     "
 >
-    <!-- wp:paragraph {"fontSize":"small","textColor":"contrast-2"} -->
-    <p class="has-contrast-2-color has-text-color has-small-font-size">
-        <a href="/">Home</a> /
-        <span class="current-page">Current Page</span>
-    </p>
-    <!-- /wp:paragraph -->
+    <!-- Breadcrumb navigation for accessibility and localization -->
+    <nav aria-label="Breadcrumb" class="has-contrast-2-color has-text-color has-small-font-size">
+        <ol style="list-style: none; display: flex; gap: 0.5em; padding: 0; margin: 0;">
+            <li>
+                <a href="/">{{ __('Home') }}</a>
+            </li>
+            <li aria-current="page" style="display: flex; align-items: center;">
+                <span aria-hidden="true" style="margin: 0 0.5em;">/</span>
+                <span>{{ page.title }}</span>
+            </li>
+        </ol>
+    </nav>
 </div>
 <!-- /wp:group -->
