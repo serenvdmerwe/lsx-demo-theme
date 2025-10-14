@@ -49,6 +49,8 @@ if (! function_exists('lsx_demo_theme_core_setup')) {
 	add_action('after_setup_theme', 'lsx_demo_theme_core_setup');
 }
 
+// Register additional pattern categories for the theme.
+
 if (! function_exists('lsx_demo_theme_editor_style')) :
 	function lsx_demo_theme_editor_style()
 	{
