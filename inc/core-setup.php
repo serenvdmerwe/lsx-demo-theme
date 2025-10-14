@@ -50,27 +50,6 @@ if (! function_exists('lsx_demo_theme_core_setup')) {
 }
 
 // Register additional pattern categories for the theme.
-if (! function_exists('lsx_demo_theme_register_pattern_categories')) {
-	function lsx_demo_theme_register_pattern_categories()
-	{
-		$extra = array(
-			'hero'           => __('Hero', 'lsx-demo-theme'),
-			'section'        => __('Sections', 'lsx-demo-theme'),
-			'query'          => __('Queries / Grids', 'lsx-demo-theme'),
-			'catalog'        => __('Catalog', 'lsx-demo-theme'),
-			'meta'           => __('Meta / Specs', 'lsx-demo-theme'),
-			'blog'           => __('Blog', 'lsx-demo-theme'),
-			'call-to-action' => __('Calls to Action', 'lsx-demo-theme'),
-			'testimonials'   => __('Testimonials / Social Proof', 'lsx-demo-theme'),
-		);
-		foreach ($extra as $slug => $label) {
-			if (! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered($slug)) {
-				register_block_pattern_category($slug, array('label' => $label));
-			}
-		}
-	}
-	add_action('init', 'lsx_demo_theme_register_pattern_categories');
-}
 
 if (! function_exists('lsx_demo_theme_editor_style')) :
 	function lsx_demo_theme_editor_style()
