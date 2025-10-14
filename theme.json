@@ -35,11 +35,15 @@
                     "name": "Deep Burgundy",
                     "color": "#4A1C2C"
                 },
-                { "slug": "accent", "name": "Accent Gold", "color": "#D4AF37" },
+                {
+                    "slug": "accent",
+                    "name": "Accent Burgundy",
+                    "color": "#4A1C2C"
+                },
                 {
                     "slug": "highlight",
-                    "name": "Action Amber",
-                    "color": "#C98C1A"
+                    "name": "Highlight Burgundy",
+                    "color": "#7A3045"
                 },
                 {
                     "slug": "accent-1",
@@ -48,13 +52,13 @@
                 },
                 {
                     "slug": "accent-2",
-                    "name": "Accent 2 (Gold)",
-                    "color": "#D4AF37"
+                    "name": "Accent 2 (Burgundy Light)",
+                    "color": "#7A3045"
                 },
                 {
                     "slug": "accent-3",
-                    "name": "Accent 3 (Amber)",
-                    "color": "#C98C1A"
+                    "name": "Accent 3 (Burgundy Mid)",
+                    "color": "#CFA4B0"
                 },
                 { "slug": "neutral", "name": "Neutral", "color": "#CCCCCC" },
                 { "slug": "light", "name": "Light", "color": "#FFFFFF" },
@@ -135,48 +139,48 @@
                 },
                 {
                     "slug": "accent-b-100",
-                    "name": "Accent B 100",
-                    "color": "#FFF4CC"
+                    "name": "Accent B 100 (Burgundy Tint 1)",
+                    "color": "#F6EEF1"
                 },
                 {
                     "slug": "accent-b-200",
-                    "name": "Accent B 200",
-                    "color": "#FBE08A"
+                    "name": "Accent B 200 (Burgundy Tint 2)",
+                    "color": "#E7D3D9"
                 },
                 {
                     "slug": "accent-b-300",
-                    "name": "Accent B 300",
-                    "color": "#EBC753"
+                    "name": "Accent B 300 (Burgundy Tint 3)",
+                    "color": "#CFA4B0"
                 },
                 {
                     "slug": "accent-b-400",
-                    "name": "Accent B 400",
-                    "color": "#C59A2F"
+                    "name": "Accent B 400 (Burgundy Shade 1)",
+                    "color": "#7A3045"
                 },
                 {
                     "slug": "accent-b-500",
-                    "name": "Accent B 500",
-                    "color": "#D4AF37"
+                    "name": "Accent B 500 (Core Burgundy)",
+                    "color": "#4A1C2C"
                 },
                 {
                     "slug": "accent-c-100",
-                    "name": "Accent C 100",
-                    "color": "#FFE3A1"
+                    "name": "Accent C 100 (Burgundy Tint 4)",
+                    "color": "#F6EEF1"
                 },
                 {
                     "slug": "accent-c-200",
-                    "name": "Accent C 200",
-                    "color": "#F2B744"
+                    "name": "Accent C 200 (Burgundy Tint 5)",
+                    "color": "#E7D3D9"
                 },
                 {
                     "slug": "accent-c-300",
-                    "name": "Accent C 300",
-                    "color": "#C98C1A"
+                    "name": "Accent C 300 (Burgundy Mid)",
+                    "color": "#CFA4B0"
                 },
                 {
                     "slug": "accent-c-400",
-                    "name": "Accent C 400",
-                    "color": "#8A5E0E"
+                    "name": "Accent C 400 (Burgundy Deep)",
+                    "color": "#4A1C2C"
                 }
             ]
         },

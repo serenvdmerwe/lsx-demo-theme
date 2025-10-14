@@ -28,3 +28,5 @@
 	<!-- /wp:buttons -->
 </div>
 <!-- /wp:group -->
+ * (Removed) Former Sidebar shop filters pattern disabled for catalog-only mode.
+ */

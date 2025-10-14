@@ -37,6 +37,7 @@
         "hint": "7.1.13",
         "postcss": "^8.4.24",
         "postcss-cli": "^10.1.0",
+        "postcss-scss": "4.0.9",
         "sass": "^1.69.0"
     },
     "browserslist": [
