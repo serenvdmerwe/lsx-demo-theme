@@ -10,7 +10,6 @@
  *  - block-styles.php    : block styles, pattern categories & bindings
  *  - breadcrumbs.php     : breadcrumb rendering helper
  *  - logo.php            : inline SVG logo + custom logo fallback
- *  - images.php          : image placeholder + alt text fallbacks
  *  - accessibility.php   : skip links injection & future a11y helpers
  *
  * @package lsx-demo-theme
@@ -48,38 +47,17 @@ function lsx_demo_theme_require_inc($file)
 	}
 }
 
-// Skip links template part injection early in body.
-add_action('wp_body_open', function () {
-	if (locate_template('parts/skip-links.html')) {
-		get_template_part('parts/skip-links');
-	}
-});
+// Skip links functionality is handled via template parts in individual templates
+// No automatic injection needed - skip links are called directly in templates
 
-// Additional pattern categories from snippet (guard for duplicates).
-add_action('init', function () {
-	$extra = array(
-		'hero'           => __('Hero', 'lsx-demo-theme'),
-		'section'        => __('Sections', 'lsx-demo-theme'),
-		'query'          => __('Queries / Grids', 'lsx-demo-theme'),
-		'catalog'        => __('Catalog', 'lsx-demo-theme'),
-		'meta'           => __('Meta / Specs', 'lsx-demo-theme'),
-		'blog'           => __('Journal', 'lsx-demo-theme'),
-		'call-to-action' => __('Calls to Action', 'lsx-demo-theme'),
-		'testimonials'   => __('Testimonials / Social Proof', 'lsx-demo-theme'),
-	);
-	foreach ($extra as $slug => $label) {
-		if (! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered($slug)) {
-			register_block_pattern_category($slug, array('label' => $label));
-		}
-	}
-});
+// Pattern categories will be registered via core-setup.php include
+// This ensures proper timing and follows WordPress theme development best practices
 // Load modular includes (order matters for dependency: core first, then others).
 lsx_demo_theme_require_inc('core-setup.php');
 lsx_demo_theme_require_inc('assets.php');
 lsx_demo_theme_require_inc('block-styles.php');
 lsx_demo_theme_require_inc('breadcrumbs.php');
 lsx_demo_theme_require_inc('logo.php');
-lsx_demo_theme_require_inc('images.php');
 lsx_demo_theme_require_inc('accessibility.php');
 lsx_demo_theme_require_inc('page-management.php');
 
