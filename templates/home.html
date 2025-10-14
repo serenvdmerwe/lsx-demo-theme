@@ -1,37 +1,13 @@
-<!-- Original home template commented out for reference
-<original>
-<!-- wp:template-part {"slug":"header"} /-->
-<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"},"lock":{"move":false,"remove":false}} -->
-<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)">
-	<!-- wp:pattern {"slug":"lsx-demo-theme/hidden-blog-heading"} /-->
-	<!-- wp:pattern {"slug":"lsx-demo-theme/template-query-loop"} /-->
-</main>
-<!-- /wp:group -->
-<!-- wp:template-part {"slug":"footer"} /-->
-</original> -->
-
-<!-- Posts index (Journal) -->
 <!-- wp:template-part {"slug":"skip-links"} /-->
 <!-- wp:template-part {"slug":"header"} /-->
-<!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-60","bottom":"var:preset|spacing|spacing-60"}}},"lock":{"move":false,"remove":false}} -->
-<div id="content">
-	<!-- wp:heading {"level":1} -->Journal<!-- /wp:heading -->
-	<!-- wp:query {"query":{"perPage":10}} -->
-	<div class="wp-block-query">
-		<!-- wp:post-template -->
-		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"},"border":{"bottom":{"width":"1px","color":"var:preset|color|neutral-300"}},"spacing":{"padding":{"bottom":"var:preset|spacing|spacing-30"}}}} -->
-		<div>
-			<!-- wp:post-title {"isLink":true,"level":2} /-->
-			<!-- wp:post-excerpt {"moreText":"Read more"} /-->
-			<!-- wp:post-date {"fontSize":"small"} /-->
-		</div>
-		<!-- /wp:group -->
-		<!-- /wp:post-template -->
-		<!-- wp:query-pagination -->
-		<!-- wp:query-pagination-numbers /-->
-		<!-- /wp:query-pagination -->
-	</div>
-	<!-- /wp:query -->
-</div>
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<main
+    class="wp-block-group"
+    id="maincontent"
+    tabindex="-1"
+    style="margin-top: var(--wp--preset--spacing--60)"
+>
+    <!-- This is the home page - add your content here -->
+</main>
 <!-- /wp:group -->
 <!-- wp:template-part {"slug":"footer"} /-->
