@@ -35,7 +35,7 @@ a {
 .wp-block-navigation
     .wp-block-navigation-submenu
     .wp-block-navigation-item:not(:last-child) {
-    margin-bottom: 1px;
+    margin-bottom: 3px;
 }
 
 /* Increase the outline offset on the parent menu items, so that the outline does not touch the text. */
