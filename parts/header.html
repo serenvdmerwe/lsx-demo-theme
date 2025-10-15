@@ -1,44 +1,29 @@
-<!-- Header Template Part (merged custom markup) -->
-<!-- Original pattern reference retained for potential reuse: -->
-<!-- wp:pattern {"slug":"lsx-demo-theme/header"} /-->
-
-<!-- wp:group {"tagName":"header","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-30","bottom":"var:preset|spacing|spacing-30"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<header>
+<!-- Header Template Part -->
+<!-- wp:group {"tagName":"header","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<header class="wp-block-group">
     <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-    <div>
+    <div class="wp-block-group">
         <!-- wp:site-logo {"width":64} /-->
-        <!-- wp:site-title {"level":2,"style":{"typography":{"fontSize":"1.25rem"}}} /-->
+        <!-- wp:site-title {"level":1,"style":{"typography":{"fontSize":"1.25rem"}}} /-->
     </div>
     <!-- /wp:group -->
 
     <!-- Primary Navigation -->
-    <!-- wp:navigation {"ariaLabel":"Primary","layout":{"type":"flex","justifyContent":"center"},"style":{"typography":{"fontFamily":"var(--wp--preset--font-family--ui-font)","fontSize":"var(--wp--preset--font-size--small)"}},"className":"primary-nav","id":"primary-navigation"} /-->
+    <!-- wp:navigation {"ref":1,"ariaLabel":"Primary","layout":{"type":"flex","justifyContent":"center"},"style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)"}},"className":"primary-nav"} /-->
 
-    <!-- Utilities -->
-    <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right","orientation":"horizontal","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"0.75rem"}}} -->
-    <div>
-        <!-- Search trigger -->
-        <!-- wp:button {"className":"is-style-outline","fontSize":"small"} -->
-        <div class="wp-block-button has-custom-font-size has-small-font-size">
+    <!-- Mobile Navigation Toggle -->
+    <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"},"className":"mobile-nav-toggle"} -->
+    <div class="wp-block-group mobile-nav-toggle">
+        <!-- wp:button {"className":"is-style-outline mobile-menu-button","fontSize":"small"} -->
+        <div
+            class="wp-block-button has-custom-font-size has-small-font-size is-style-outline mobile-menu-button"
+        >
             <a
                 class="wp-block-button__link"
-                data-toggle="search-panel"
+                href="#"
+                onclick="document.querySelector('.primary-nav').classList.toggle('is-open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); return false;"
                 aria-expanded="false"
-                aria-controls="lbh-search-panel"
-                >Search</a
-            >
-        </div>
-        <!-- /wp:button -->
-
-        <!-- Mobile nav toggle -->
-        <!-- wp:button {"className":"is-style-outline","fontSize":"small"} -->
-        <div class="wp-block-button has-custom-font-size has-small-font-size">
-            <a
-                class="wp-block-button__link"
-                data-toggle="mobile-nav"
-                aria-expanded="false"
-                aria-controls="lbh-mobile-nav"
-                aria-label="Open menu"
+                aria-label="Toggle menu"
                 >Menu</a
             >
         </div>
