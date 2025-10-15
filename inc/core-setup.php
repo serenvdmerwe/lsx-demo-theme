@@ -51,8 +51,7 @@ if (! function_exists('lsx_demo_theme_core_setup')) {
 
 // Register additional pattern categories for the theme.
 if (! function_exists('lsx_demo_theme_register_pattern_categories')) {
-	function lsx_demo_theme_register_pattern_categories()
-	{
+	function lsx_demo_theme_register_pattern_categories() {
 		$extra = array(
 			'hero'           => __('Hero', 'lsx-demo-theme'),
 			'section'        => __('Sections', 'lsx-demo-theme'),
