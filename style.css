@@ -89,7 +89,7 @@ a {
 
 @media (min-width: 768px) {
     .primary-nav {
-        display: flex !important;
+        display: flex;
         position: static;
         width: auto;
         height: auto;
