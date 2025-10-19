@@ -36,13 +36,13 @@ Template parts are located in the `parts/` directory:
 ```php
 <?php
 // Display primary menu
-lsx_demo_display_menu('primary');
+lsx_demo_theme_display_menu('primary');
 
 // Display simple horizontal menu
-lsx_demo_simple_menu('primary', 'custom-class');
+lsx_demo_theme_simple_menu('primary', 'custom-class');
 
 // Display mobile menu with toggle
-lsx_demo_mobile_menu('mobile', 'Menu');
+lsx_demo_theme_mobile_menu('mobile', 'Menu');
 ?>
 ```
 
