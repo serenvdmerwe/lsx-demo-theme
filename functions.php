@@ -88,7 +88,10 @@ if (! function_exists('lsx_demo_theme_enqueue_assets')) {
 }
 
 /**
- * Register Custom Post Type for Shoes.
+ * Registers the "Shoes" custom post type for the theme.
+ *
+ * @since 1.0
+ * @return void
  */
 function lsx_demo_theme_shoes_cpt() {
 	$labels = array(
