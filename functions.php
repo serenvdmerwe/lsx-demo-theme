@@ -30,6 +30,15 @@ require_once get_template_directory() . '/inc/luxury-product-filter-handler.php'
 // Include sample products creator
 require_once get_template_directory() . '/inc/luxury-sample-products.php';
 
+// Include designer boot taxonomies
+require_once get_template_directory() . '/inc/designer-boot-taxonomies.php';
+
+// Include designer boot template helpers
+require_once get_template_directory() . '/inc/designer-boot-template-helpers.php';
+
+// Include designer boot meta boxes
+require_once get_template_directory() . '/inc/designer-boot-meta-boxes.php';
+
 // Include system validator for development/testing
 // if (defined('WP_DEBUG') && WP_DEBUG) {
 // 	require_once get_template_directory() . '/inc/system-validator.php';
@@ -344,42 +353,42 @@ if (! function_exists('lsx_demo_theme_format_binding')) :
 	}
 endif;
 
-// Registers shoes custom post type.
-if (! function_exists('lsx_demo_theme_register_shoes_post_type')) :
+// Registers designer boot post type according to luxury-boots-catalog.md specification.
+if (! function_exists('lbc_register_designer_boot_post_type')) :
 	/**
-	 * Registers the shoes custom post type.
+	 * Registers the designer_boot custom post type.
 	 *
 	 * @since lsx-demo-theme 1.0
 	 *
 	 * @return void
 	 */
-	function lsx_demo_theme_register_shoes_post_type()
+	function lbc_register_designer_boot_post_type()
 	{
 		$labels = array(
-			'name'                     => _x('Products', 'Post type general name', 'lsx-demo-theme'),
-			'singular_name'            => _x('Product', 'Post type singular name', 'lsx-demo-theme'),
-			'menu_name'                => _x('Products', 'Admin Menu text', 'lsx-demo-theme'),
-			'name_admin_bar'           => _x('Product', 'Add New on Toolbar', 'lsx-demo-theme'),
-			'add_new'                  => __('Add New', 'lsx-demo-theme'),
-			'add_new_item'             => __('Add New Product', 'lsx-demo-theme'),
-			'new_item'                 => __('New Product', 'lsx-demo-theme'),
-			'edit_item'                => __('Edit Product', 'lsx-demo-theme'),
-			'view_item'                => __('View Product', 'lsx-demo-theme'),
-			'all_items'                => __('All Products', 'lsx-demo-theme'),
-			'search_items'             => __('Search Products', 'lsx-demo-theme'),
-			'parent_item_colon'        => __('Parent Products:', 'lsx-demo-theme'),
-			'not_found'                => __('No products found.', 'lsx-demo-theme'),
-			'not_found_in_trash'       => __('No products found in Trash.', 'lsx-demo-theme'),
-			'featured_image'           => _x('Product Cover Image', 'Overrides the "Featured Image" phrase for this post type. Added in 4.3', 'lsx-demo-theme'),
-			'set_featured_image'       => _x('Set cover image', 'Overrides the "Set featured image" phrase for this post type. Added in 4.3', 'lsx-demo-theme'),
-			'remove_featured_image'    => _x('Remove cover image', 'Overrides the "Remove featured image" phrase for this post type. Added in 4.3', 'lsx-demo-theme'),
-			'use_featured_image'       => _x('Use as cover image', 'Overrides the "Use as featured image" phrase for this post type. Added in 4.3', 'lsx-demo-theme'),
-			'archives'                 => _x('Product archives', 'The post type archive label used in nav menus. Default "Post Archives". Added in 4.4', 'lsx-demo-theme'),
-			'insert_into_item'         => _x('Insert into product', 'Overrides the "Insert into post"/"Insert into page" phrase (used when inserting media into a post). Added in 4.4', 'lsx-demo-theme'),
-			'uploaded_to_this_item'    => _x('Uploaded to this product', 'Overrides the "Uploaded to this post"/"Uploaded to this page" phrase (used when viewing media attached to a post). Added in 4.4', 'lsx-demo-theme'),
-			'filter_items_list'        => _x('Filter products list', 'Screen reader text for the filter links heading on the post type listing screen. Default "Filter posts list"/"Filter pages list". Added in 4.4', 'lsx-demo-theme'),
-			'items_list_navigation'    => _x('Products list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default "Posts list navigation"/"Pages list navigation". Added in 4.4', 'lsx-demo-theme'),
-			'items_list'               => _x('Products list', 'Screen reader text for the items list heading on the post type listing screen. Default "Posts list"/"Pages list". Added in 4.4', 'lsx-demo-theme'),
+			'name'                     => _x('Designer Boots', 'Post type general name', 'lbc'),
+			'singular_name'            => _x('Designer Boot', 'Post type singular name', 'lbc'),
+			'menu_name'                => _x('Designer Boots', 'Admin Menu text', 'lbc'),
+			'name_admin_bar'           => _x('Designer Boot', 'Add New on Toolbar', 'lbc'),
+			'add_new'                  => __('Add New', 'lbc'),
+			'add_new_item'             => __('Add New Designer Boot', 'lbc'),
+			'new_item'                 => __('New Designer Boot', 'lbc'),
+			'edit_item'                => __('Edit Designer Boot', 'lbc'),
+			'view_item'                => __('View Designer Boot', 'lbc'),
+			'all_items'                => __('All Designer Boots', 'lbc'),
+			'search_items'             => __('Search Designer Boots', 'lbc'),
+			'parent_item_colon'        => __('Parent Designer Boots:', 'lbc'),
+			'not_found'                => __('No designer boots found.', 'lbc'),
+			'not_found_in_trash'       => __('No designer boots found in Trash.', 'lbc'),
+			'featured_image'           => _x('Boot Cover Image', 'Overrides the "Featured Image" phrase for this post type. Added in 4.3', 'lbc'),
+			'set_featured_image'       => _x('Set cover image', 'Overrides the "Set featured image" phrase for this post type. Added in 4.3', 'lbc'),
+			'remove_featured_image'    => _x('Remove cover image', 'Overrides the "Remove featured image" phrase for this post type. Added in 4.3', 'lbc'),
+			'use_featured_image'       => _x('Use as cover image', 'Overrides the "Use as featured image" phrase for this post type. Added in 4.3', 'lbc'),
+			'archives'                 => _x('Designer Boot archives', 'The post type archive label used in nav menus. Default "Post Archives". Added in 4.4', 'lbc'),
+			'insert_into_item'         => _x('Insert into designer boot', 'Overrides the "Insert into post"/"Insert into page" phrase (used when inserting media into a post). Added in 4.4', 'lbc'),
+			'uploaded_to_this_item'    => _x('Uploaded to this designer boot', 'Overrides the "Uploaded to this post"/"Uploaded to this page" phrase (used when viewing media attached to a post). Added in 4.4', 'lbc'),
+			'filter_items_list'        => _x('Filter designer boots list', 'Screen reader text for the filter links heading on the post type listing screen. Default "Filter posts list"/"Filter pages list". Added in 4.4', 'lbc'),
+			'items_list_navigation'    => _x('Designer Boots list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default "Posts list navigation"/"Pages list navigation". Added in 4.4', 'lbc'),
+			'items_list'               => _x('Designer Boots list', 'Screen reader text for the items list heading on the post type listing screen. Default "Posts list"/"Pages list". Added in 4.4', 'lbc'),
 		);
 
 		$args = array(
@@ -390,19 +399,19 @@ if (! function_exists('lsx_demo_theme_register_shoes_post_type')) :
 			'show_in_menu'       => true,
 			'show_in_rest'       => true,
 			'query_var'          => true,
-			'rewrite'            => array('slug' => 'product'),
+			'rewrite'            => array('slug' => 'designer-boots'),
 			'capability_type'    => 'post',
-			'has_archive'        => 'shop',
+			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => 5,
-			'menu_icon'          => 'dashicons-products',
-			'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'revisions'),
+			'menu_icon'          => 'dashicons-universal-access',
+			'supports'           => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'revisions'),
 			'show_in_graphql'    => true,
-			'graphql_single_name' => 'product',
-			'graphql_plural_name' => 'products',
+			'graphql_single_name' => 'designerBoot',
+			'graphql_plural_name' => 'designerBoots',
 		);
 
-		register_post_type('product', $args);
+		register_post_type('designer_boot', $args);
 
 		// Flush rewrite rules on theme activation (development only)
 		if (defined('WP_DEBUG') && WP_DEBUG && !get_option('lsx_rewrite_rules_flushed')) {
@@ -411,336 +420,51 @@ if (! function_exists('lsx_demo_theme_register_shoes_post_type')) :
 		}
 	}
 endif;
-add_action('init', 'lsx_demo_theme_register_shoes_post_type', 5); // Early priority
+add_action('init', 'lbc_register_designer_boot_post_type', 5); // Early priority
 
-// Registers shoes taxonomies.
-if (! function_exists('lsx_demo_theme_register_shoes_taxonomies')) :
+// Taxonomies registered in /inc/designer-boot-taxonomies.php
+// Designer boot taxonomies are registered in /inc/designer-boot-taxonomies.php
+
+// Register custom fields for designer boots
+if (!function_exists('lbc_add_designer_boot_meta_boxes')) :
 	/**
-	 * Registers custom taxonomies for the shoes post type.
+	 * Add custom meta boxes for designer boot fields
 	 *
 	 * @since lsx-demo-theme 1.0
 	 *
 	 * @return void
 	 */
-	function lsx_demo_theme_register_shoes_taxonomies()
+	function lbc_add_designer_boot_meta_boxes()
 	{
-		// Heel Height taxonomy (as per luxury brief specifications)
-		$heel_height_labels = array(
-			'name'                       => _x('Heel Heights', 'Taxonomy General Name', 'lsx-demo-theme'),
-			'singular_name'              => _x('Heel Height', 'Taxonomy Singular Name', 'lsx-demo-theme'),
-			'menu_name'                  => __('Heel Heights', 'lsx-demo-theme'),
-			'all_items'                  => __('All Heel Heights', 'lsx-demo-theme'),
-			'parent_item'                => __('Parent Heel Height', 'lsx-demo-theme'),
-			'parent_item_colon'          => __('Parent Heel Height:', 'lsx-demo-theme'),
-			'new_item_name'              => __('New Heel Height Name', 'lsx-demo-theme'),
-			'add_new_item'               => __('Add New Heel Height', 'lsx-demo-theme'),
-			'edit_item'                  => __('Edit Heel Height', 'lsx-demo-theme'),
-			'update_item'                => __('Update Heel Height', 'lsx-demo-theme'),
-			'view_item'                  => __('View Heel Height', 'lsx-demo-theme'),
-			'separate_items_with_commas' => __('Separate heel heights with commas', 'lsx-demo-theme'),
-			'add_or_remove_items'        => __('Add or remove heel heights', 'lsx-demo-theme'),
-			'choose_from_most_used'      => __('Choose from the most used', 'lsx-demo-theme'),
-			'popular_items'              => __('Popular Heel Heights', 'lsx-demo-theme'),
-			'search_items'               => __('Search Heel Heights', 'lsx-demo-theme'),
-			'not_found'                  => __('Not Found', 'lsx-demo-theme'),
-			'no_terms'                   => __('No heel heights', 'lsx-demo-theme'),
-			'items_list'                 => __('Heel Heights list', 'lsx-demo-theme'),
-			'items_list_navigation'      => __('Heel Heights list navigation', 'lsx-demo-theme'),
+		add_meta_box(
+			'lbc-boot-details',
+			__('Boot Details', 'lbc'),
+			'lbc_render_boot_details_meta_box',
+			'designer_boot',
+			'normal',
+			'high'
 		);
 
-		$heel_height_args = array(
-			'labels'                     => $heel_height_labels,
-			'hierarchical'               => false,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => true,
-			'show_in_rest'               => true,
-			'rewrite'                    => array('slug' => 'heel-height'),
-			'show_in_graphql'            => true,
-			'graphql_single_name'        => 'heelHeight',
-			'graphql_plural_name'        => 'heelHeights',
+		add_meta_box(
+			'lbc-boot-images',
+			__('Additional Images', 'lbc'),
+			'lbc_render_boot_images_meta_box',
+			'designer_boot',
+			'normal',
+			'high'
 		);
 
-		register_taxonomy('heel_height', array('product'), $heel_height_args);
-
-		// Material taxonomy (as per luxury brief specifications)
-		$material_labels = array(
-			'name'                       => _x('Materials', 'Taxonomy General Name', 'lsx-demo-theme'),
-			'singular_name'              => _x('Material', 'Taxonomy Singular Name', 'lsx-demo-theme'),
-			'menu_name'                  => __('Materials', 'lsx-demo-theme'),
-			'all_items'                  => __('All Materials', 'lsx-demo-theme'),
-			'parent_item'                => __('Parent Material', 'lsx-demo-theme'),
-			'parent_item_colon'          => __('Parent Material:', 'lsx-demo-theme'),
-			'new_item_name'              => __('New Material Name', 'lsx-demo-theme'),
-			'add_new_item'               => __('Add New Material', 'lsx-demo-theme'),
-			'edit_item'                  => __('Edit Material', 'lsx-demo-theme'),
-			'update_item'                => __('Update Material', 'lsx-demo-theme'),
-			'view_item'                  => __('View Material', 'lsx-demo-theme'),
-			'separate_items_with_commas' => __('Separate materials with commas', 'lsx-demo-theme'),
-			'add_or_remove_items'        => __('Add or remove materials', 'lsx-demo-theme'),
-			'choose_from_most_used'      => __('Choose from the most used', 'lsx-demo-theme'),
-			'popular_items'              => __('Popular Materials', 'lsx-demo-theme'),
-			'search_items'               => __('Search Materials', 'lsx-demo-theme'),
-			'not_found'                  => __('Not Found', 'lsx-demo-theme'),
-			'no_terms'                   => __('No materials', 'lsx-demo-theme'),
-			'items_list'                 => __('Materials list', 'lsx-demo-theme'),
-			'items_list_navigation'      => __('Materials list navigation', 'lsx-demo-theme'),
+		add_meta_box(
+			'lbc-boot-specs',
+			__('Technical Specifications', 'lbc'),
+			'lbc_render_boot_specs_meta_box',
+			'designer_boot',
+			'side',
+			'default'
 		);
-
-		$material_args = array(
-			'labels'                     => $material_labels,
-			'hierarchical'               => false,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => true,
-			'show_in_rest'               => true,
-			'rewrite'                    => array('slug' => 'material'),
-		);
-
-		register_taxonomy('material', array('product'), $material_args);
-
-		// Finish taxonomy
-		$finish_labels = array(
-			'name'                       => _x('Finishes', 'Taxonomy General Name', 'lsx-demo-theme'),
-			'singular_name'              => _x('Finish', 'Taxonomy Singular Name', 'lsx-demo-theme'),
-			'menu_name'                  => __('Finishes', 'lsx-demo-theme'),
-			'all_items'                  => __('All Finishes', 'lsx-demo-theme'),
-			'new_item_name'              => __('New Finish Name', 'lsx-demo-theme'),
-			'add_new_item'               => __('Add New Finish', 'lsx-demo-theme'),
-			'edit_item'                  => __('Edit Finish', 'lsx-demo-theme'),
-			'update_item'                => __('Update Finish', 'lsx-demo-theme'),
-			'view_item'                  => __('View Finish', 'lsx-demo-theme'),
-			'search_items'               => __('Search Finishes', 'lsx-demo-theme'),
-			'not_found'                  => __('Not Found', 'lsx-demo-theme'),
-			'no_terms'                   => __('No finishes', 'lsx-demo-theme'),
-			'items_list'                 => __('Finishes list', 'lsx-demo-theme'),
-			'items_list_navigation'      => __('Finishes list navigation', 'lsx-demo-theme'),
-		);
-
-		$finish_args = array(
-			'labels'                     => $finish_labels,
-			'hierarchical'               => false,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => true,
-			'show_in_rest'               => true,
-			'rewrite'                    => array('slug' => 'finish'),
-		);
-
-		register_taxonomy('finish', array('product'), $finish_args);
-
-		// Collection taxonomy (hierarchical for luxury product lines)
-		$collection_labels = array(
-			'name'                       => _x('Collections', 'Taxonomy General Name', 'lsx-demo-theme'),
-			'singular_name'              => _x('Collection', 'Taxonomy Singular Name', 'lsx-demo-theme'),
-			'menu_name'                  => __('Collections', 'lsx-demo-theme'),
-			'all_items'                  => __('All Collections', 'lsx-demo-theme'),
-			'parent_item'                => __('Parent Collection', 'lsx-demo-theme'),
-			'parent_item_colon'          => __('Parent Collection:', 'lsx-demo-theme'),
-			'new_item_name'              => __('New Collection Name', 'lsx-demo-theme'),
-			'add_new_item'               => __('Add New Collection', 'lsx-demo-theme'),
-			'edit_item'                  => __('Edit Collection', 'lsx-demo-theme'),
-			'update_item'                => __('Update Collection', 'lsx-demo-theme'),
-			'view_item'                  => __('View Collection', 'lsx-demo-theme'),
-			'separate_items_with_commas' => __('Separate collections with commas', 'lsx-demo-theme'),
-			'add_or_remove_items'        => __('Add or remove collections', 'lsx-demo-theme'),
-			'choose_from_most_used'      => __('Choose from the most used', 'lsx-demo-theme'),
-			'popular_items'              => __('Popular Collections', 'lsx-demo-theme'),
-			'search_items'               => __('Search Collections', 'lsx-demo-theme'),
-			'not_found'                  => __('Not Found', 'lsx-demo-theme'),
-			'no_terms'                   => __('No collections', 'lsx-demo-theme'),
-			'items_list'                 => __('Collections list', 'lsx-demo-theme'),
-			'items_list_navigation'      => __('Collections list navigation', 'lsx-demo-theme'),
-		);
-
-		$collection_args = array(
-			'labels'                     => $collection_labels,
-			'hierarchical'               => true,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => true,
-			'show_in_rest'               => true,
-			'rewrite'                    => array('slug' => 'collection'),
-			'show_in_graphql'            => true,
-			'graphql_single_name'        => 'collection',
-			'graphql_plural_name'        => 'collections',
-		);
-
-		register_taxonomy('collection', array('product'), $collection_args);
-
-		// Brand taxonomy
-		$brand_labels = array(
-			'name'                       => _x('Brands', 'Taxonomy General Name', 'lsx-demo-theme'),
-			'singular_name'              => _x('Brand', 'Taxonomy Singular Name', 'lsx-demo-theme'),
-			'menu_name'                  => __('Brands', 'lsx-demo-theme'),
-			'all_items'                  => __('All Brands', 'lsx-demo-theme'),
-			'new_item_name'              => __('New Brand Name', 'lsx-demo-theme'),
-			'add_new_item'               => __('Add New Brand', 'lsx-demo-theme'),
-			'edit_item'                  => __('Edit Brand', 'lsx-demo-theme'),
-			'update_item'                => __('Update Brand', 'lsx-demo-theme'),
-			'view_item'                  => __('View Brand', 'lsx-demo-theme'),
-			'search_items'               => __('Search Brands', 'lsx-demo-theme'),
-			'not_found'                  => __('Not Found', 'lsx-demo-theme'),
-			'no_terms'                   => __('No brands', 'lsx-demo-theme'),
-			'items_list'                 => __('Brands list', 'lsx-demo-theme'),
-			'items_list_navigation'      => __('Brands list navigation', 'lsx-demo-theme'),
-		);
-
-		$brand_args = array(
-			'labels'                     => $brand_labels,
-			'hierarchical'               => false,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => true,
-			'show_in_rest'               => true,
-			'rewrite'                    => array('slug' => 'brand'),
-			'show_in_graphql'            => true,
-			'graphql_single_name'        => 'brand',
-			'graphql_plural_name'        => 'brands',
-		);
-
-		register_taxonomy('brand', array('product'), $brand_args);
-
-		// Country taxonomy
-		$country_labels = array(
-			'name'                       => _x('Countries', 'Taxonomy General Name', 'lsx-demo-theme'),
-			'singular_name'              => _x('Country', 'Taxonomy Singular Name', 'lsx-demo-theme'),
-			'menu_name'                  => __('Countries', 'lsx-demo-theme'),
-			'all_items'                  => __('All Countries', 'lsx-demo-theme'),
-			'new_item_name'              => __('New Country Name', 'lsx-demo-theme'),
-			'add_new_item'               => __('Add New Country', 'lsx-demo-theme'),
-			'edit_item'                  => __('Edit Country', 'lsx-demo-theme'),
-			'update_item'                => __('Update Country', 'lsx-demo-theme'),
-			'view_item'                  => __('View Country', 'lsx-demo-theme'),
-			'search_items'               => __('Search Countries', 'lsx-demo-theme'),
-			'not_found'                  => __('Not Found', 'lsx-demo-theme'),
-			'no_terms'                   => __('No countries', 'lsx-demo-theme'),
-			'items_list'                 => __('Countries list', 'lsx-demo-theme'),
-			'items_list_navigation'      => __('Countries list navigation', 'lsx-demo-theme'),
-		);
-
-		$country_args = array(
-			'labels'                     => $country_labels,
-			'hierarchical'               => false,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => true,
-			'show_in_rest'               => true,
-			'rewrite'                    => array('slug' => 'country'),
-		);
-
-		register_taxonomy('country', array('product'), $country_args);
-
-		// Color taxonomy
-		$color_labels = array(
-			'name'                       => _x('Colors', 'Taxonomy General Name', 'lsx-demo-theme'),
-			'singular_name'              => _x('Color', 'Taxonomy Singular Name', 'lsx-demo-theme'),
-			'menu_name'                  => __('Colors', 'lsx-demo-theme'),
-			'all_items'                  => __('All Colors', 'lsx-demo-theme'),
-			'new_item_name'              => __('New Color Name', 'lsx-demo-theme'),
-			'add_new_item'               => __('Add New Color', 'lsx-demo-theme'),
-			'edit_item'                  => __('Edit Color', 'lsx-demo-theme'),
-			'update_item'                => __('Update Color', 'lsx-demo-theme'),
-			'view_item'                  => __('View Color', 'lsx-demo-theme'),
-			'search_items'               => __('Search Colors', 'lsx-demo-theme'),
-			'not_found'                  => __('Not Found', 'lsx-demo-theme'),
-			'no_terms'                   => __('No colors', 'lsx-demo-theme'),
-			'items_list'                 => __('Colors list', 'lsx-demo-theme'),
-			'items_list_navigation'      => __('Colors list navigation', 'lsx-demo-theme'),
-		);
-
-		$color_args = array(
-			'labels'                     => $color_labels,
-			'hierarchical'               => false,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => true,
-			'show_in_rest'               => true,
-			'rewrite'                    => array('slug' => 'color'),
-		);
-
-		register_taxonomy('color', array('product'), $color_args);
-
-		// Silhouette taxonomy
-		$silhouette_labels = array(
-			'name'                       => _x('Silhouettes', 'Taxonomy General Name', 'lsx-demo-theme'),
-			'singular_name'              => _x('Silhouette', 'Taxonomy Singular Name', 'lsx-demo-theme'),
-			'menu_name'                  => __('Silhouettes', 'lsx-demo-theme'),
-			'all_items'                  => __('All Silhouettes', 'lsx-demo-theme'),
-			'new_item_name'              => __('New Silhouette Name', 'lsx-demo-theme'),
-			'add_new_item'               => __('Add New Silhouette', 'lsx-demo-theme'),
-			'edit_item'                  => __('Edit Silhouette', 'lsx-demo-theme'),
-			'update_item'                => __('Update Silhouette', 'lsx-demo-theme'),
-			'view_item'                  => __('View Silhouette', 'lsx-demo-theme'),
-			'search_items'               => __('Search Silhouettes', 'lsx-demo-theme'),
-			'not_found'                  => __('Not Found', 'lsx-demo-theme'),
-			'no_terms'                   => __('No silhouettes', 'lsx-demo-theme'),
-			'items_list'                 => __('Silhouettes list', 'lsx-demo-theme'),
-			'items_list_navigation'      => __('Silhouettes list navigation', 'lsx-demo-theme'),
-		);
-
-		$silhouette_args = array(
-			'labels'                     => $silhouette_labels,
-			'hierarchical'               => false,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => true,
-			'show_in_rest'               => true,
-			'rewrite'                    => array('slug' => 'silhouette'),
-		);
-
-		register_taxonomy('silhouette', array('product'), $silhouette_args);
-
-		// Closure taxonomy
-		$closure_labels = array(
-			'name'                       => _x('Closures', 'Taxonomy General Name', 'lsx-demo-theme'),
-			'singular_name'              => _x('Closure', 'Taxonomy Singular Name', 'lsx-demo-theme'),
-			'menu_name'                  => __('Closures', 'lsx-demo-theme'),
-			'all_items'                  => __('All Closures', 'lsx-demo-theme'),
-			'new_item_name'              => __('New Closure Name', 'lsx-demo-theme'),
-			'add_new_item'               => __('Add New Closure', 'lsx-demo-theme'),
-			'edit_item'                  => __('Edit Closure', 'lsx-demo-theme'),
-			'update_item'                => __('Update Closure', 'lsx-demo-theme'),
-			'view_item'                  => __('View Closure', 'lsx-demo-theme'),
-			'search_items'               => __('Search Closures', 'lsx-demo-theme'),
-			'not_found'                  => __('Not Found', 'lsx-demo-theme'),
-			'no_terms'                   => __('No closures', 'lsx-demo-theme'),
-			'items_list'                 => __('Closures list', 'lsx-demo-theme'),
-			'items_list_navigation'      => __('Closures list navigation', 'lsx-demo-theme'),
-		);
-
-		$closure_args = array(
-			'labels'                     => $closure_labels,
-			'hierarchical'               => false,
-			'public'                     => true,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_in_nav_menus'          => true,
-			'show_tagcloud'              => true,
-			'show_in_rest'               => true,
-			'rewrite'                    => array('slug' => 'closure'),
-		);
-
-		register_taxonomy('closure', array('product'), $closure_args);
 	}
 endif;
-add_action('init', 'lsx_demo_theme_register_shoes_taxonomies', 10); // After post type
+add_action('add_meta_boxes', 'lbc_add_designer_boot_meta_boxes');
 
 // Registers reusable header component block patterns.
 if (! function_exists('lsx_demo_theme_register_header_components')) :

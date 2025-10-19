@@ -1,0 +1,65 @@
+<!-- wp:group {"style":{"border":{"width":"1px","color":"var:preset|color|neutral-200"},"spacing":{"padding":"var:preset|spacing|50"}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<div
+    class="wp-block-group has-base-background-color has-background"
+    style="
+        border-color: var(--wp--preset--color--neutral-200);
+        border-width: 1px;
+        padding: var(--wp--preset--spacing--50);
+    "
+>
+    <!-- wp:html -->
+    <dl class="boot-facts">
+        <dt>Brand</dt>
+        <dd>[brand_terms]</dd>
+
+        <dt>Silhouette</dt>
+        <dd>[silhouette_terms]</dd>
+
+        <dt>Closure</dt>
+        <dd>[closure_terms]</dd>
+
+        <dt>Heel Type</dt>
+        <dd>[lbc_heel_type]</dd>
+
+        <dt>Heel Height</dt>
+        <dd>[lbc_heel_height_mm]mm</dd>
+
+        <dt>Material</dt>
+        <dd>[lbc_leather_type]</dd>
+
+        <dt>Color</dt>
+        <dd>[lbc_leather_color]</dd>
+
+        <dt>Sizes (EU)</dt>
+        <dd>[lbc_sizes_eu]</dd>
+
+        <dt>Country</dt>
+        <dd>[lbc_country_of_origin]</dd>
+
+        <dt>Care</dt>
+        <dd>[lbc_care]</dd>
+    </dl>
+    <!-- /wp:html -->
+
+    <!-- Product Link CTA -->
+    <!-- wp:html -->
+    <div class="boot-cta" style="margin-top: var(--wp--preset--spacing--50)">
+        [if lbc_product_link]
+        <a
+            href="[lbc_product_link]"
+            class="wp-element-button"
+            style="
+                background-color: var(--wp--preset--color--primary);
+                color: var(--wp--preset--color--base);
+                text-decoration: none;
+                padding: 12px 24px;
+                display: inline-block;
+                border-radius: 0;
+            "
+            >View at Retailer</a
+        >
+        [/if]
+    </div>
+    <!-- /wp:html -->
+</div>
+<!-- /wp:group -->

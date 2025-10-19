@@ -1,8 +1,11 @@
 <?php
 
 /**
- * Sample Luxury Boot Products
- * Creates sample products for the luxury boot catalog
+ * Sample Designer Boot Products
+ * Creates sample designer boot products according to luxury-boots-catalog.md specification
+ *
+ * @package LSX Demo Theme
+ * @since 1.0.0
  */
 
 // Prevent direct access
@@ -17,7 +20,7 @@ class LuxuryBootSampleData
 	{
 		// For development - always recreate sample products
 		if (defined('WP_DEBUG') && WP_DEBUG) {
-			delete_option('luxury_sample_products_created');
+			delete_option('lbc_sample_products_created');
 		}
 
 		add_action('init', array($this, 'maybe_create_sample_products'), 500); // After taxonomies are registered
@@ -28,33 +31,38 @@ class LuxuryBootSampleData
 	 */
 	public function maybe_create_sample_products()
 	{
+		// Check if already created (skip in debug mode)
+		if (!defined('WP_DEBUG') || !WP_DEBUG) {
+			if (get_option('lbc_sample_products_created')) {
+				return;
+			}
+		}
+
 		// First create taxonomy terms
 		$this->create_taxonomy_terms();
 
-		// Then create sample products (always recreate in debug mode)
+		// Then create sample products
 		$this->create_sample_products();
 
 		// Update flag only if not in debug mode
 		if (!defined('WP_DEBUG') || !WP_DEBUG) {
-			update_option('luxury_sample_products_created', true);
+			update_option('lbc_sample_products_created', true);
 		}
 	}
 
 	/**
-	 * Create required taxonomy terms
+	 * Create required taxonomy terms according to luxury-boots-catalog.md specification
 	 */
 	private function create_taxonomy_terms()
 	{
 		$taxonomy_terms = array(
-			'heel_height' => array('low', 'medium', 'high', 'extra-high'),
-			'material' => array('italian-leather', 'patent-leather', 'suede', 'fabric'),
-			'finish' => array('glossy', 'matte'),
-			'collection' => array('heritage', 'modern-classic', 'avant-garde', 'limited-edition', 'seasonal'),
-			'brand' => array('GUCCI', 'Louis Vuitton', 'Prada', 'Saint Laurent', 'Christian Louboutin', 'Balenciaga'),
-			'country' => array('italy', 'france'),
-			'color' => array('black'),
-			'silhouette' => array('ankle-boot', 'platform-boot', 'combat-boot'),
-			'closure' => array('zipper', 'lace-up')
+			'brand' => array('GUCCI', 'Louis Vuitton', 'Prada'),
+			'heel_height' => array('low', 'medium', 'high', 'platform'),
+			'material' => array('calfskin', 'lambskin', 'nappa', 'patent', 'mesh', 'rubber'),
+			'country' => array('Italy', 'Imported'),
+			'color' => array('Black', 'Milk', 'Brown', 'White'),
+			'silhouette' => array('ankle boot', 'chelsea', 'lace-up'),
+			'closure' => array('side zip', 'lace', 'pull-on')
 		);
 
 		foreach ($taxonomy_terms as $taxonomy => $terms) {
@@ -67,154 +75,95 @@ class LuxuryBootSampleData
 	}
 
 	/**
-	 * Create luxury boot product samples
+	 * Create designer boot product samples according to luxury-boots-catalog.md specification
 	 */
 	private function create_sample_products()
 	{
 		$products = array(
 			array(
-				'title' => 'GUCCI Aria Leather Ankle Boot',
-				'content' => $this->get_gucci_content(),
+				'title' => 'GUCCI Horsebit Ankle Boot – Black Calfskin',
+				'excerpt' => 'Iconic horsebit ankle boot in smooth black calfskin with a low rubber block heel and side-zip convenience—versatile from desk to dinner.',
+				'content' => '',
 				'taxonomies' => array(
-					'heel_height' => 'high',
-					'material' => 'italian-leather',
-					'finish' => 'glossy',
-					'collection' => 'heritage',
 					'brand' => 'GUCCI',
-					'country' => 'italy',
-					'color' => 'black',
-					'silhouette' => 'ankle-boot',
-					'closure' => 'zipper'
+					'heel_height' => 'low',
+					'material' => 'calfskin',
+					'country' => 'Italy',
+					'color' => 'Black',
+					'silhouette' => 'ankle boot',
+					'closure' => 'side zip'
 				),
 				'meta' => array(
-					'_product_price' => '1850',
-					'_product_sku' => 'GUC-AR-001',
-					'_product_featured' => 'yes',
-					'_product_size_range' => '35-42 EU',
-					'_product_care_instructions' => 'Professional leather care recommended',
-					'_product_made_in' => 'Made in Italy',
+					'lbc_featured_alt' => 'GUCCI Horsebit ankle boot in black calfskin, side view',
+					'lbc_featured_desc' => 'Three-quarter angle showing horsebit hardware and block heel.',
+					'lbc_description_rich' => 'The GUCCI Horsebit ankle boot pairs Italian craftsmanship with everyday wearability. Smooth black calfskin shapes a refined silhouette, anchored by a low rubber block heel for stability. A discreet side zip streamlines entry without interrupting the profile. Dress it up with tailoring or down with denim; the horsebit hardware signals timeless luxury. Expect a comfortable, true-to-size fit with minimal break-in.',
+					'lbc_sizes_eu' => '35–39',
+					'lbc_heel_type' => 'Low rubber block',
+					'lbc_heel_height_mm' => 50,
+					'lbc_leather_type' => 'calfskin',
+					'lbc_leather_color' => 'Black',
+					'lbc_country_of_origin' => 'Italy',
+					'lbc_care' => 'Wipe with soft cloth; avoid saturation.',
+					'lbc_product_link' => 'https://www.reversible.com/shopping/women/item/gucci-womens-boot-with-horsebit-705714541',
 					'_lsx_sample_product' => '1'
-				)
+				),
+				'slug' => 'designer-boot-gucci-horsebit-black'
 			),
 			array(
-				'title' => 'Louis Vuitton LV Archlight Boot',
-				'content' => $this->get_louis_vuitton_content(),
+				'title' => 'Louis Vuitton Swing Platform Ankle Boot – Black Lambskin',
+				'excerpt' => 'Supple lambskin ankle boot with a balanced platform and medium block heel—modern height with confident traction.',
+				'content' => '',
 				'taxonomies' => array(
-					'heel_height' => 'medium',
-					'material' => 'patent-leather',
-					'finish' => 'glossy',
-					'collection' => 'modern-classic',
 					'brand' => 'Louis Vuitton',
-					'country' => 'france',
-					'color' => 'black',
-					'silhouette' => 'platform-boot',
-					'closure' => 'lace-up'
+					'heel_height' => 'medium',
+					'material' => 'lambskin',
+					'country' => 'Italy',
+					'color' => 'Black',
+					'silhouette' => 'ankle boot',
+					'closure' => 'side zip'
 				),
 				'meta' => array(
-					'_product_price' => '2200',
-					'_product_sku' => 'LV-AL-002',
-					'_product_featured' => 'yes',
-					'_product_size_range' => '35-41 EU',
-					'_product_care_instructions' => 'Avoid water exposure, professional care only',
-					'_product_made_in' => 'Made in France',
+					'lbc_featured_alt' => 'Louis Vuitton Swing Platform ankle boot in black lambskin, profile',
+					'lbc_featured_desc' => 'Profile view emphasising platform and heel.',
+					'lbc_description_rich' => 'Crafted in soft black lambskin, the Swing Platform ankle boot delivers statement height without sacrificing stability. A medium block heel and balanced platform distribute weight evenly, while the clean ankle line keeps the silhouette sharp. The look reads modern and architectural—ideal for evening dressing or elevating minimalist daywear. Fit is true; the platform offsets perceived heel height.',
+					'lbc_sizes_eu' => '35–39',
+					'lbc_heel_type' => 'Medium block with platform',
+					'lbc_heel_height_mm' => 75,
+					'lbc_leather_type' => 'lambskin',
+					'lbc_leather_color' => 'Black',
+					'lbc_country_of_origin' => 'Italy',
+					'lbc_care' => 'Condition occasionally; avoid abrasive contact.',
 					'_lsx_sample_product' => '1'
-				)
+				),
+				'slug' => 'designer-boot-lv-swing-platform-black'
 			),
 			array(
-				'title' => 'Prada Monolith Combat Boot',
-				'content' => $this->get_prada_content(),
+				'title' => 'Prada 85 Leather Ankle Boots – Black Nappa',
+				'excerpt' => 'Sleek nappa ankle boots with an elegant high heel—streamlined lines and a close, tailored fit.',
+				'content' => '',
 				'taxonomies' => array(
-					'heel_height' => 'low',
-					'material' => 'italian-leather',
-					'finish' => 'matte',
-					'collection' => 'avant-garde',
 					'brand' => 'Prada',
-					'country' => 'italy',
-					'color' => 'black',
-					'silhouette' => 'combat-boot',
-					'closure' => 'lace-up'
+					'heel_height' => 'high',
+					'material' => 'nappa',
+					'country' => 'Italy',
+					'color' => 'Black',
+					'silhouette' => 'ankle boot',
+					'closure' => 'side zip'
 				),
 				'meta' => array(
-					'_product_price' => '1650',
-					'_product_sku' => 'PRA-MC-003',
-					'_product_featured' => 'no',
-					'_product_size_range' => '36-42 EU',
-					'_product_care_instructions' => 'Clean with soft dry cloth, condition monthly',
-					'_product_made_in' => 'Made in Italy',
+					'lbc_featured_alt' => 'Prada 85 leather ankle boots in black nappa, three-quarter view',
+					'lbc_featured_desc' => 'Three-quarter view highlighting tapered toe and high heel.',
+					'lbc_description_rich' => 'Prada\'s 85 leather ankle boots deliver a polished profile in supple black nappa. The tapered toe elongates the line, while the high heel adds lift without bulk. A smooth interior and clean ankle finish suit evening looks and sharp daytime tailoring. Expect a closer fit through the ankle; if between sizes, consider the half size up.',
+					'lbc_sizes_eu' => '35–40',
+					'lbc_heel_type' => 'High stiletto-like block',
+					'lbc_heel_height_mm' => 85,
+					'lbc_leather_type' => 'nappa',
+					'lbc_leather_color' => 'Black',
+					'lbc_country_of_origin' => 'Italy',
+					'lbc_care' => 'Use shoe trees; store in dust bags.',
 					'_lsx_sample_product' => '1'
-				)
-			),
-			array(
-				'title' => 'Saint Laurent Opyum Ankle Boot',
-				'content' => $this->get_saint_laurent_content(),
-				'taxonomies' => array(
-					'heel_height' => 'extra-high',
-					'material' => 'patent-leather',
-					'finish' => 'glossy',
-					'collection' => 'heritage',
-					'brand' => 'Saint Laurent',
-					'country' => 'italy',
-					'color' => 'black',
-					'silhouette' => 'ankle-boot',
-					'closure' => 'zipper'
 				),
-				'meta' => array(
-					'_product_price' => '1790',
-					'_product_sku' => 'SL-OP-004',
-					'_product_featured' => 'yes',
-					'_product_size_range' => '35-41 EU',
-					'_product_care_instructions' => 'Polish with patent leather cream',
-					'_product_made_in' => 'Made in Italy',
-					'_lsx_sample_product' => '1'
-				)
-			),
-			array(
-				'title' => 'Christian Louboutin So Kate Booty',
-				'content' => $this->get_louboutin_content(),
-				'taxonomies' => array(
-					'heel_height' => 'extra-high',
-					'material' => 'suede',
-					'finish' => 'matte',
-					'collection' => 'limited-edition',
-					'brand' => 'Christian Louboutin',
-					'country' => 'italy',
-					'color' => 'black',
-					'silhouette' => 'ankle-boot',
-					'closure' => 'zipper'
-				),
-				'meta' => array(
-					'_product_price' => '1995',
-					'_product_sku' => 'CL-SK-005',
-					'_product_featured' => 'yes',
-					'_product_size_range' => '35-42 EU',
-					'_product_care_instructions' => 'Suede brush and waterproof spray recommended',
-					'_product_made_in' => 'Made in Italy',
-					'_lsx_sample_product' => '1'
-				)
-			),
-			array(
-				'title' => 'Balenciaga Track Hike Boot',
-				'content' => $this->get_balenciaga_content(),
-				'taxonomies' => array(
-					'heel_height' => 'low',
-					'material' => 'fabric',
-					'finish' => 'matte',
-					'collection' => 'seasonal',
-					'brand' => 'Balenciaga',
-					'country' => 'italy',
-					'color' => 'black',
-					'silhouette' => 'platform-boot',
-					'closure' => 'lace-up'
-				),
-				'meta' => array(
-					'_product_price' => '1350',
-					'_product_sku' => 'BAL-TH-006',
-					'_product_featured' => 'no',
-					'_product_size_range' => '35-43 EU',
-					'_product_care_instructions' => 'Machine washable, air dry only',
-					'_product_made_in' => 'Made in Italy',
-					'_lsx_sample_product' => '1'
-				)
+				'slug' => 'designer-boot-prada-85-leather-black'
 			)
 		);
 
@@ -224,20 +173,37 @@ class LuxuryBootSampleData
 	}
 
 	/**
-	 * Create individual product
+	 * Create individual designer boot product
 	 */
 	private function create_product($data)
 	{
+		// Check if product already exists by slug
+		if (isset($data['slug'])) {
+			$existing_post = get_page_by_path($data['slug'], OBJECT, 'designer_boot');
+			if ($existing_post) {
+				return $existing_post->ID; // Skip if already exists
+			}
+		}
+
 		// Create the post
-		$post_id = wp_insert_post(array(
+		$post_data = array(
 			'post_title' => $data['title'],
 			'post_content' => $data['content'],
+			'post_excerpt' => isset($data['excerpt']) ? $data['excerpt'] : '',
 			'post_status' => 'publish',
-			'post_type' => 'product',
+			'post_type' => 'designer_boot', // Changed from 'product' to 'designer_boot'
 			'post_author' => 1,
-		));
+		);
+
+		// Add slug if provided
+		if (isset($data['slug'])) {
+			$post_data['post_name'] = $data['slug'];
+		}
+
+		$post_id = wp_insert_post($post_data);
 
 		if (is_wp_error($post_id)) {
+			error_log('Failed to create designer boot: ' . $post_id->get_error_message());
 			return false;
 		}
 
@@ -246,7 +212,7 @@ class LuxuryBootSampleData
 			wp_set_object_terms($post_id, $term, $taxonomy);
 		}
 
-		// Add meta data
+		// Add meta data (using lbc_ prefix as per specification)
 		foreach ($data['meta'] as $key => $value) {
 			update_post_meta($post_id, $key, $value);
 		}
@@ -255,167 +221,73 @@ class LuxuryBootSampleData
 	}
 
 	/**
-	 * GUCCI product content
+	 * Force recreation of sample products (for debugging)
 	 */
-	private function get_gucci_content()
+	public function recreate_sample_products()
 	{
-		return '<div class="luxury-product-description">
-            <h2>Exquisite Italian Craftsmanship</h2>
-            <p>The GUCCI Aria Leather Ankle Boot embodies the pinnacle of Italian luxury footwear. Crafted from the finest premium leather in Florence, each boot is meticulously constructed using traditional techniques passed down through generations of skilled artisans.</p>
+		// Delete existing sample products
+		$existing_boots = get_posts(array(
+			'post_type' => 'designer_boot',
+			'meta_key' => '_lsx_sample_product',
+			'meta_value' => '1',
+			'posts_per_page' => -1
+		));
 
-            <h3>Distinctive Features</h3>
-            <ul>
-                <li><strong>Premium Italian Leather:</strong> Sourced from renowned Tuscan tanneries</li>
-                <li><strong>Hand-finished Details:</strong> Signature GUCCI hardware and stitching</li>
-                <li><strong>Comfort Engineering:</strong> Cushioned insole with arch support</li>
-                <li><strong>Timeless Design:</strong> Classic silhouette with contemporary edge</li>
-            </ul>
+		foreach ($existing_boots as $boot) {
+			wp_delete_post($boot->ID, true);
+		}
 
-            <h3>Care & Maintenance</h3>
-            <p>To preserve the beauty and longevity of your GUCCI boots, we recommend professional leather care services. Store in provided dust bags and avoid exposure to direct sunlight or moisture.</p>
+		// Clear the creation flag
+		delete_option('lbc_sample_products_created');
 
-            <blockquote class="luxury-quote">
-                "Each pair represents our commitment to uncompromising quality and Italian heritage."
-                <cite>— GUCCI Atelier</cite>
-            </blockquote>
-        </div>';
-	}
-
-	/**
-	 * Louis Vuitton product content
-	 */
-	private function get_louis_vuitton_content()
-	{
-		return '<div class="luxury-product-description">
-            <h2>French Excellence Redefined</h2>
-            <p>The Louis Vuitton LV Archlight Boot showcases the Maison\'s innovative approach to luxury footwear. This architectural marvel combines cutting-edge design with traditional French savoir-faire, creating a statement piece that transcends seasonal trends.</p>
-
-            <h3>Innovative Design Elements</h3>
-            <ul>
-                <li><strong>Architectural Silhouette:</strong> Sculptural lines inspired by modern architecture</li>
-                <li><strong>Patent Leather Finish:</strong> Mirror-like surface for maximum impact</li>
-                <li><strong>Comfort Technology:</strong> Advanced cushioning system</li>
-                <li><strong>Signature Details:</strong> Embossed LV monogram elements</li>
-            </ul>
-
-            <h3>Artisanal Process</h3>
-            <p>Each boot requires over 100 individual steps to complete, performed by master craftspeople in our French ateliers. The patent leather undergoes a specialized treatment process to achieve its distinctive lustrous finish.</p>
-
-            <blockquote class="luxury-quote">
-                "Innovation and tradition unite in perfect harmony."
-                <cite>— Louis Vuitton Design Studio</cite>
-            </blockquote>
-        </div>';
-	}
-
-	/**
-	 * Prada product content
-	 */
-	private function get_prada_content()
-	{
-		return '<div class="luxury-product-description">
-            <h2>Avant-Garde Luxury</h2>
-            <p>The Prada Monolith Combat Boot represents the brand\'s fearless approach to contemporary design. This bold interpretation of military-inspired footwear elevates utilitarian aesthetics to high fashion status, perfect for the modern luxury consumer.</p>
-
-            <h3>Design Philosophy</h3>
-            <ul>
-                <li><strong>Military Heritage:</strong> Combat boot silhouette reimagined for luxury</li>
-                <li><strong>Premium Construction:</strong> Full-grain Italian leather throughout</li>
-                <li><strong>Modern Proportions:</strong> Exaggerated sole for contemporary appeal</li>
-                <li><strong>Prada DNA:</strong> Signature triangle logo in brushed metal</li>
-            </ul>
-
-            <h3>Technical Specifications</h3>
-            <p>Features include reinforced toe construction, moisture-wicking lining, and a specialized rubber compound sole for superior traction and durability. The lacing system utilizes marine-grade hardware for both function and aesthetic appeal.</p>
-
-            <blockquote class="luxury-quote">
-                "Where function meets the future of fashion."
-                <cite>— Prada Design Team</cite>
-            </blockquote>
-        </div>';
-	}
-
-	/**
-	 * Saint Laurent product content
-	 */
-	private function get_saint_laurent_content()
-	{
-		return '<div class="luxury-product-description">
-            <h2>Parisian Sophistication</h2>
-            <p>The Saint Laurent Opyum Ankle Boot epitomizes the maison\'s rock-and-roll glamour aesthetic. This statement boot combines architectural lines with sensual curves, creating an unmistakably powerful silhouette that embodies the Saint Laurent woman\'s confidence.</p>
-
-            <h3>Signature Elements</h3>
-            <ul>
-                <li><strong>Iconic YSL Hardware:</strong> Gold-tone logo heel detail</li>
-                <li><strong>Architectural Heel:</strong> Sculptural 105mm stiletto construction</li>
-                <li><strong>Premium Patent:</strong> High-gloss finish for maximum impact</li>
-                <li><strong>Perfect Proportions:</strong> Elongating silhouette design</li>
-            </ul>
-
-            <h3>Craftsmanship Heritage</h3>
-            <p>Handcrafted in Italian workshops using techniques refined over decades, each boot undergoes rigorous quality control. The patent leather treatment involves a multi-stage process to achieve the signature Saint Laurent luster.</p>
-
-            <blockquote class="luxury-quote">
-                "Elegance is refusal - the essence of Saint Laurent style."
-                <cite>— Anthony Vaccarello, Creative Director</cite>
-            </blockquote>
-        </div>';
-	}
-
-	/**
-	 * Christian Louboutin product content
-	 */
-	private function get_louboutin_content()
-	{
-		return '<div class="luxury-product-description">
-            <h2>The Art of Seduction</h2>
-            <p>The Christian Louboutin So Kate Booty embodies the designer\'s philosophy that shoes should be "like jewels" for the feet. This ankle boot iteration of the iconic So Kate silhouette delivers the same leg-lengthening effect with added versatility and edge.</p>
-
-            <h3>Iconic Features</h3>
-            <ul>
-                <li><strong>Signature Red Sole:</strong> The unmistakable Louboutin trademark</li>
-                <li><strong>120mm Stiletto:</strong> Perfectly proportioned for elegance and comfort</li>
-                <li><strong>Luxurious Suede:</strong> Buttery-soft texture with rich depth</li>
-                <li><strong>Pointed Toe:</strong> Elongating silhouette for maximum sophistication</li>
-            </ul>
-
-            <h3>Artisanal Excellence</h3>
-            <p>Each boot is handcrafted by skilled artisans who specialize in luxury footwear construction. The suede undergoes careful selection and treatment to ensure consistent texture and color depth, while the signature red lacquered sole is applied by hand in multiple layers.</p>
-
-            <blockquote class="luxury-quote">
-                "A shoe has so much more to offer than just to walk."
-                <cite>— Christian Louboutin</cite>
-            </blockquote>
-        </div>';
-	}
-
-	/**
-	 * Balenciaga product content
-	 */
-	private function get_balenciaga_content()
-	{
-		return '<div class="luxury-product-description">
-            <h2>Future-Forward Design</h2>
-            <p>The Balenciaga Track Hike Boot represents the brand\'s commitment to pushing boundaries in luxury fashion. This hybrid design merges athletic functionality with high-fashion aesthetics, creating a boot that\'s equally at home on city streets or fashion runways.</p>
-
-            <h3>Innovation Highlights</h3>
-            <ul>
-                <li><strong>Hybrid Construction:</strong> Technical fabrics meet luxury craftsmanship</li>
-                <li><strong>Athletic Heritage:</strong> Performance-inspired design elements</li>
-                <li><strong>Sustainable Materials:</strong> Eco-conscious fabric selections</li>
-                <li><strong>Modular Design:</strong> Removable components for customization</li>
-            </ul>
-
-            <h3>Technical Performance</h3>
-            <p>Features advanced moisture-wicking technology, reinforced stress points, and a specialized sole compound developed in collaboration with athletic footwear experts. The boot maintains luxury aesthetics while delivering genuine performance capabilities.</p>
-
-            <blockquote class="luxury-quote">
-                "Luxury is the freedom to choose what you want to wear."
-                <cite>— Demna Gvasalia, Creative Director</cite>
-            </blockquote>
-        </div>';
+		// Recreate sample products
+		$this->maybe_create_sample_products();
 	}
 }
 
 // Initialize the sample data creator
 new LuxuryBootSampleData();
+
+// Hook to create sample products on theme activation or when needed
+add_action('after_switch_theme', function () {
+	$sample_data = new LuxuryBootSampleData();
+	$sample_data->maybe_create_sample_products();
+});
+
+// Add admin menu item for manual creation
+add_action('admin_menu', function () {
+	add_theme_page(
+		'Create Sample Products',
+		'Sample Products',
+		'manage_options',
+		'lbc-sample-products',
+		function () {
+			if (isset($_GET['create']) && $_GET['create'] === '1') {
+				$sample_data = new LuxuryBootSampleData();
+				$sample_data->recreate_sample_products();
+				echo '<div class="notice notice-success"><p>Sample products created successfully!</p></div>';
+			}
+			echo '<div class="wrap">';
+			echo '<h1>Luxury Boot Collection - Sample Products</h1>';
+			echo '<p>Click the button below to create sample designer boot products:</p>';
+			echo '<a href="?page=lbc-sample-products&create=1" class="button button-primary">Create Sample Products</a>';
+			echo '<p><strong>Archive URL:</strong> <a href="' . home_url('/designer-boots/') . '" target="_blank">' . home_url('/designer-boots/') . '</a></p>';
+
+			// Show existing products
+			$boots = get_posts(array(
+				'post_type' => 'designer_boot',
+				'posts_per_page' => -1,
+				'post_status' => 'publish'
+			));
+
+			if ($boots) {
+				echo '<h3>Existing Designer Boots:</h3><ul>';
+				foreach ($boots as $boot) {
+					echo '<li><a href="' . get_permalink($boot) . '" target="_blank">' . $boot->post_title . '</a></li>';
+				}
+				echo '</ul>';
+			}
+			echo '</div>';
+		}
+	);
+});

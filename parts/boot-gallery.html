@@ -1,0 +1,129 @@
+<!-- Boot Image Gallery Section -->
+<!-- wp:group {"style":{"spacing":{"padding":"var:preset|spacing|50"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding: var(--wp--preset--spacing--50)">
+    <!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"600"}},"fontSize":"large"} -->
+    <h3 class="wp-block-heading has-large-font-size" style="font-weight: 600">
+        Gallery
+    </h3>
+    <!-- /wp:heading -->
+
+    <!-- Main Images Grid -->
+    <!-- wp:html -->
+    <div
+        class="boot-gallery"
+        style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--wp--preset--spacing--40);
+            margin-top: var(--wp--preset--spacing--40);
+        "
+    >
+        <!-- Featured Image -->
+        [if featured_image]
+        <div class="gallery-item gallery-featured">
+            <img
+                src="[featured_image_url]"
+                alt="[lbc_featured_alt]"
+                style="
+                    width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                "
+            />
+            [if lbc_featured_alt]
+            <p
+                style="
+                    margin-top: var(--wp--preset--spacing--20);
+                    color: var(--wp--preset--color--neutral-500);
+                    font-size: 0.875rem;
+                    text-align: center;
+                "
+            >
+                [lbc_featured_alt]
+            </p>
+            [/if]
+        </div>
+        [/if]
+
+        <!-- Additional Images -->
+        [if lbc_image_2]
+        <div class="gallery-item">
+            <img
+                src="[lbc_image_2]"
+                alt="[lbc_image_2_alt]"
+                style="
+                    width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                "
+            />
+            [if lbc_image_2_alt]
+            <p
+                style="
+                    margin-top: var(--wp--preset--spacing--20);
+                    color: var(--wp--preset--color--neutral-500);
+                    font-size: 0.875rem;
+                    text-align: center;
+                "
+            >
+                [lbc_image_2_alt]
+            </p>
+            [/if]
+        </div>
+        [/if] [if lbc_image_3]
+        <div class="gallery-item">
+            <img
+                src="[lbc_image_3]"
+                alt="[lbc_image_3_alt]"
+                style="
+                    width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                "
+            />
+            [if lbc_image_3_alt]
+            <p
+                style="
+                    margin-top: var(--wp--preset--spacing--20);
+                    color: var(--wp--preset--color--neutral-500);
+                    font-size: 0.875rem;
+                    text-align: center;
+                "
+            >
+                [lbc_image_3_alt]
+            </p>
+            [/if]
+        </div>
+        [/if] [if lbc_image_4]
+        <div class="gallery-item">
+            <img
+                src="[lbc_image_4]"
+                alt="[lbc_image_4_alt]"
+                style="
+                    width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                "
+            />
+            [if lbc_image_4_alt]
+            <p
+                style="
+                    margin-top: var(--wp--preset--spacing--20);
+                    color: var(--wp--preset--color--neutral-500);
+                    font-size: 0.875rem;
+                    text-align: center;
+                "
+            >
+                [lbc_image_4_alt]
+            </p>
+            [/if]
+        </div>
+        [/if]
+    </div>
+    <!-- /wp:html -->
+</div>
+<!-- /wp:group -->
