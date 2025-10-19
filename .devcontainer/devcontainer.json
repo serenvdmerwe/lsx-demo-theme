@@ -1,0 +1,43 @@
+{
+  "name": "LSX Demo Theme Development",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "wordpress",
+  "workspaceFolder": "/var/www/html/wp-content/themes/lsx-demo-theme",
+  "forwardPorts": [8080, 3306],
+  "remoteUser": "www-data",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint",
+        "bmewburn.vscode-intelephense-client",
+        "wordpresstoolbox.wordpress-toolbox",
+        "xdebug.php-debug",
+        "github.copilot",
+        "github.copilot-chat",
+        "editorconfig.editorconfig",
+        "mrmlnc.vscode-scss",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit"
+        },
+        "phpcs.enable": true,
+        "phpcs.standard": ".github/linters/phpcs.xml",
+        "php.validate.executablePath": "/usr/local/bin/php",
+        "files.eol": "\n"
+      }
+    }
+  },
+  "postCreateCommand": "composer install && npm install && npm run build",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    }
+  }
+}

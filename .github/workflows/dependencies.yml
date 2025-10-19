@@ -1,0 +1,58 @@
+name: Dependency Updates
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # Run every Monday at midnight
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-dependencies:
+    name: Update Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Check for npm updates
+        id: npm-check
+        run: |
+          npm install -g npm-check-updates
+          ncu > updates.txt
+          if grep -q "All dependencies match the latest package versions" updates.txt; then
+            echo "No updates found"
+            echo "has_updates=false" >> $GITHUB_OUTPUT
+          else
+            echo "Updates found"
+            echo "has_updates=true" >> $GITHUB_OUTPUT
+            ncu -u
+          fi
+
+      - name: Install dependencies and test build
+        if: steps.npm-check.outputs.has_updates == 'true'
+        run: |
+          npm install
+          npm run build
+
+      - name: Create Pull Request
+        if: steps.npm-check.outputs.has_updates == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update npm dependencies'
+          title: '[Automated] Update NPM Dependencies'
+          body: |
+            This PR updates npm dependencies to their latest versions.
+
+            Updated packages:
+            ```
+            $(cat updates.txt)
+            ```
+
+            This PR was created automatically by the Dependency Updates workflow.
+          branch: dependency-updates
+          base: main
+          labels: dependencies

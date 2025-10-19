@@ -1,4 +1,4 @@
-== lsx-demo-child ==
+== lsx-demo-theme ==
 
 Contributors: 
 Requires at least: 6.8
@@ -16,8 +16,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Copyright ==
 
-lsx-demo-child WordPress Theme, (C) 2025 
-lsx-demo-child is distributed under the terms of the GNU GPL.
+lsx-demo-theme WordPress Theme, (C) 2025 
+lsx-demo-theme is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,5 +30,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-lsx-demo-child is a child theme of lsx-demo-theme (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+lsx-demo-theme is based on Twenty Twenty-Five (https://wordpress.org/themes/twentytwentyfive/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 

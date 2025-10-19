@@ -1,130 +1,166 @@
 <?php
 /**
- * LSX Demo Child Theme Functions
+ * lsx-demo-theme functions and definitions.
  *
- * @package LSX_Demo_Child
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty_Five
+ * @since lsx-demo-theme 1.0
  */
 
-// Prevent direct access
-if (!defined('ABSPATH')) {
-    exit;
-}
+// Adds theme support for post formats.
+if ( ! function_exists( 'lsx_demo_theme_post_format_setup' ) ) :
+	/**
+	 * Adds theme support for post formats.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_post_format_setup() {
+		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
+	}
+endif;
+add_action( 'after_setup_theme', 'lsx_demo_theme_post_format_setup' );
 
-/**
- * Enqueue parent and child theme styles
- */
-function lsx_demo_child_enqueue_styles() {
-    // Enqueue parent theme stylesheet
-    wp_enqueue_style('lsx-demo-parent-style', get_template_directory_uri() . '/style.css');
-    
-    // Enqueue child theme stylesheet
-    wp_enqueue_style('lsx-demo-child-style', 
-        get_stylesheet_directory_uri() . '/style.css',
-        array('lsx-demo-parent-style'),
-        wp_get_theme()->get('Version')
-    );
-}
-add_action('wp_enqueue_scripts', 'lsx_demo_child_enqueue_styles');
+// Enqueues editor-style.css in the editors.
+if ( ! function_exists( 'lsx_demo_theme_editor_style' ) ) :
+	/**
+	 * Enqueues editor-style.css in the editors.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_editor_style() {
+		add_editor_style( get_parent_theme_file_uri( 'assets/css/editor-style.css' ) );
+	}
+endif;
+add_action( 'after_setup_theme', 'lsx_demo_theme_editor_style' );
 
-/**
- * Register theme support for block editor features
- */
-function lsx_demo_child_theme_support() {
-    // Add support for editor styles
-    add_theme_support('editor-styles');
-    
-    // Add support for responsive embeds
-    add_theme_support('responsive-embeds');
-    
-    // Add support for block templates
-    add_theme_support('block-templates');
-    
-    // Add support for block template parts
-    add_theme_support('block-template-parts');
-}
-add_action('after_setup_theme', 'lsx_demo_child_theme_support');
+// Enqueues style.css on the front.
+if ( ! function_exists( 'lsx_demo_theme_enqueue_styles' ) ) :
+	/**
+	 * Enqueues style.css on the front.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_enqueue_styles() {
+		wp_enqueue_style(
+			'lsx-demo-theme-style',
+			get_parent_theme_file_uri( 'style.css' ),
+			array(),
+			wp_get_theme()->get( 'Version' )
+		);
+	}
+endif;
+add_action( 'wp_enqueue_scripts', 'lsx_demo_theme_enqueue_styles' );
 
-/**
- * Register custom header component as a block pattern
- */
-function lsx_demo_child_register_header_pattern() {
-    register_block_pattern(
-        'lsx-demo-child/custom-header',
-        array(
-            'title'       => __('Custom Header Component', 'lsx-demo-child'),
-            'description' => __('A reusable header component with logo, navigation, and call-to-action.', 'lsx-demo-child'),
-            'content'     => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"}}},"backgroundColor":"white","className":"site-header","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull site-header has-white-background-color has-background" style="padding-top:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group"><!-- wp:site-logo {"width":120} /-->
+// Registers custom block styles.
+if ( ! function_exists( 'lsx_demo_theme_block_styles' ) ) :
+	/**
+	 * Registers custom block styles.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_block_styles() {
+		register_block_style(
+			'core/list',
+			array(
+				'name'         => 'checkmark-list',
+				'label'        => __( 'Checkmark', 'lsx-demo-theme' ),
+				'inline_style' => '
+				ul.is-style-checkmark-list {
+					list-style-type: "\2713";
+				}
 
-<!-- wp:navigation {"ref":4,"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"center"}} /-->
+				ul.is-style-checkmark-list li {
+					padding-inline-start: 1ch;
+				}',
+			)
+		);
+	}
+endif;
+add_action( 'init', 'lsx_demo_theme_block_styles' );
 
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","textColor":"white","className":"header-cta"} -->
-<div class="wp-block-button header-cta"><a class="wp-block-button__link has-white-color has-primary-background-color has-text-color has-background wp-element-button" href="#contact">Get Started</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->',
-            'categories'  => array('header'),
-            'keywords'    => array('header', 'navigation', 'logo'),
-        )
-    );
-}
-add_action('init', 'lsx_demo_child_register_header_pattern');
+// Registers pattern categories.
+if ( ! function_exists( 'lsx_demo_theme_pattern_categories' ) ) :
+	/**
+	 * Registers pattern categories.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_pattern_categories() {
 
-/**
- * Custom function to display reusable header component
- * Can be called from any template file
- */
-function lsx_demo_child_header_component($args = array()) {
-    $defaults = array(
-        'show_logo' => true,
-        'show_nav' => true,
-        'show_cta' => true,
-        'cta_text' => 'Get Started',
-        'cta_link' => '#contact',
-        'container_class' => 'custom-header-component'
-    );
-    
-    $args = wp_parse_args($args, $defaults);
-    
-    ?>
-    <header class="<?php echo esc_attr($args['container_class']); ?>">
-        <div class="header-container">
-            <?php if ($args['show_logo']) : ?>
-                <div class="header-logo">
-                    <?php if (has_custom_logo()) : ?>
-                        <?php the_custom_logo(); ?>
-                    <?php else : ?>
-                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                            <h1 class="site-title"><?php bloginfo('name'); ?></h1>
-                        </a>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if ($args['show_nav']) : ?>
-                <nav class="header-navigation">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location' => 'primary',
-                        'menu_class' => 'header-menu',
-                        'container' => false,
-                        'fallback_cb' => false,
-                    ));
-                    ?>
-                </nav>
-            <?php endif; ?>
-            
-            <?php if ($args['show_cta']) : ?>
-                <div class="header-cta">
-                    <a href="<?php echo esc_url($args['cta_link']); ?>" class="cta-button">
-                        <?php echo esc_html($args['cta_text']); ?>
-                    </a>
-                </div>
-            <?php endif; ?>
-        </div>
-    </header>
-    <?php
-}
+		register_block_pattern_category(
+			'lsx_demo_theme_page',
+			array(
+				'label'       => __( 'Pages', 'lsx-demo-theme' ),
+				'description' => __( 'A collection of full page layouts.', 'lsx-demo-theme' ),
+			)
+		);
+
+		register_block_pattern_category(
+			'lsx_demo_theme_post-format',
+			array(
+				'label'       => __( 'Post formats', 'lsx-demo-theme' ),
+				'description' => __( 'A collection of post format patterns.', 'lsx-demo-theme' ),
+			)
+		);
+
+		register_block_pattern_category(
+			'lsx_demo_theme_pricing',
+			array(
+				'label'       => __( 'Pricing', 'lsx-demo-theme' ),
+				'description' => __( 'A collection of pricing table patterns and layouts.', 'lsx-demo-theme' ),
+			)
+		);
+	}
+endif;
+add_action( 'init', 'lsx_demo_theme_pattern_categories' );
+
+// Registers block binding sources.
+if ( ! function_exists( 'lsx_demo_theme_register_block_bindings' ) ) :
+	/**
+	 * Registers the post format block binding source.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_demo_theme_register_block_bindings() {
+		register_block_bindings_source(
+			'lsx-demo-theme/format',
+			array(
+				'label'              => _x( 'Post format name', 'Label for the block binding placeholder in the editor', 'lsx-demo-theme' ),
+				'get_value_callback' => 'lsx_demo_theme_format_binding',
+			)
+		);
+	}
+endif;
+add_action( 'init', 'lsx_demo_theme_register_block_bindings' );
+
+// Registers block binding callback function for the post format name.
+if ( ! function_exists( 'lsx_demo_theme_format_binding' ) ) :
+	/**
+	 * Callback function for the post format name block binding source.
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return string|void Post format name, or nothing if the format is 'standard'.
+	 */
+	function lsx_demo_theme_format_binding() {
+		$post_format_slug = get_post_format();
+
+		if ( $post_format_slug && 'standard' !== $post_format_slug ) {
+			return get_post_format_string( $post_format_slug );
+		}
+	}
+endif;
