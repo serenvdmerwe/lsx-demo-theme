@@ -1,0 +1,447 @@
+/*
+ * Cross-Device Testing Styles
+ * Responsive design validation for luxury boot catalog
+ * Tests breakpoints, touch targets, and mobile-first design
+ */
+
+/* ==========================================================================
+   Mobile-First Base Styles (320px+)
+   ========================================================================== */
+
+.cross-device-test-component {
+    padding: var(--wp--preset--spacing--30);
+    background: var(--wp--preset--color--ivory);
+    border-radius: 8px;
+    margin: var(--wp--preset--spacing--40) 0;
+}
+
+/* Touch-friendly base sizes */
+.cross-device-test-component .test-button,
+.cross-device-test-component .wp-block-button__link {
+    min-height: 44px; /* WCAG 2.2 AA minimum touch target */
+    min-width: 44px;
+    padding: var(--wp--preset--spacing--15) var(--wp--preset--spacing--25);
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+/* Mobile-optimized product cards */
+.product-card-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    background: var(--wp--preset--color--white);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: var(--wp--preset--spacing--30);
+}
+
+.product-card-mobile .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+}
+
+.product-card-mobile .product-content {
+    padding: var(--wp--preset--spacing--25);
+}
+
+.product-card-mobile .product-title {
+    font-family: var(--wp--preset--font-family--playfair-display);
+    font-size: clamp(18px, 5vw, 22px);
+    font-weight: 600;
+    color: var(--wp--preset--color--primary-black);
+    margin-bottom: var(--wp--preset--spacing--15);
+    line-height: 1.3;
+}
+
+.product-card-mobile .product-price {
+    font-family: var(--wp--preset--font-family--montserrat);
+    font-size: clamp(16px, 4vw, 18px);
+    font-weight: 600;
+    color: var(--wp--preset--color--luxury-burgundy);
+    margin-bottom: var(--wp--preset--spacing--20);
+}
+
+/* Mobile navigation */
+.mobile-nav-test {
+    position: sticky;
+    top: 0;
+    background: var(--wp--preset--color--primary-black);
+    padding: var(--wp--preset--spacing--20);
+    z-index: 100;
+}
+
+.mobile-nav-test .nav-toggle {
+    background: transparent;
+    border: 2px solid var(--wp--preset--color--ivory);
+    color: var(--wp--preset--color--ivory);
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-test .nav-toggle:hover,
+.mobile-nav-test .nav-toggle:focus {
+    background: var(--wp--preset--color--luxury-gold);
+    color: var(--wp--preset--color--primary-black);
+    border-color: var(--wp--preset--color--luxury-gold);
+}
+
+/* Form elements mobile optimization */
+.form-test-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wp--preset--spacing--20);
+    padding: var(--wp--preset--spacing--25);
+    background: var(--wp--preset--color--white);
+    border-radius: 6px;
+    border: 1px solid var(--wp--preset--color--luxury-neutral-200);
+}
+
+.form-test-mobile label {
+    font-family: var(--wp--preset--font-family--montserrat);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--wp--preset--color--luxury-neutral-700);
+    margin-bottom: var(--wp--preset--spacing--10);
+}
+
+.form-test-mobile input,
+.form-test-mobile select,
+.form-test-mobile textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: var(--wp--preset--spacing--15);
+    border: 1px solid var(--wp--preset--color--luxury-neutral-300);
+    border-radius: 4px;
+    font-family: var(--wp--preset--font-family--open-sans);
+    font-size: 16px; /* Prevents zoom on iOS */
+    background: var(--wp--preset--color--white);
+    transition: border-color 0.3s ease;
+}
+
+.form-test-mobile input:focus,
+.form-test-mobile select:focus,
+.form-test-mobile textarea:focus {
+    outline: 2px solid var(--wp--preset--color--luxury-gold);
+    outline-offset: 2px;
+    border-color: var(--wp--preset--color--luxury-burgundy);
+}
+
+/* ==========================================================================
+   Tablet Styles (768px+)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+    .cross-device-test-component {
+        padding: var(--wp--preset--spacing--50);
+    }
+
+    /* Two-column layout for tablets */
+    .product-grid-tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--wp--preset--spacing--40);
+        margin: var(--wp--preset--spacing--40) 0;
+    }
+
+    .product-card-mobile {
+        margin-bottom: 0;
+    }
+
+    .product-card-mobile .product-image {
+        height: 240px;
+    }
+
+    /* Horizontal form layout */
+    .form-test-tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--wp--preset--spacing--30);
+        align-items: start;
+    }
+
+    .form-test-tablet .full-width {
+        grid-column: 1 / -1;
+    }
+
+    /* Navigation improvements */
+    .mobile-nav-test {
+        position: relative;
+        padding: var(--wp--preset--spacing--30);
+    }
+
+    .tablet-nav-menu {
+        display: flex;
+        gap: var(--wp--preset--spacing--30);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tablet-nav-menu a {
+        color: var(--wp--preset--color--ivory);
+        text-decoration: none;
+        font-family: var(--wp--preset--font-family--montserrat);
+        font-size: 16px;
+        font-weight: 500;
+        padding: var(--wp--preset--spacing--15) var(--wp--preset--spacing--20);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .tablet-nav-menu a:hover,
+    .tablet-nav-menu a:focus {
+        background: var(--wp--preset--color--luxury-gold);
+        color: var(--wp--preset--color--primary-black);
+    }
+}
+
+/* ==========================================================================
+   Desktop Styles (1024px+)
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+    .cross-device-test-component {
+        padding: var(--wp--preset--spacing--60);
+        max-width: 1200px;
+        margin: var(--wp--preset--spacing--60) auto;
+    }
+
+    /* Three-column product grid */
+    .product-grid-desktop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--wp--preset--spacing--50);
+        margin: var(--wp--preset--spacing--50) 0;
+    }
+
+    .product-card-mobile .product-image {
+        height: 280px;
+    }
+
+    /* Advanced form layout */
+    .form-test-desktop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--wp--preset--spacing--40);
+        align-items: start;
+    }
+
+    .form-test-desktop .full-width {
+        grid-column: 1 / -1;
+    }
+
+    .form-test-desktop .half-width {
+        grid-column: span 2;
+    }
+
+    /* Desktop navigation */
+    .desktop-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--60);
+    }
+
+    .desktop-nav .nav-toggle {
+        display: none;
+    }
+
+    /* Hover effects for desktop */
+    .product-card-mobile:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .cross-device-test-component .wp-block-button__link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ==========================================================================
+   Large Desktop Styles (1440px+)
+   ========================================================================== */
+
+@media (min-width: 1440px) {
+    .cross-device-test-component {
+        max-width: 1400px;
+        padding: var(--wp--preset--spacing--80);
+    }
+
+    /* Four-column grid for large screens */
+    .product-grid-large {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--wp--preset--spacing--60);
+        margin: var(--wp--preset--spacing--60) 0;
+    }
+
+    .product-card-mobile .product-image {
+        height: 320px;
+    }
+
+    /* Enhanced typography scaling */
+    .product-card-mobile .product-title {
+        font-size: 24px;
+    }
+
+    .product-card-mobile .product-price {
+        font-size: 20px;
+    }
+}
+
+/* ==========================================================================
+   Touch and Interaction Enhancements
+   ========================================================================== */
+
+/* Touch-specific improvements */
+@media (hover: none) and (pointer: coarse) {
+    .cross-device-test-component .wp-block-button__link,
+    .product-card-mobile,
+    .form-test-mobile input,
+    .form-test-mobile select,
+    .form-test-mobile textarea {
+        transition: none; /* Faster response on touch */
+    }
+
+    /* Larger touch targets */
+    .cross-device-test-component .wp-block-button__link {
+        min-height: 48px;
+        min-width: 48px;
+        padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
+    }
+}
+
+/* High-resolution display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .product-card-mobile {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .cross-device-test-component {
+        border: 0.5px solid var(--wp--preset--color--luxury-neutral-200);
+    }
+}
+
+/* ==========================================================================
+   Accessibility Enhancements
+   ========================================================================== */
+
+/* Focus management */
+.cross-device-test-component *:focus {
+    outline: 2px solid var(--wp--preset--color--luxury-gold);
+    outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .cross-device-test-component *,
+    .product-card-mobile,
+    .cross-device-test-component .wp-block-button__link {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .cross-device-test-component {
+        border: 2px solid var(--wp--preset--color--primary-black);
+    }
+
+    .product-card-mobile {
+        border: 1px solid var(--wp--preset--color--primary-black);
+    }
+
+    .cross-device-test-component .wp-block-button__link {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .cross-device-test-component {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        border: 1px solid black;
+    }
+
+    .product-card-mobile {
+        break-inside: avoid;
+        background: white !important;
+        border: 1px solid black;
+    }
+
+    .cross-device-test-component .wp-block-button__link {
+        background: white !important;
+        color: black !important;
+        border: 1px solid black;
+    }
+}
+
+/* ==========================================================================
+   Testing Utilities
+   ========================================================================== */
+
+/* Visual debugging grid (remove in production) */
+.debug-grid {
+    background-image: linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Breakpoint indicator (development only) */
+.breakpoint-indicator {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: var(--wp--preset--color--luxury-burgundy);
+    color: var(--wp--preset--color--ivory);
+    padding: var(--wp--preset--spacing--10) var(--wp--preset--spacing--15);
+    border-radius: 4px;
+    font-family: var(--wp--preset--font-family--montserrat);
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 9999;
+}
+
+.breakpoint-indicator::after {
+    content: 'Mobile (< 768px)';
+}
+
+@media (min-width: 768px) {
+    .breakpoint-indicator::after {
+        content: 'Tablet (768px+)';
+    }
+}
+
+@media (min-width: 1024px) {
+    .breakpoint-indicator::after {
+        content: 'Desktop (1024px+)';
+    }
+}
+
+@media (min-width: 1440px) {
+    .breakpoint-indicator::after {
+        content: 'Large Desktop (1440px+)';
+    }
+}
