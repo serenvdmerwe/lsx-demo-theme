@@ -4,6 +4,16 @@
             "name": "page-no-title",
             "postTypes": ["page"],
             "title": "Page No Title"
+        },
+        {
+            "name": "single-product",
+            "postTypes": ["product"],
+            "title": "Single Product"
+        },
+        {
+            "name": "archive-product",
+            "postTypes": ["product"],
+            "title": "Product Archive"
         }
     ],
     "settings": {
@@ -14,34 +24,149 @@
             "defaultPalette": false,
             "palette": [
                 {
-                    "color": "#121212",
+                    "color": "#F8F8F8",
                     "name": "Base",
                     "slug": "base"
                 },
                 {
-                    "color": "#4A4A4A",
-                    "name": "Neutral",
-                    "slug": "neutral"
+                    "color": "#000000",
+                    "name": "Contrast",
+                    "slug": "contrast"
                 },
                 {
-                    "color": "#F4F4F4",
-                    "name": "Light",
-                    "slug": "light"
+                    "color": "#000000",
+                    "name": "Primary",
+                    "slug": "primary"
                 },
                 {
-                    "color": "#FF5F1F",
-                    "name": "Accent 1",
-                    "slug": "accent-1"
+                    "color": "#4A1C2C",
+                    "name": "Secondary",
+                    "slug": "secondary"
                 },
                 {
-                    "color": "#00FF85",
-                    "name": "Accent 2",
-                    "slug": "accent-2"
+                    "color": "#D4AF37",
+                    "name": "Accent",
+                    "slug": "accent"
                 },
                 {
-                    "color": "#3895FF",
-                    "name": "Accent 3",
-                    "slug": "accent-3"
+                    "color": "#FFFFFF",
+                    "name": "Neutral 0",
+                    "slug": "neutral-0"
+                },
+                {
+                    "color": "#F8F8F8",
+                    "name": "Neutral 100",
+                    "slug": "neutral-100"
+                },
+                {
+                    "color": "#F0F0F0",
+                    "name": "Neutral 200",
+                    "slug": "neutral-200"
+                },
+                {
+                    "color": "#E5E5E5",
+                    "name": "Neutral 300",
+                    "slug": "neutral-300"
+                },
+                {
+                    "color": "#CCCCCC",
+                    "name": "Neutral 400",
+                    "slug": "neutral-400"
+                },
+                {
+                    "color": "#A6A6A6",
+                    "name": "Neutral 500",
+                    "slug": "neutral-500"
+                },
+                {
+                    "color": "#808080",
+                    "name": "Neutral 600",
+                    "slug": "neutral-600"
+                },
+                {
+                    "color": "#4D4D4D",
+                    "name": "Neutral 700",
+                    "slug": "neutral-700"
+                },
+                {
+                    "color": "#333333",
+                    "name": "Neutral 800",
+                    "slug": "neutral-800"
+                },
+                {
+                    "color": "#000000",
+                    "name": "Neutral 900",
+                    "slug": "neutral-900"
+                },
+                {
+                    "color": "#F6EEF1",
+                    "name": "Accent A 100",
+                    "slug": "accent-a-100"
+                },
+                {
+                    "color": "#E7D3D9",
+                    "name": "Accent A 200",
+                    "slug": "accent-a-200"
+                },
+                {
+                    "color": "#CFA4B0",
+                    "name": "Accent A 300",
+                    "slug": "accent-a-300"
+                },
+                {
+                    "color": "#7A3045",
+                    "name": "Accent A 400",
+                    "slug": "accent-a-400"
+                },
+                {
+                    "color": "#4A1C2C",
+                    "name": "Accent A 500",
+                    "slug": "accent-a-500"
+                },
+                {
+                    "color": "#FFF4CC",
+                    "name": "Accent B 100",
+                    "slug": "accent-b-100"
+                },
+                {
+                    "color": "#FBE08A",
+                    "name": "Accent B 200",
+                    "slug": "accent-b-200"
+                },
+                {
+                    "color": "#EBC753",
+                    "name": "Accent B 300",
+                    "slug": "accent-b-300"
+                },
+                {
+                    "color": "#C59A2F",
+                    "name": "Accent B 400",
+                    "slug": "accent-b-400"
+                },
+                {
+                    "color": "#D4AF37",
+                    "name": "Accent B 500",
+                    "slug": "accent-b-500"
+                },
+                {
+                    "color": "#FFE3A1",
+                    "name": "Accent C 100",
+                    "slug": "accent-c-100"
+                },
+                {
+                    "color": "#F2B744",
+                    "name": "Accent C 200",
+                    "slug": "accent-c-200"
+                },
+                {
+                    "color": "#C98C1A",
+                    "name": "Accent C 300",
+                    "slug": "accent-c-300"
+                },
+                {
+                    "color": "#8A5E0E",
+                    "name": "Accent C 400",
+                    "slug": "accent-c-400"
                 }
             ]
         },
@@ -52,9 +177,14 @@
         "shadow": {
             "presets": [
                 {
-                    "name": "LSX Shadow",
-                    "shadow": "4px 4px 0px 0px #000",
-                    "slug": "lsx-shadow"
+                    "name": "Luxury Shadow",
+                    "shadow": "0 4px 12px rgba(0, 0, 0, 0.15)",
+                    "slug": "luxury-shadow"
+                },
+                {
+                    "name": "Subtle Shadow",
+                    "shadow": "0 2px 8px rgba(0, 0, 0, 0.08)",
+                    "slug": "subtle-shadow"
                 }
             ]
         },
@@ -62,39 +192,54 @@
             "defaultSpacingSizes": false,
             "spacingSizes": [
                 {
-                    "name": "Tiny",
-                    "size": "10px",
+                    "name": "4px",
+                    "size": "0.25rem",
+                    "slug": "10"
+                },
+                {
+                    "name": "8px",
+                    "size": "0.5rem",
                     "slug": "20"
                 },
                 {
-                    "name": "X-Small",
-                    "size": "20px",
+                    "name": "12px",
+                    "size": "0.75rem",
                     "slug": "30"
                 },
                 {
-                    "name": "Small",
-                    "size": "30px",
+                    "name": "16px",
+                    "size": "1rem",
                     "slug": "40"
                 },
                 {
-                    "name": "Regular",
-                    "size": "clamp(30px, 5vw, 50px)",
+                    "name": "24px",
+                    "size": "1.5rem",
                     "slug": "50"
                 },
                 {
-                    "name": "Large",
-                    "size": "clamp(30px, 7vw, 70px)",
+                    "name": "32px",
+                    "size": "2rem",
                     "slug": "60"
                 },
                 {
-                    "name": "X-Large",
-                    "size": "clamp(50px, 7vw, 90px)",
+                    "name": "48px",
+                    "size": "3rem",
                     "slug": "70"
                 },
                 {
-                    "name": "XX-Large",
-                    "size": "clamp(70px, 10vw, 140px)",
+                    "name": "64px",
+                    "size": "4rem",
                     "slug": "80"
+                },
+                {
+                    "name": "96px",
+                    "size": "6rem",
+                    "slug": "90"
+                },
+                {
+                    "name": "128px",
+                    "size": "8rem",
+                    "slug": "100"
                 }
             ],
             "units": ["%", "px", "em", "rem", "vh", "vw"]
@@ -104,69 +249,70 @@
             "fluid": true,
             "fontFamilies": [
                 {
-                    "fontFace": [
-                        {
-                            "fontFamily": "Manrope",
-                            "fontStyle": "normal",
-                            "fontWeight": "400 700",
-                            "src": [
-                                "file:./assets/fonts/manrope/Manrope-VariableFont_wght.woff2"
-                            ]
-                        }
-                    ],
-                    "fontFamily": "Manrope, sans-serif",
-                    "name": "Manrope",
-                    "slug": "manrope"
+                    "fontFamily": "\"Playfair Display\", Georgia, \"Times New Roman\", serif",
+                    "name": "Heading (Playfair Display)",
+                    "slug": "heading-font"
                 },
                 {
-                    "fontFace": [
-                        {
-                            "fontFamily": "Lexend",
-                            "fontStyle": "normal",
-                            "fontWeight": "400 800",
-                            "src": [
-                                "file:./assets/fonts/lexend/Lexend-VariableFont_wght.woff2"
-                            ]
-                        }
-                    ],
-                    "fontFamily": "Lexend, sans-serif",
-                    "name": "Lexend",
-                    "slug": "lexend"
+                    "fontFamily": "Montserrat, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+                    "name": "Body (Montserrat)",
+                    "slug": "body-font"
+                },
+                {
+                    "fontFamily": "\"Open Sans\", system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+                    "name": "UI (Open Sans)",
+                    "slug": "ui-font"
                 }
             ],
             "fontSizes": [
                 {
-                    "fluid": true,
                     "name": "Tiny",
-                    "size": "12px",
-                    "slug": "tiny"
+                    "size": "0.75rem",
+                    "slug": "font-size-100"
                 },
                 {
-                    "fluid": true,
-                    "name": "xSmall",
-                    "size": "16px",
-                    "slug": "x-small"
-                },
-                {
-                    "fluid": true,
                     "name": "Small",
-                    "size": "20px",
-                    "slug": "small"
+                    "size": "0.875rem",
+                    "slug": "font-size-300"
                 },
                 {
-                    "fluid": true,
+                    "name": "Base",
+                    "size": "1rem",
+                    "slug": "font-size-200"
+                },
+                {
                     "name": "Medium",
-                    "size": "24px",
-                    "slug": "medium"
+                    "size": "1.125rem",
+                    "slug": "font-size-400"
                 },
                 {
-                    "fluid": true,
                     "name": "Large",
-                    "size": "32px",
-                    "slug": "large"
+                    "size": "1.25rem",
+                    "slug": "font-size-500"
+                },
+                {
+                    "name": "X-Large",
+                    "size": "1.5rem",
+                    "slug": "font-size-600"
+                },
+                {
+                    "name": "Huge",
+                    "size": "1.875rem",
+                    "slug": "font-size-700"
+                },
+                {
+                    "name": "Gigantic",
+                    "size": "2.25rem",
+                    "slug": "font-size-800"
+                },
+                {
+                    "name": "Colossal",
+                    "size": "3rem",
+                    "slug": "font-size-900"
                 }
             ],
-            "writingMode": true
+            "lineHeight": true,
+            "dropCap": false
         },
         "useRootPaddingAwareAlignments": true
     },
@@ -602,8 +748,8 @@
             }
         },
         "color": {
-            "background": "var(--wp--preset--color--light)",
-            "text": "var(--wp--preset--color--base)"
+            "background": "var(--wp--preset--color--base)",
+            "text": "var(--wp--preset--color--contrast)"
         },
         "elements": {
             "button": {
@@ -623,8 +769,8 @@
                     }
                 },
                 "color": {
-                    "background": "var(--wp--preset--color--accent-2)",
-                    "text": "var(--wp--preset--color--base)"
+                    "background": "var(--wp--preset--color--accent)",
+                    "text": "var(--wp--preset--color--primary)"
                 },
                 "spacing": {
                     "padding": {
@@ -635,19 +781,19 @@
                     }
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--lexend)",
-                    "fontSize": "var(--wp--preset--font-size--medium)"
+                    "fontFamily": "var(--wp--preset--font-family--ui-font)",
+                    "fontSize": "var(--wp--preset--font-size--font-size-200)",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.02em"
                 }
             },
             "caption": {
                 "color": {
-                    "text": "var(--wp--preset--color--neutral)"
+                    "text": "var(--wp--preset--color--neutral-600)"
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--lexend)",
-                    "fontSize": "var(--wp--preset--font-size--small)",
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
+                    "fontFamily": "var(--wp--preset--font-family--ui-font)",
+                    "fontSize": "var(--wp--preset--font-size--font-size-100)",
                     "lineHeight": "1.4"
                 }
             },
@@ -698,31 +844,25 @@
             },
             "heading": {
                 "color": {
-                    "text": "var(--wp--preset--color--accent-1)"
+                    "text": "var(--wp--preset--color--primary)"
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--aleo)",
-                    "fontStyle": "normal",
+                    "fontFamily": "var(--wp--preset--font-family--heading-font)",
                     "fontWeight": "700",
-                    "letterSpacing": "-0.1px",
-                    "lineHeight": "1.35"
+                    "lineHeight": "1.25"
                 }
             },
             "link": {
                 ":hover": {
                     "color": {
-                        "text": "var(--wp--preset--color--accent-3)"
-                    },
-                    "typography": {
-                        "textDecoration": "none"
+                        "text": "var(--wp--preset--color--accent)"
                     }
                 },
                 "color": {
-                    "text": "var(--wp--preset--color--accent-1)"
+                    "text": "var(--wp--preset--color--secondary)"
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--lexend)",
-                    "fontSize": "var(--wp--preset--font-size--tiny)"
+                    "textDecoration": "underline"
                 }
             }
         },
@@ -736,10 +876,8 @@
             }
         },
         "typography": {
-            "fontFamily": "var(--wp--preset--font-family--lexend)",
-            "fontSize": "var(--wp--preset--font-size--tiny)",
-            "fontStyle": "normal",
-            "fontWeight": "400",
+            "fontFamily": "var(--wp--preset--font-family--body-font)",
+            "fontSize": "var(--wp--preset--font-size--font-size-200)",
             "lineHeight": "1.5"
         }
     },
@@ -778,6 +916,16 @@
             "area": "uncategorized",
             "name": "sidebar",
             "title": "Sidebar"
+        },
+        {
+            "area": "uncategorized",
+            "name": "hero-luxury",
+            "title": "Luxury Hero"
+        },
+        {
+            "area": "uncategorized",
+            "name": "product-specs",
+            "title": "Product Specs"
         }
     ],
     "version": 3,

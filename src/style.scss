@@ -6,3 +6,190 @@ body {
   background-color: $primary-color;
   display: flex;
 }
+
+/* Header Components Styles */
+.header-component {
+  transition: all 0.3s ease;
+
+  .site-logo {
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .site-title {
+    transition: color 0.2s ease;
+    
+    &.minimal {
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+    
+    &.featured {
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    &.mobile-optimized {
+      font-size: clamp(1rem, 4vw, 1.25rem);
+    }
+  }
+
+  .main-navigation {
+    &.centered-nav {
+      .wp-block-navigation__container {
+        justify-content: center;
+        gap: var(--wp--preset--spacing--40);
+      }
+    }
+    
+    &.minimal-nav {
+      font-weight: 300;
+      
+      .wp-block-navigation-link {
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+          text-underline-offset: 0.3em;
+        }
+      }
+    }
+    
+    &.featured-nav {
+      .wp-block-navigation-link {
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: var(--wp--preset--color--accent-2);
+          transition: width 0.3s ease;
+        }
+        
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+    
+    &.mobile-first {
+      .wp-block-navigation__responsive-container-open {
+        padding: var(--wp--preset--spacing--50);
+        
+        .wp-block-navigation__responsive-container-content {
+          .wp-block-navigation-link {
+            padding: var(--wp--preset--spacing--30) 0;
+            border-bottom: 1px solid var(--wp--preset--color--accent-6);
+            
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header-search {
+    max-width: 200px;
+    
+    .wp-block-search__input {
+      border: 1px solid var(--wp--preset--color--accent-6);
+      border-radius: var(--wp--preset--border-radius--small);
+      padding: 0.5rem 1rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      
+      &:focus {
+        border-color: var(--wp--preset--color--accent-2);
+        box-shadow: 0 0 0 2px rgba(0, 255, 133, 0.2);
+      }
+    }
+    
+    &.mobile-full-width {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .header-cta-button {
+    .wp-block-button__link {
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  .header-component {
+    .wp-block-group.alignwide {
+      flex-direction: column;
+      gap: var(--wp--preset--spacing--30);
+      
+      &.keep-horizontal {
+        flex-direction: row;
+      }
+    }
+    
+    .main-navigation {
+      width: 100%;
+      
+      .wp-block-navigation__container {
+        justify-content: center;
+      }
+    }
+    
+    .header-search {
+      order: 3;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+/* Accessibility Enhancements */
+.header-component {
+  .wp-block-navigation-link:focus,
+  .wp-block-button__link:focus,
+  .wp-block-search__input:focus {
+    outline: 2px solid var(--wp--preset--color--accent-2);
+    outline-offset: 2px;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .site-title,
+    .wp-block-navigation-link {
+      font-weight: 600;
+    }
+    
+    .header-search .wp-block-search__input {
+      border-width: 2px;
+    }
+  }
+}
