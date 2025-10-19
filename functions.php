@@ -272,7 +272,7 @@ class LSX_Demo_Menu_Walker extends Walker_Nav_Menu {
 
 		$item_output = isset( $args->before ) ? $args->before : '';
 		$item_output .= '<a' . $attributes . '>';
-		$item_output .= ( isset( $args->link_before ) ? $args->link_before : '' ) . apply_filters( 'the_title', $item->title, $item->ID ) . ( isset( $args->link_after ) ? $args->link_after : '' );
+		$item_output .= ( isset( $args->link_before ) ? $args->link_before : '' ) . esc_html( apply_filters( 'the_title', $item->title, $item->ID ) ) . ( isset( $args->link_after ) ? $args->link_after : '' );
 		$item_output .= '</a>';
 		$item_output .= isset( $args->after ) ? $args->after : '';
 
