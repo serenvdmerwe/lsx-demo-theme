@@ -1,0 +1,284 @@
+/**
+ * Designer Boots CSS - Professional E-commerce Layout
+ * Supports 60/40 product page layout with gallery left, product info right
+ */
+
+/* ===== PRODUCT PAGE LAYOUT ===== */
+
+/* Product Gallery Styling */
+.product-gallery-additional {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.product-gallery-additional img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.product-gallery-additional img:hover {
+    transform: scale(1.05);
+}
+
+/* Product Info Column */
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--wp--preset--color--contrast);
+    margin-bottom: var(--wp--preset--spacing--40);
+}
+
+.product-key-details {
+    font-size: 0.9rem;
+}
+
+.product-key-details > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+/* Product CTA Styling */
+.product-cta a.wp-element-button {
+    background-color: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--base);
+    text-decoration: none;
+    padding: 16px 32px;
+    display: block;
+    border-radius: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: var(--wp--preset--spacing--30);
+    transition: background-color 0.3s ease;
+}
+
+.product-cta a.wp-element-button:hover {
+    background-color: var(--wp--preset--color--secondary);
+}
+
+/* ===== SPECIFICATIONS TABLE ===== */
+
+.specifications-table {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.specifications-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.specifications-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--wp--preset--color--neutral-200);
+}
+
+.specifications-table td:first-child {
+    font-weight: bold;
+    background: var(--wp--preset--color--base);
+    width: 30%;
+}
+
+.specifications-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== PRODUCT DESCRIPTION ===== */
+
+.product-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.personal-notes .notes-section {
+    background: var(--wp--preset--color--neutral-50);
+    padding: 2rem;
+    border-left: 4px solid var(--wp--preset--color--primary);
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.personal-notes h3 {
+    font-family: var(--wp--preset--font-family--heading);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--wp--preset--color--primary);
+}
+
+/* ===== RELATED PRODUCTS ===== */
+
+.related-boots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.related-boot-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.related-boot-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+.related-boot-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.related-boot-info {
+    padding: 1.5rem;
+}
+
+.related-boot-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--wp--preset--color--contrast);
+}
+
+.related-boot-brand {
+    font-size: 0.9rem;
+    color: var(--wp--preset--color--primary);
+    margin-bottom: 0.5rem;
+}
+
+.related-boot-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--wp--preset--color--contrast);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+    /* Stack columns on mobile */
+    .wp-block-columns {
+        flex-direction: column;
+    }
+
+    .wp-block-column[style*='flex-basis: 60%'],
+    .wp-block-column[style*='flex-basis: 40%'] {
+        flex-basis: 100% !important;
+    }
+
+    /* Adjust product gallery for mobile */
+    .product-gallery-additional {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    /* Stack key details vertically on mobile */
+    .product-key-details > div {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    /* Adjust specifications table for mobile */
+    .specifications-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .specifications-table td:first-child {
+        width: 40%;
+    }
+
+    /* Related products - single column on mobile */
+    .related-boots {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ultra small screens adjustments */
+    .product-gallery-additional {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .specifications-table {
+        margin: 0 1rem;
+    }
+
+    .specifications-table td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .product-description {
+        font-size: 1rem;
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* Focus states for interactive elements */
+.product-cta a.wp-element-button:focus {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 2px;
+}
+
+.product-gallery-additional img:focus {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 2px;
+}
+
+.related-boot-card:focus {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .specifications-table table {
+        border: 2px solid var(--wp--preset--color--contrast);
+    }
+
+    .specifications-table td {
+        border-bottom: 1px solid var(--wp--preset--color--contrast);
+    }
+
+    .related-boot-card {
+        border: 1px solid var(--wp--preset--color--contrast);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .product-gallery-additional img,
+    .product-cta a.wp-element-button,
+    .related-boot-card {
+        transition: none;
+    }
+
+    .related-boot-card:hover {
+        transform: none;
+    }
+
+    .product-gallery-additional img:hover {
+        transform: none;
+    }
+}

@@ -223,6 +223,16 @@ if (! function_exists('lsx_demo_theme_enqueue_fonts')) :
 				wp_get_theme()->get('Version')
 			);
 		}
+
+		// Enqueue designer boots e-commerce styles on designer boot pages
+		if (is_singular('designer_boot') || is_post_type_archive('designer_boot')) {
+			wp_enqueue_style(
+				'designer-boots-ecommerce',
+				get_template_directory_uri() . '/assets/css/designer-boots-ecommerce.css',
+				array(),
+				wp_get_theme()->get('Version')
+			);
+		}
 	}
 endif;
 add_action('wp_enqueue_scripts', 'lsx_demo_theme_enqueue_fonts');
