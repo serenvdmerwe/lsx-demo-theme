@@ -1,0 +1,181 @@
+<?php
+
+/**
+ * Title: Luxury Homepage
+ * Slug: lsx-demo-theme/luxury-homepage
+ * Categories: lsx_demo_theme_page, lsx_demo_theme_luxury
+ * Block Types: core/post-content
+ * Post Types: page
+ * Description: Complete luxury homepage layout with hero section, featured products, and journal posts.
+ *
+ * @package WordPress
+ * @subpackage lsx-demo-theme
+ * @since lsx-demo-theme 1.0
+ */
+
+?>
+<!-- wp:cover {"dimRatio":60,"overlayColor":"primary","minHeight":70,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100"}}}} -->
+<div
+	class="wp-block-cover alignfull is-light"
+	style="
+        padding-top: var(--wp--preset--spacing--100);
+        padding-bottom: var(--wp--preset--spacing--100);
+        min-height: 70vh;
+    ">
+	<span
+		aria-hidden="true"
+		class="wp-block-cover__background has-primary-background-color has-background-dim-60 has-background-dim"></span>
+	<div class="wp-block-cover__inner-container">
+		<!-- wp:group {"layout":{"type":"constrained","contentSize":"1100px"}} -->
+		<div class="wp-block-group">
+			<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"clamp(2.5rem, 4vw, 4rem)","lineHeight":"1.1"}},"textColor":"base","fontFamily":"heading-font"} -->
+			<h1
+				class="wp-block-heading has-text-align-center has-base-color has-text-color has-heading-font-font-family"
+				style="
+                    font-size: clamp(2.5rem, 4vw, 4rem);
+                    line-height: 1.1;
+                ">
+				Step Into Luxury
+			</h1>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var:preset|font-size|font-size-500"}},"textColor":"neutral-100","fontFamily":"body-font"} -->
+			<p
+				class="has-text-align-center has-neutral-100-color has-text-color has-body-font-font-family"
+				style="
+                    font-size: var(--wp--preset--font-size--font-size-500);
+                ">
+				Premium black high-heel boots, crafted to command attention
+				and embody timeless elegance.
+			</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|70"}}}} -->
+			<div
+				class="wp-block-buttons"
+				style="margin-top: var(--wp--preset--spacing--70)">
+				<!-- wp:button {"backgroundColor":"accent","textColor":"primary","style":{"typography":{"fontWeight":"600"},"border":{"radius":"0px"}},"fontSize":"font-size-400","fontFamily":"ui-font"} -->
+				<div class="wp-block-button">
+					<a
+						class="wp-block-button__link has-primary-color has-accent-background-color has-text-color has-background has-ui-font-font-family has-font-size-400-font-size wp-element-button"
+						style="border-radius: 0px; font-weight: 600"
+						href="/designer-boots/">Shop the Collection</a>
+				</div>
+				<!-- /wp:button -->
+
+				<!-- wp:button {"textColor":"base","style":{"color":{"background":"#00000000"},"typography":{"fontWeight":"400"},"border":{"color":"var:preset|color|base","width":"2px","radius":"0px"}},"fontSize":"font-size-400","fontFamily":"ui-font"} -->
+				<div class="wp-block-button">
+					<a
+						class="wp-block-button__link has-base-color has-text-color has-ui-font-font-family has-font-size-400-font-size wp-element-button has-border-color"
+						style="
+                            border-color: var(--wp--preset--color--base);
+                            border-width: 2px;
+                            border-radius: 0px;
+                            background-color: #00000000;
+                            font-weight: 400;
+                        "
+						href="/about/">Discover Our Craft</a>
+				</div>
+				<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+</div>
+<!-- /wp:cover -->
+
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|90","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<div
+	class="wp-block-group alignwide"
+	style="
+        padding-top: var(--wp--preset--spacing--90);
+        padding-bottom: var(--wp--preset--spacing--60);
+    ">
+	<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"var:preset|font-size|font-size-700"}},"textColor":"primary","fontFamily":"heading-font"} -->
+	<h2
+		class="wp-block-heading has-text-align-center has-primary-color has-text-color has-heading-font-font-family"
+		style="font-size: var(--wp--preset--font-size--font-size-700)">
+		Crafted for Excellence
+	</h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|70"}}},"textColor":"neutral-700","fontSize":"font-size-400","fontFamily":"body-font"} -->
+	<p
+		class="has-text-align-center has-neutral-700-color has-text-color has-body-font-font-family has-font-size-400-font-size"
+		style="
+            margin-top: var(--wp--preset--spacing--50);
+            margin-bottom: var(--wp--preset--spacing--70);
+        ">
+		Each pair represents the pinnacle of craftsmanship, where
+		traditional techniques meet contemporary design. Discover the luxury
+		that comes from attention to detail and uncompromising quality.
+	</p>
+	<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"var:preset|color|neutral-100"},"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"}} -->
+<div
+	class="wp-block-group alignfull has-background"
+	style="
+        background-color: var(--wp--preset--color--neutral-100);
+        padding-top: var(--wp--preset--spacing--80);
+        padding-bottom: var(--wp--preset--spacing--80);
+    ">
+	<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"var:preset|font-size|font-size-600"}},"textColor":"primary","fontFamily":"heading-font"} -->
+	<h2
+		class="wp-block-heading has-text-align-center has-primary-color has-text-color has-heading-font-font-family"
+		style="font-size: var(--wp--preset--font-size--font-size-600)">
+		Featured Collection
+	</h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:spacer {"height":"var:preset|spacing|60"} -->
+	<div
+		style="height: var(--wp--preset--spacing--60)"
+		aria-hidden="true"
+		class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:query {"queryId":0,"query":{"perPage":3,"pages":0,"offset":0,"postType":"designer_boot","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[]},"align":"wide"} -->
+	<div class="wp-block-query alignwide">
+		<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|70"}},"layout":{"type":"grid","columnCount":3}} -->
+		<!-- wp:group {"style":{"spacing":{"padding":"0"},"color":{"background":"var:preset|color|base"}},"layout":{"type":"constrained"}} -->
+		<div
+			class="wp-block-group has-background"
+			style="
+                background-color: var(--wp--preset--color--base);
+                padding: 0;
+            ">
+			<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/4","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}}} /-->
+
+			<!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+			<div
+				class="wp-block-group"
+				style="
+                    padding-top: 0;
+                    padding-right: var(--wp--preset--spacing--50);
+                    padding-bottom: var(--wp--preset--spacing--60);
+                    padding-left: var(--wp--preset--spacing--50);
+                ">
+				<!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"var:preset|font-size|font-size-500"}},"textColor":"primary","fontFamily":"heading-font"} /-->
+
+				<!-- wp:post-excerpt {"moreText":"","showMoreOnNewLine":false,"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|40"}}},"textColor":"neutral-600","fontSize":"font-size-300","fontFamily":"body-font"} /-->
+
+				<!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"accent","fontSize":"font-size-400","fontFamily":"ui-font"} -->
+				<p
+					class="has-accent-color has-text-color has-ui-font-font-family has-font-size-400-font-size"
+					style="font-weight: 600">
+					From $850
+				</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+		<!-- /wp:post-template -->
+	</div>
+	<!-- /wp:query -->
+</div>
+<!-- /wp:group -->

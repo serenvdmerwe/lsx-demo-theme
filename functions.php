@@ -540,7 +540,98 @@ if (!function_exists('lsx_force_create_sample_products')) :
 	}
 endif;
 add_action('init', 'lsx_force_create_sample_products', 999);
-// Manual system reset for development
+// Force front page template hierarchy for luxury homepage
+if (!function_exists('lsx_force_front_page_template')) :
+	/**
+	 * Force front-page.html template to be used on homepage
+	 * regardless of WordPress reading settings
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @param string $template Template path
+	 * @return string Modified template path
+	 */
+	function lsx_force_front_page_template($template)
+	{
+		// Only apply on the front page
+		if (is_front_page() && is_home()) {
+			// Look for front-page.html template
+			$front_page_template = locate_template(array('front-page.html'));
+			if ($front_page_template) {
+				return $front_page_template;
+			}
+		}
+		return $template;
+	}
+endif;
+add_filter('template_include', 'lsx_force_front_page_template', 99);
+
+// Ensure front page displays static content, not posts
+if (!function_exists('lsx_set_homepage_reading_settings')) :
+	/**
+	 * Programmatically set reading settings to show static front page
+	 * and create homepage if needed
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @return void
+	 */
+	function lsx_set_homepage_reading_settings()
+	{
+		// Only run once and only if not already set
+		if (!get_option('lsx_homepage_settings_applied')) {
+			// Check if there's already a front page set
+			$front_page_id = get_option('page_on_front');
+
+			// If no front page exists, create one
+			if (!$front_page_id || !get_post($front_page_id)) {
+				$homepage = array(
+					'post_title'    => 'Home',
+					'post_content'  => '<!-- wp:pattern {"slug":"lsx-demo-theme/luxury-homepage"} /-->',
+					'post_status'   => 'publish',
+					'post_type'     => 'page',
+					'post_name'     => 'home'
+				);
+
+				$front_page_id = wp_insert_post($homepage);
+
+				// Set this page as the front page
+				if ($front_page_id && !is_wp_error($front_page_id)) {
+					update_option('page_on_front', $front_page_id);
+				}
+			}
+
+			// Set front page to show static page (not posts)
+			update_option('show_on_front', 'page');
+
+			// Create a blog page if one doesn't exist
+			$blog_page_id = get_option('page_for_posts');
+			if (!$blog_page_id || !get_post($blog_page_id)) {
+				$blogpage = array(
+					'post_title'    => 'Blog',
+					'post_content'  => '',
+					'post_status'   => 'publish',
+					'post_type'     => 'page',
+					'post_name'     => 'blog'
+				);
+
+				$blog_page_id = wp_insert_post($blogpage);
+
+				// Set this page as the posts page
+				if ($blog_page_id && !is_wp_error($blog_page_id)) {
+					update_option('page_for_posts', $blog_page_id);
+				}
+			}
+
+			// Set the reading settings flag
+			update_option('lsx_homepage_settings_applied', true);
+
+			// Flush rewrite rules to ensure proper routing
+			flush_rewrite_rules(false);
+		}
+	}
+endif;
+add_action('after_setup_theme', 'lsx_set_homepage_reading_settings'); // Manual system reset for development
 if (!function_exists('lsx_force_system_reset')) :
 	/**
 	 * Force complete system reset - accessible via URL parameter
@@ -551,6 +642,7 @@ if (!function_exists('lsx_force_system_reset')) :
 			// Clear all flags
 			delete_option('luxury_sample_products_created');
 			delete_option('lsx_rewrite_rules_flushed');
+			delete_option('lsx_homepage_settings_applied');
 
 			// Force recreation
 			lsx_force_create_sample_products();
