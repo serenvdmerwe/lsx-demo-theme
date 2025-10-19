@@ -539,8 +539,7 @@ if (!function_exists('lsx_force_create_sample_products')) :
 		}
 	}
 endif;
-add_action('init', 'lsx_force_create_sample_products', 999); // Very late priority to ensure everything is registered
-
+add_action('init', 'lsx_force_create_sample_products', 999);
 // Manual system reset for development
 if (!function_exists('lsx_force_system_reset')) :
 	/**
