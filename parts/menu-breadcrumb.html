@@ -1,0 +1,58 @@
+<!-- Breadcrumb Navigation Template Part -->
+<!-- wp:group {"className":"breadcrumb-navigation","layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"},"gap":"var:preset|spacing|10"}}} -->
+<div class="wp-block-group breadcrumb-navigation">
+    <!-- wp:html -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <ol class="breadcrumb-list">
+            <li class="breadcrumb-item">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="breadcrumb-link">
+                    <?php esc_html_e( 'Home', 'lsx-demo-theme' ); ?>
+                </a>
+            </li>
+            <?php if ( is_category() || is_single() ) : ?>
+                <li class="breadcrumb-separator" aria-hidden="true">›</li>
+                <li class="breadcrumb-item">
+                    <?php if ( is_single() ) : ?>
+                        <?php
+                        $categories = get_the_category();
+                        if ( ! empty( $categories ) ) :
+                        ?>
+                            <a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>" class="breadcrumb-link">
+                                <?php echo esc_html( $categories[0]->name ); ?>
+                            </a>
+                        <?php endif; ?>
+                    <?php else : ?>
+                        <span class="breadcrumb-current">
+                            <?php single_cat_title(); ?>
+                        </span>
+                    <?php endif; ?>
+                </li>
+            <?php endif; ?>
+
+            <?php if ( is_single() ) : ?>
+                <li class="breadcrumb-separator" aria-hidden="true">›</li>
+                <li class="breadcrumb-item">
+                    <span class="breadcrumb-current">
+                        <?php the_title(); ?>
+                    </span>
+                </li>
+            <?php elseif ( is_page() && ! is_front_page() ) : ?>
+                <li class="breadcrumb-separator" aria-hidden="true">›</li>
+                <li class="breadcrumb-item">
+                    <span class="breadcrumb-current">
+                        <?php the_title(); ?>
+                    </span>
+                </li>
+            <?php elseif ( is_archive() && ! is_category() ) : ?>
+                <li class="breadcrumb-separator" aria-hidden="true">›</li>
+                <li class="breadcrumb-item">
+                    <span class="breadcrumb-current">
+                        <?php the_archive_title(); ?>
+                    </span>
+                </li>
+            <?php endif; ?>
+        </ol>
+    </nav>
+    <!-- /wp:html -->
+</div>
+<!-- /wp:group -->

@@ -9,26 +9,8 @@
     <!-- /wp:group -->
 
     <!-- Primary Navigation -->
-    <!-- wp:navigation {"ref":1,"ariaLabel":"Primary","layout":{"type":"flex","justifyContent":"center"},"style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)"}},"className":"primary-nav"} /-->
+    <!-- wp:template-part {"slug":"menu-primary","tagName":"div"} /-->
 
-    <!-- Mobile Navigation Toggle -->
-    <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"},"className":"mobile-nav-toggle"} -->
-    <div class="wp-block-group mobile-nav-toggle">
-        <!-- wp:button {"className":"is-style-outline mobile-menu-button","fontSize":"small"} -->
-        <div
-            class="wp-block-button has-custom-font-size has-small-font-size is-style-outline mobile-menu-button"
-        >
-            <a
-                class="wp-block-button__link"
-                href="#"
-                onclick="document.querySelector('.primary-nav').classList.toggle('is-open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); return false;"
-                aria-expanded="false"
-                aria-label="Toggle menu"
-                >Menu</a
-            >
-        </div>
-        <!-- /wp:button -->
-    </div>
     <!-- /wp:group -->
 </header>
 <!-- /wp:group -->
