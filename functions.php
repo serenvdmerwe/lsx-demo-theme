@@ -654,3 +654,48 @@ if (!function_exists('lsx_force_system_reset')) :
 	}
 endif;
 add_action('init', 'lsx_force_system_reset', 1);
+
+// Ensure PHP processing in block theme template parts
+if (!function_exists('lsx_process_php_in_templates')) :
+	/**
+	 * Process PHP code in block theme templates and template parts
+	 * Fixes issue where PHP gets converted to HTML comments
+	 *
+	 * @since lsx-demo-theme 1.0
+	 *
+	 * @param string $content Template content
+	 * @return string Processed content
+	 */
+	function lsx_process_php_in_templates($content)
+	{
+		// Only process if content contains PHP-like patterns
+		if (strpos($content, '<?php') !== false || strpos($content, '<!--?php') !== false) {
+			// Fix corrupted PHP tags that became HTML comments
+			$content = str_replace('<!--?php', '<?php', $content);
+			$content = str_replace('?-->', '?>', $content);
+
+			// Ensure proper PHP processing
+			ob_start();
+			eval('?>' . $content);
+			$processed_content = ob_get_clean();
+
+			// If eval fails, return original content
+			if ($processed_content === false) {
+				return $content;
+			}
+
+			return $processed_content;
+		}
+
+		return $content;
+	}
+endif;
+
+// Hook into template part rendering
+add_filter('render_block_core/template-part', 'lsx_process_php_in_templates', 10, 1);
+add_filter('render_block', function ($block_content, $block) {
+	if ($block['blockName'] === 'core/template-part') {
+		return lsx_process_php_in_templates($block_content);
+	}
+	return $block_content;
+}, 10, 2);

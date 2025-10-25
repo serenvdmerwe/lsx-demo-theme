@@ -383,7 +383,7 @@
                     "link": {
                         ":hover": {
                             "typography": {
-                                "textDecoration": "underline"
+                                "textDecoration": "none"
                             }
                         },
                         "color": {
@@ -504,7 +504,7 @@
                     "link": {
                         ":hover": {
                             "typography": {
-                                "textDecoration": "underline"
+                                "textDecoration": "none"
                             }
                         },
                         "typography": {
@@ -549,7 +549,7 @@
                     "link": {
                         ":hover": {
                             "typography": {
-                                "textDecoration": "underline"
+                                "textDecoration": "none"
                             }
                         },
                         "color": {
@@ -581,7 +581,7 @@
                     "link": {
                         ":hover": {
                             "typography": {
-                                "textDecoration": "underline"
+                                "textDecoration": "none"
                             }
                         },
                         "typography": {
@@ -726,7 +726,7 @@
                     "link": {
                         ":hover": {
                             "typography": {
-                                "textDecoration": "underline"
+                                "textDecoration": "none"
                             }
                         },
                         "typography": {
@@ -862,7 +862,7 @@
                     "text": "var(--wp--preset--color--secondary)"
                 },
                 "typography": {
-                    "textDecoration": "underline"
+                    "textDecoration": "none"
                 }
             }
         },
