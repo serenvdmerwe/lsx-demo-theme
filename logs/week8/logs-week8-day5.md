@@ -5,23 +5,26 @@ This template illustrates how to structure your daily log.  Duplicate this file 
 ## Daily Standup
 
 ### How do you feel today?
+• Emotionally - 60%
+• Physically - 70%
 
-Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
+### What have you done since yesterday?
+• Logs for @Barbs
+• Studies - Beginner WordPress Developer - WP.org
+• Met /W Brandon
+• Huddle Ash
+• Asana admin
+• Local - Ollie menu - UX - Mobile
+• Plan - plugin
 
-### What did you do yesterday?
+### What will you do today?
+• Asana admin
+• Changelog.md - 1.0 RC 1
+• Studies - Beginner WordPress Developer - WP.org
 
-Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
-
-### What do you plan to do today?
-
-List the tasks you intend to work on today.  Use a checklist to break them down:
-
-- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
-- [ ] Add more tasks as needed.
-
-### What are your blockers?
-
-Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
+### Anything blocking your progress?
+• Personally - yes
+• Work - no
 
 ## Daily Logs
 
