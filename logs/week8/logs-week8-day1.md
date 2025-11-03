@@ -5,23 +5,24 @@ This template illustrates how to structure your daily log.  Duplicate this file 
 ## Daily Standup
 
 ### How do you feel today?
+• Emotionally - 80%
+• Physically - 67%
 
-Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
+### What have you done since Friday?
+• Ollie menu task - complete
+• Gravity forms task reread
+• Logs Local work
 
-### What did you do yesterday?
+### What will you do today?
+• Was Still Sick mostly this weekend So I will run through The Ash Site List today with Ai
+• Gravity Forms
+• Logs
+• Ash request Sat Message
+• Studies
 
-Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
-
-### What do you plan to do today?
-
-List the tasks you intend to work on today.  Use a checklist to break them down:
-
-- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
-- [ ] Add more tasks as needed.
-
-### What are your blockers?
-
-Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
+### Anything blocking your progress?
+• Personally - No - feeling much better
+• Work - No - Shout out teamwork
 
 ## Daily Logs
 
