@@ -5,23 +5,31 @@ This template illustrates how to structure your daily log.  Duplicate this file 
 ## Daily Standup
 
 ### How do you feel today?
+• Emotionally - 80%
+• Physically - 78%
 
-Describe your overall mood or energy level.  For example: “Feeling excited to start working on the project.”
+### What have you done since yesterday?
+• 1.0 RC 1
+• Add Stark Accessibility Checker
+• 10 Blog post text up - Categories - Tags - Yoast Config
+• Micro copy checks
+• Studied a bit more on local sites - had a problem - was with the Copilot for this
+• Very useful Catch Up/ Intern meet with @Brandon shout out  :lifeline: + :star:
 
-### What did you do yesterday?
+### What will you do today?
+• Meet with @Brandon + @Barbs at 10am sa time
+• Add Images - blog
+• Final function test run - Menu Nav - UX
+• Add - GF to Contact
+• Add - Contact Copy
+• Add - Contact Img
+• Run - Figma task asana - design final decisions
+• CPT - work on content finalization
 
-Summarise what you accomplished in the previous session.  Mention specific tasks or issues you worked on.
 
-### What do you plan to do today?
-
-List the tasks you intend to work on today.  Use a checklist to break them down:
-
-- [ ] Replace this line with an actual task; keep descriptions short and action‑oriented.
-- [ ] Add more tasks as needed.
-
-### What are your blockers?
-
-Identify anything that might prevent you from making progress (e.g. waiting for feedback, unsure about a tool).  If you have no blockers, state “None”.
+### Anything blocking your progress?
+• Personally - no
+• Work - no
 
 ## Daily Logs
 
