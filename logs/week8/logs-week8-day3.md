@@ -6,9 +6,3 @@ This template illustrates how to structure your daily log.  Duplicate this file 
 WED
 SICK
 
-```
-- 1.5 hrs – cloned repo and installed dependencies (Issue #1)
-- 2.0 hrs – read WordPress block theme documentation and took notes
-```
-
-You can draft notes throughout the day in this section and refine them before committing.
